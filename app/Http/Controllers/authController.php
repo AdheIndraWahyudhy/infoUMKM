@@ -90,7 +90,7 @@ class authController extends Controller
         ];
         if(Auth::attempt($infologin)){
             // jika autentifikasi sukses
-            return redirect('dashboard')->with('success',Auth::user()->name.' Berhasil Login');
+            return redirect('user')->with('success',Auth::user()->name.' Berhasil Login');
             // return "success";
         }else{
             // kalau autentifikasi gagal

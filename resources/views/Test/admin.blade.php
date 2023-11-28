@@ -8,6 +8,25 @@
 <body>
     <h2>Admin</h2>
     <a href="auth/logout"><b>Logout -> </b></a>
-    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>No Hp</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($users as $user)
+                <tr>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->number_phone}}</td>
+                    <td><a href="">Lihat Produk</a></td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </body>
 </html>
