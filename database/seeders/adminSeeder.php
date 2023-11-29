@@ -7,12 +7,14 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
-class UsersTableSeeders extends Seeder
+class adminSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
         User::create([
             'name' => 'admin',
@@ -21,6 +23,5 @@ class UsersTableSeeders extends Seeder
             'number_phone' => '085382539627',
             'role' => 'admin',
         ]);
-        
     }
 }

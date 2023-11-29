@@ -8,8 +8,10 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->id('id_store'); 
@@ -25,15 +27,17 @@ return new class extends Migration
             $table->timestamps();
             
             // Menambahkan foreign key constraints
-            $table->foreign('user_id')->references('id_user')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('category_id')->references('id_category')->on('categories');
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('stores');
     }
