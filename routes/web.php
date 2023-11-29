@@ -52,6 +52,6 @@ Route::middleware('isUser')->group(function(){
     });
     Route::prefix('store')->group(function(){
         Route::get('/',[userController::class,'makeStore']);
-        Route::get('/create',[userController::class,'createStore']);
+        Route::post('/create',[userController::class,'createStore']);
     });
 });

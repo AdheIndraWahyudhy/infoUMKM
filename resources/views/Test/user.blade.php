@@ -11,6 +11,34 @@
     <h1>Hallo, {{$user}}</h1>
     @if ($store != null)
         <h1>Anda sudah memiliki toko</h1>
+        {{-- <img src="{{url('StoresImg/'.$store->store_image)}}" alt=""> --}}
+        <h3>Table Produk</h3>
+        <a href="{{url('/product')}}">Tambah Produk</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Produk</th>
+                    <th>Harga</th>
+                    <th>Deskripsi</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($products as $product)
+                    <tr>
+                        <td>{{$no++}}</td>
+                        <td>{{$product->product_name}}</td>
+                        <td>{{$product->product_price}}</td>
+                        <td>{{$product->description}}</td>
+                        <td>
+                            <a href="{{url('product/edit/'.$product->id_product)}}">Edit</a>
+                            <a href="{{url('product/delete'.$product->id_product)}}">Delete</a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     @else
         Buat toko anda <a href="{{url('/store')}}">Sekarang</a>
     @endif
