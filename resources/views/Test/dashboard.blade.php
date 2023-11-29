@@ -12,7 +12,6 @@
     <h1>Kategori</h1>
     @foreach ($categories as $category)
         <img src="" alt="">
-        
         <a href="{{url('category/'.$category->id_category)}}"><h3>{{$category->category_name}}</h3></a>
     @endforeach
 </body>

@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class userController extends Controller
+class cobaController extends Controller
 {
+    
     function index(){
-        return view('Test.user');
+        return Auth::user()->name;
     }
 }

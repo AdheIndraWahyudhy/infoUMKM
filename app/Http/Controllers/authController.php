@@ -32,18 +32,20 @@ class authController extends Controller
             'password'=>$request->password
         ];
         if(Auth::attempt($infologin)){
-            // jika autentifikasi sukses
-            if (Auth::user()->role === 'admin') {
-                // Jika role adalah admin, redirect ke halaman admin
-                return redirect('admin')->with('success', 'Selamat datang ' . Auth::user()->name . '. Anda berhasil login sebagai admin.');
-            } elseif (Auth::user()->role === 'user') {
-                // Jika role adalah user, redirect ke halaman user
-                return redirect('dashboard')->with('success', 'Selamat datang ' . Auth::user()->name . '. Anda berhasil login sebagai user.');
-            }
+            // // jika autentifikasi sukses
+            // if (Auth::user()->role === 'admin') {
+            //     // Jika role adalah admin, redirect ke halaman admin
+            //     return redirect('admin')->with('success', 'Selamat datang ' . Auth::user()->name . '. Anda berhasil login sebagai admin.');
+            //     // return view('Test.admin')->with('nama',Auth::user()->name);
+            // } elseif (Auth::user()->role === 'user') {
+            //     // Jika role adalah user, redirect ke halaman user
+            //     return redirect('user')->with('success', 'Selamat datang ' . Auth::user()->name . '. Anda berhasil login sebagai user.');
+            // }
+            return redirect('/coba');
         }else{
             // kalau autentifikasi gagal
-            return redirect('auth')->withErrors('Username atau password salah');
-            // return "gagal";
+            // return redirect('auth')->withErrors('Username atau password salah');
+            return "gagal";
             
         }
     }
@@ -91,6 +93,7 @@ class authController extends Controller
         if(Auth::attempt($infologin)){
             // jika autentifikasi sukses
             return redirect('user')->with('success',Auth::user()->name.' Berhasil Login');
+            
             // return "success";
         }else{
             // kalau autentifikasi gagal

@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>User</h2>
-    <a href="auth/logout"><b>Logout -> </b></a>
-    
+    <a href="auth/logout/user"><b>Logout -> </b></a>
+    {{-- <h1>Hallo, {{$username}}</h1> --}}
 </body>
 </html>

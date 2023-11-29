@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\cobaController;
 use App\Http\Controllers\halamanController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
@@ -18,19 +19,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Halaman yang di akses oleh pengunjung
-Route::get('/',[halamanController::class,'dashboard']);
-Route::get('/category/{id}',[halamanController::class,'category']);
+Route::middleware('isVisitor')->group(function () {
+    Route::get('/',[halamanController::class,'dashboard']);
+    Route::get('/category/{id}',[halamanController::class,'category']);
+});
 
 // Route autentifikasi
-Route::get('/auth',[authController::class,'index']);
-Route::post('/auth/login',[authController::class,'login']);
-Route::get('/auth/register',[authController::class,'register']);
-Route::post('/auth/register/create',[authController::class,'create']);
-// Route Logout
-Route::get('/auth/logout',[authController::class,'logout']);
+Route::prefix('/auth')->group(function(){
+    Route::middleware('isVisitor')->group(function(){
+        Route::get('/',[authController::class,'index']);
+        Route::post('/login',[authController::class,'login']);
+        Route::get('/register',[authController::class,'register']);
+        Route::post('/register/create',[authController::class,'create']);    
+    });
+
+    // Route Logout
+    Route::get('/logout/admin',[authController::class,'logout'])->middleware('isAdmin');
+    Route::get('/logout/user',[authController::class,'logout'])->middleware('isUser');
+});
 
 // Route halaman Admin
-Route::get('/admin',[adminController::class,'index']);
+Route::prefix('admin')->middleware('isAdmin')->group(function(){
+    Route::get('/',[adminController::class,'index']);
+
+});
+Route::get('coba',[cobaController::class,'index']);
 
 // Route Halmana user/owner
-Route::get('/user',[userController::class,'index']);
+Route::prefix('user')->middleware('isUser')->group(function(){
+    Route::get('/',[userController::class,'index']);
+});

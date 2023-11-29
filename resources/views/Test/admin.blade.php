@@ -7,7 +7,8 @@
 </head>
 <body>
     <h2>Admin</h2>
-    <a href="auth/logout"><b>Logout -> </b></a>
+    <h1>ini {{$nama}}</h1>
+    <a href="{{url('auth/logout/admin')}}"><b>Logout -> </b></a>
     <table border="1">
         <thead>
             <tr>
