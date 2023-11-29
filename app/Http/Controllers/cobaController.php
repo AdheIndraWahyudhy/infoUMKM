@@ -9,6 +9,12 @@ class cobaController extends Controller
 {
     
     function index(){
-        return Auth::user()->name;
+        $user = Auth::user();
+
+        if ($user) {
+            return $user->name;
+        } else {
+            return "Pengguna tidak terotentikasi.";
+        }
     }
 }
