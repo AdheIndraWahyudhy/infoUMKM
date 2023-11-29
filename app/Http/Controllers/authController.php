@@ -54,7 +54,7 @@ class authController extends Controller
         return redirect('auth')->with('success',' Berhasil Logout');
     }
     function register(){
-        return view('sesi/registrasi');
+        return view('Test.register');
     }
     function create(Request $request){
         Session::flash('name', $request->name);

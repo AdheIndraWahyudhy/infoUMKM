@@ -8,6 +8,11 @@
 <body>
     <h2>User</h2>
     <a href="auth/logout/user"><b>Logout -> </b></a>
-    {{-- <h1>Hallo, {{$username}}</h1> --}}
+    <h1>Hallo, {{$user}}</h1>
+    @if ($store != null)
+        <h1>Anda sudah memiliki toko</h1>
+    @else
+        Buat toko anda <a href="{{url('/store')}}">Sekarang</a>
+    @endif
 </body>
 </html>

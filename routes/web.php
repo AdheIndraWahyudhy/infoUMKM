@@ -46,6 +46,12 @@ Route::prefix('admin')->middleware('isAdmin')->group(function(){
 // Route::get('coba',[cobaController::class,'index']);
 
 // Route Halmana user/owner
-Route::prefix('user')->middleware('isUser')->group(function(){
-    Route::get('/',[userController::class,'index']);
+Route::middleware('isUser')->group(function(){
+    Route::prefix('user')->group(function(){
+        Route::get('/',[userController::class,'index']);
+    });
+    Route::prefix('store')->group(function(){
+        Route::get('/',[userController::class,'makeStore']);
+        Route::get('/create',[userController::class,'createStore']);
+    });
 });
