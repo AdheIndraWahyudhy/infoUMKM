@@ -12,7 +12,7 @@ class authController extends Controller
 {
     //
     function index(){
-        return view('Test.login');
+        return view('auth.login');
     }
 
     function login(Request $request){
@@ -54,7 +54,7 @@ class authController extends Controller
         return redirect('auth')->with('success',' Berhasil Logout');
     }
     function register(){
-        return view('Test.register');
+        return view('auth.register');
     }
     function create(Request $request){
         Session::flash('name', $request->name);
