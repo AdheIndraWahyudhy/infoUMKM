@@ -7,8 +7,13 @@
 </head>
 <body>
     <h2>User</h2>
+    {{-- tombol logout --}}
     <a href="auth/logout/user"><b>Logout -> </b></a>
+
+    {{-- Menampilkan halaman nama user --}}
     <h1>Hallo, {{$user}}</h1>
+
+    {{-- percabangan, apabila user belum mempunyai toko maka user akan di arahkan untuk membuat toko baru --}}
     @if ($store != null)
         <h1>Anda sudah memiliki toko</h1>
         {{-- <img src="{{url('StoresImg/'.$store->store_image)}}" alt=""> --}}
@@ -33,13 +38,14 @@
                         <td>{{$product->description}}</td>
                         <td>
                             <a href="{{url('product/edit/'.$product->id_product)}}">Edit</a>
-                            <a href="{{url('product/delete'.$product->id_product)}}">Delete</a>
+                            <a href="{{url('product/delete/'.$product->id_product)}}">Delete</a>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     @else
+        {{-- Tombol untuk membuat toko baru --}}
         Buat toko anda <a href="{{url('/store')}}">Sekarang</a>
     @endif
 </body>

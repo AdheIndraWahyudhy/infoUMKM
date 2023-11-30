@@ -4,6 +4,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\cobaController;
 use App\Http\Controllers\halamanController;
+use App\Http\Controllers\productController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,5 +54,11 @@ Route::middleware('isUser')->group(function(){
     Route::prefix('store')->group(function(){
         Route::get('/',[userController::class,'makeStore']);
         Route::post('/create',[userController::class,'createStore']);
+    });
+    Route::prefix('product')->group(function(){
+        Route::get('/',[productController::class,'formProduct']);
+        Route::post('/create',[productController::class,'createProduct']);
+        Route::get('/edit/{id}',[productController::class,'editProduct']);
+        Route::get('/delete/{id}',[productController::class,'deleteProduct']);
     });
 });
