@@ -1,91 +1,208 @@
-.detail-card .detail {
-    display: flex;
-    flex-direction: row;
-    align-self: flex-start;
-    padding: 15px;
-    border-radius: 30px;
-    box-shadow: 2px 4px 8px 2px rgba(0.5, 0, 0, 0.5);
-}
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&family=K2D:wght@300;600&display=swap');
 
-.left {
-    padding: 30px;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
 
-.left img {
-    height: 300px;
-    border-radius: 15px;
-    flex-direction: column; 
-}
+        /* Basic Styles */
+        body {
+            box-sizing: border-box;
+            font-family: Inria Sans;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+            max-width: 100%;
+            margin: 0 auto;
+        }
 
-.small-image img {
-    height: 90px;
-    padding: 5px;
-}
+        /* Header Styles */
+        .header {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            background-color: #fff;
+            color: #06546f;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 0;
+            z-index: 1000;
+        }
 
-.small-image {
-    display: flex; 
-    justify-content: center; 
-}
+        .logo {
+            display: flex;
+            padding-left: 15px;
+        }
 
-.right {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
+        .logo img {
+            width: 40px;
+            height: 40px; 
+            margin-right: 10px;
+        }
 
-#title h1,
-.desc h3 {
-    margin: 0;
-    padding-top: 30px;
-}
+        .logo h3 {
+            font-size: 1.5em;
+            font-family: K2D;
+        }
 
-button {
-    width: 200px;
-    height: 30px;
-    background-color: rgb(17, 199, 227);
-    border-radius: 15px;
-    color: white;
-    border: none;
-}
+        .menu {
+            text-align: center;
+        }
 
-button:hover {
-    background-color: rgb(0, 150, 170); 
-}
+        .menu li:hover {
+            text-decoration: none;
+            background-color: #087292;
+            border-radius: 15px;
+            padding: 8px;
+            color: #fff;
+            transition: 0.3s;
+        }
 
-p {
-    text-align: justify;
-}
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-.produk .title-produk{
-    text-align: center;
-}
+        .menu ul li {
+            display: inline;
+            margin-right: 20px;
+        }
 
-.list {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-  
-.list-item {
-    flex: 0 1 calc(20% - 20px);
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 2px 4px 8px 2px rgba(0.5, 0, 0, 0.5);
-    border-radius: 5px;
-}
+        ul li:last-child {
+            margin-right: 0;
+        }
 
-.name h2 {
-    margin-top: 10px;
-    margin-bottom: 0;
-}
+        ul li.right {
+            margin-left: auto;
+        }
 
-.list-item h3 {
-    margin-top: 0;
-}
+        .content {
+            width: 100%;
+        }
 
-.list img {
-    height: 170px;
-    border-radius: 5px;
-}
+        .header-content {
+            background: linear-gradient(93deg, #1B81D7 16.71%, #05B7D0 98.22%);
+            color: #fff;
+            width: 100%;
+            max-height: 264px;
+            padding-top: 100px;
+            padding-bottom: 30px;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 50px;
+            letter-spacing: -2.5px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .header-content p  {
+            padding-bottom: 10px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 70px;
+        }
+
+        .detail-card .detail {
+            display: flex;
+            flex-direction: row;
+            align-self: flex-start;
+            padding: 15px;
+            border-radius: 30px;
+            box-shadow: 2px 4px 8px 2px rgba(0.5, 0, 0, 0.5);
+        }
+        
+        .left {
+            padding: 30px;
+        }
+        
+        .left img {
+            height: 300px;
+            border-radius: 15px;
+            flex-direction: column; 
+        }
+        
+        .small-image img {
+            height: 90px;
+            padding: 5px;
+        }
+        
+        .small-image {
+            display: flex; 
+            justify-content: center; 
+        }
+        
+        .right {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        #title h1,
+        .desc h3 {
+            margin: 0;
+            padding-top: 30px;
+        }
+        
+        a.button {
+            width: 200px;
+            background-color: rgb(17, 199, 227);
+            border-radius: 15px;
+            color: white;
+            text-decoration: none;
+            padding: 3px;
+            text-align: center;
+        }
+        
+        button:hover {
+            background-color: rgb(0, 150, 170); 
+        }
+        
+        p {
+            text-align: justify;
+        }
+        
+        .produk .title-produk{
+            text-align: center;
+        }
+        
+        .list {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+          
+        .list-item {
+            flex: 0 1 calc(20% - 20px);
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 2px 4px 8px 2px rgba(0.5, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+        
+        .name h2 {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        
+        .list-item h3 {
+            margin-top: 0;
+        }
+        
+        .list img {
+            height: 170px;
+            border-radius: 5px;
+        }
