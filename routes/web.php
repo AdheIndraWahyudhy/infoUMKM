@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('isVisitor')->group(function () {
     Route::get('/',[halamanController::class,'dashboard']);
     Route::get('/category/{id}',[halamanController::class,'category']);
+    Route::get('/favorite',[halamanController::class,'favoriteStore']);
+    Route::get('/store/{id}',[halamanController::class,'detailStore']);
 });
 
 // Route autentifikasi

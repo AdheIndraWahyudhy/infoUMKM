@@ -8,7 +8,9 @@
 </head>
 <body>
     <a href="{{url('auth/')}}">Login</a> | <a href="{{url('auth/register')}}">Daftar</a>
-    
+    <h2>navbar</h2>| <a href="{{url('/favorite')}}">Favorite</a>
+
+    {{-- Penampil kategori --}}
     <h1>Kategori</h1>
     @foreach ($categories as $category)
         <img src="" alt="">
