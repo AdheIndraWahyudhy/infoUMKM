@@ -7,7 +7,8 @@
     <title>Form Rating dan Suggestion</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="{{url('store/'.$id.'/send')}}" method="POST">
+        @csrf
         <label for="rating">Rating (1-5):</label>
         <input type="number" name="rating" id="rating" min="1" max="5" required>
         <label for="suggestion">Saran</label>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Rating;
 use App\Models\Store;
+use App\Models\SugRep;
 use Illuminate\Http\Request;
 
 class halamanController extends Controller
@@ -25,6 +27,39 @@ class halamanController extends Controller
     function detailStore($id){
         $store=Store::where('id_store',$id)->first();
         $product=Product::where('store_id',$id)->get();
-        return view('dashboard.detail')->with(['stores'=> $store,'product'=>$product]);
+        return view('Test.detailStore')->with(['store'=> $store,'product'=>$product]);
+    }
+    function ratingSuggestion($id){
+        return view('Test.formRatingSuggestion')->with('id',$id);
+    }
+
+    function sendRatingSuggestion(Request $request, $id){
+        $newSuggest=[
+            'store_id'=>$id,
+            'type'=>'saran',
+            'message'=>$request->sugesstion,
+        ];
+        $newRating=[
+            'store_id'=>$id,
+            'rating'=>$request->rating,
+
+        ];
+        SugRep::create($newSuggest);
+        Rating::create($newRating);
+        $ratings=Rating::where('store_id',$id)->get();
+        $ratingsCount = Rating::where('store_id',$id)->count();
+        $totalRating = 0;    // Variabel untuk menghitung total rating
+
+        foreach ($ratings as $rating) {
+            $totalRating += $rating->rating;
+        }
+
+        $averageRating = $totalRating / $ratingsCount;
+        $updateRatingStore=[
+            'rating'=>$averageRating
+        ];
+        Store::where('id_store',$id)->update($updateRatingStore);
+        return redirect('store/'.$id);
+
     }
 }

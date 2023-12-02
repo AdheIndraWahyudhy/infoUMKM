@@ -25,6 +25,8 @@ Route::middleware('isVisitor')->group(function () {
     Route::get('/category/{id}',[halamanController::class,'category']);
     Route::get('/favorite',[halamanController::class,'favoriteStore']);
     Route::get('/store/{id}',[halamanController::class,'detailStore']);
+    Route::get('/store/{id}/rating',[halamanController::class,'ratingSuggestion']);
+    Route::post('/store/{id}/send',[halamanController::class,'sendRatingSuggestion']);
 });
 
 // Route autentifikasi
