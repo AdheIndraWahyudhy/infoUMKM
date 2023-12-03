@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="dist/css/style.css" />
+    <link rel="stylesheet" href="{{url('assets/css/home-style.css')}}" />
     <title>INFO UMKM</title>
   </head>
   <body>
@@ -28,10 +28,10 @@
             <ul class="menu">
               <li><a href="#home">Home</a></li>
               <li><a href="#services">UMKM</a></li>
-              <li><a href="#pantai">Favorite</a></li>
+              <li><a href="{{url('favorite')}}">Favorite</a></li>
               <li><a href="#pantai">Contact</a></li>
-              <li class="active"><a href="#daftar">Daftar</a></li>
-              <li class="active"><a href="#masuk">Masuk</a></li>
+              <li class="active"><a href="{{url('auth/register')}}">Daftar</a></li>
+              <li class="active"><a href="{{url('auth/')}}">Masuk</a></li>
             </ul>
             <i class="fa-solid fa-bars menu-bar"></i>
           </div>
@@ -81,22 +81,25 @@
       <div class="container">
         <div class="box-restoran">
           <div class="box">
-            <img src="assets/img/Gambar_Toko.png" alt="" />
-            <h3>Nasi Padang Slawu</h3>
-            <p>Jl. Kalimantan No. 57</p>
-            <button>Detail</button>
+            <img src="{{url('assets/img/kuliner.jpg')}}" alt="" style="object-fit:cover"/>
+            <h3>Kuliner</h3>
+            <a href="{{url('category/1')}}">
+              <button>Kunjungi</button>
+            </a>
           </div>
           <div class="box">
-            <img src="assets/img/Gambar_Toko.png" alt="" />
-            <h3>Nasi Padang Slawu</h3>
-            <p>Jl. Kalimantan No. 57</p>
-            <button>Detail</button>
+            <img src="{{url('assets/img/fashion.jpg')}}" alt="" style="object-fit:cover"/>
+            <h3>Fashion</h3>
+            <a href="{{url('category/2')}}">
+              <button>Kunjungi</button>
+            </a>
           </div>
           <div class="box">
-            <img src="assets/img/Gambar_Toko.png" alt="" />
-            <h3>Nasi Padang Slawu</h3>
-            <p>Jl. Kalimantan No. 57</p>
-            <button>Detail</button>
+            <img src="{{url('assets/img/service.jpg')}}" alt="" style="object-fit:cover"/>
+            <h3>Jasa</h3>
+            <a href="{{url('category/3')}}">  
+              <button>Kunjungi</button>
+            </a>
           </div>
         </div>
       </div>
@@ -123,6 +126,6 @@
       </div>
     </div>
 
-    <script src="dist/js/script.js"></script>
+    <script src="{{url('assets/js/home-script.js')}}"></script>
   </body>
 </html>

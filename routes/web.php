@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\authController;
-use App\Http\Controllers\cobaController;
 use App\Http\Controllers\halamanController;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\userController;

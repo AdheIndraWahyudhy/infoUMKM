@@ -13,7 +13,7 @@ class halamanController extends Controller
 {
     function dashboard(){
         $categories=Category::get();
-        return view('Test.dashboard')->with(['categories' => $categories]);
+        return view('dashboard.home')->with(['categories' => $categories]);
     }
     function category($id){
         $Stores=Store::where('category_id',$id)->get();
@@ -27,7 +27,7 @@ class halamanController extends Controller
     function detailStore($id){
         $store=Store::where('id_store',$id)->first();
         $product=Product::where('store_id',$id)->get();
-        return view('Test.detailStore')->with(['store'=> $store,'product'=>$product]);
+        return view('dashboard.detail')->with(['store'=> $store,'product'=>$product]);
     }
     function ratingSuggestion($id){
         return view('Test.formRatingSuggestion')->with('id',$id);

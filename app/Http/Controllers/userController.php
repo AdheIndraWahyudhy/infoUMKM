@@ -15,8 +15,11 @@ class userController extends Controller
         $userName=Auth::user()->name;
         $idUser=Auth::user()->id;
         $store=Store::where('user_id',$idUser)->first();
-        $products=Product::where('store_id',$store->id_store)->get();
-        return view('Test.user')->with(['no'=>$no, 'store'=>$store,'user'=>$userName,'products'=>$products]);
+        if($store != null){
+            $products=Product::where('store_id',$store->id_store)->get();
+            return view('Test.user')->with(['no'=>$no, 'store'=>$store,'user'=>$userName,'products'=>$products]);
+        }else
+        return view('user.umkm')->with(['no'=>$no, 'store'=>$store,'user'=>$userName]);
         
     }
     function makeStore(){

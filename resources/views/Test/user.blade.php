@@ -10,6 +10,17 @@
     {{-- tombol logout --}}
     <a href="auth/logout/user"><b>Logout -> </b></a>
 
+    {{-- Navbar --}}
+    <ul>
+        <li><a href="">UMKM</a></li>
+        <li><a href="">Account</a></li>
+        <li><a href="">UMKM</a></li>
+        {{-- Pengecekan apabila toko sudah di buat atau belum, jika belum di buat maka menu product tidak akan tampil --}}
+        @if ($store != null)
+            <li><a href=""></a>Product</li>
+        @endif
+    </ul>
+
     {{-- Menampilkan halaman nama user --}}
     <h1>Hallo, {{$user}}</h1>
 

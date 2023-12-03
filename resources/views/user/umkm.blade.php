@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfoUMKM.com</title>
+    <title>InfoUMKM.com | User</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="{{url('assets/css/favorite-style.css')}}">
 </head>
 <body>
@@ -14,12 +21,13 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="">HOME</a> </li>
-                <li>UMKM</li>
-                <li>FAVORITE</li>
-                <li>ABOUT-US</li>
-                <li class="right">Daftar</li>
-                <li class="right" style="color: #087292; width: 5px;">|</li>
+                <li><a href="">UMKM</a></li>
+                <li><a href="">Account</a></li>
+                <li>Store</li>
+                @if ($store != null)
+                    <li><a href=""></a>Product</li>
+                @endif
+                <li class="right" ><i class="fa-solid fa-user"></i></li>
                 <li class="right">Masuk</li>
             </ul>
         </nav>
@@ -30,7 +38,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
         </div>
         <div class="main-content">
-            @foreach ($stores as $store)
+            {{-- @foreach ($stores as $store)
                 <div class="umkm-container">
                     <img src="{{url('StoresImg/'.$store->store_image)}}" alt="toko">
                     <h3>{{$store->store_name}}</h3>
@@ -49,7 +57,7 @@
                         <button>Detail</button>
                     </a>
                 </div>
-            @endforeach
+            @endforeach --}}
         </div>
     </main>
 </body>

@@ -13,7 +13,7 @@
             <h3>INFOUMKM.COM</h3>
         </div>
     </header>
-    <form action="" method="POST" class="quickForm">
+    <form action="{{url('auth/register/create')}}" method="POST" class="quickForm">
         @csrf
         <h2>Register</h2>
         <label for="name">User Name</label>
@@ -21,7 +21,7 @@
         <label for="email">Email</label>
         <input type="email" name="email" id="email" class="form-control" value="{{Session::get('email')}}">
         <label for="password">Password</label>
-        <input type="text" id="password" name="password" class="form-control" >
+        <input type="password" id="password" name="password" class="form-control" >
         <label for="number_phone">No HP</label>
         <input type="text" name="number_phone" id="number_phone" class="form-control" value="{{Session::get('number_phone')}}">
         <input type="submit" value="Daftar" class="btn btn-success">

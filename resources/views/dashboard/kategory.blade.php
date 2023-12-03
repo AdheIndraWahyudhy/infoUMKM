@@ -14,7 +14,7 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="">HOME</a> </li>
+                <li>HOME</li>
                 <li>UMKM</li>
                 <li>FAVORITE</li>
                 <li>ABOUT-US</li>

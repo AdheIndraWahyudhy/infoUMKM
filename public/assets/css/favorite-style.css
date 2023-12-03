@@ -70,6 +70,11 @@ body {
     display: inline;
     margin-right: 20px;
 }
+.menu ul li a{
+    text-decoration: none; /* Menghilangkan garis bawah (dekorasi teks) */
+    color: inherit; /* Menggunakan warna teks warisan dari elemen induk */
+    cursor: pointer; 
+}
 
 ul li:last-child {
     margin-right: 0;

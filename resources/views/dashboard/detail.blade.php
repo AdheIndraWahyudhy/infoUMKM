@@ -9,7 +9,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./img/logo.png" alt="logo InfoUMKM.com">
+            <img src="{{url('assets/img/logo.png')}}" alt="logo InfoUMKM.com">
             <h3>INFOUMKM.COM</h3>
         </div>
         <nav class="menu">
@@ -33,7 +33,7 @@
             <div class="detail-card">
                 <div class="detail">
                     <div class="left">
-                        <img src="./img/resto.webp" alt="resto">
+                        <img src="{{url('StoresImg/'.$store->store_image)}}" style="object-fit: cover" alt="resto">
                         <div class="small-image">
                             <img src="./img/resto.webp" alt="resto">
                             <img src="./img/resto.webp" alt="resto">
@@ -43,16 +43,16 @@
     
                     <div class="right">
                         <div id="title">
-                            <h1>Warung Kalimantan</h1>
+                            <h1>{{$store->store_name}}</h1>
                         </div>
                         <div class="desc">
-                            <h3>★ ★ ★ ★ ★ | 40 Penilian | Jl. Kalimantan No. 57</h3>
-                            <p>Lokasi : <a href="https://maps.app.goo.gl/X6oSW9FbT86SDNUR8">https://maps.app.goo.gl/X6oSW9FbT86SDNUR8</a></p>
+                            <h3>★ ★ ★ ★ ★ | {{$store->rating}} Penilian | {{$store->store_address}}</h3>
+                            <p>Lokasi : {{$store->store_address}}</p>
                             <p>Website : -</p>
                             <p>Contact : -</p>
-                            <p>Deskripsi : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Deskripsi : {{$store->description}}</p>
                         </div>
-                        <a href="#" class="button">Beri Komentar</a>
+                        <a href="{{url('store/'.$store->id_store.'/rating')}}" class="button">Beri Komentar</a>
                     </div>
                 </div>
             </div>
