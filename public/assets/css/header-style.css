@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&family=K2D:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Basic Styles */
+body {
+    box-sizing: border-box;
+    font-family: Inria Sans;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    background-color: #fff;
+    color: #06546f;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    padding-left: 15px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px; 
+    margin-right: 10px;
+}
+
+.logo h3 {
+    font-size: 1.5em;
+    font-family: K2D;
+}
+
+.menu {
+    text-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5);
+}
+
+.menu li:hover {
+    text-decoration: none;
+    background-color: #087292;
+    border-radius: 15px;
+    padding: 8px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    text-decoration: none;
+    background-color: #087292;
+    border-radius: 15px;
+    padding: 8px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #06546f;
+}
+
+.menu ul li .fa-solid {
+    padding: 0;
+    margin-left: 5%;
+    width: 3px;
+}
