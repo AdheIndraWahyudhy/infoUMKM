@@ -19,9 +19,9 @@
                 <li><a href="{{url('/umkm')}}">UMKM</a></li>
                 <li><a href="{{url('/favorite')}}">Favorite</a></li>
                 <li><a href="">About us</a></li>
-                <li class="right"><a href="{{url('auth/register')}}">Daftar</a></li>
-                <li class="right" style="color: #087292; width: 5px;">|</li>
-                <li class="right"><a href="{{url('auth/')}}">Masuk</a></li>
+                <li><a href="{{url('auth/register')}}">Daftar</a></li>
+                <li style="color: #087292; width: 5px;">|</li>
+                <li><a href="{{url('auth/')}}">Masuk</a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
