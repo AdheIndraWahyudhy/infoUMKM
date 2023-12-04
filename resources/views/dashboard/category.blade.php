@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InfoUMKM.com</title>
+    <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/favorite-style.css')}}">
 </head>
 <body>
@@ -14,15 +15,34 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="{{url('/')}}">HOME</a> </li>
+                <li><a href="{{url('/')}}">Home</a> </li>
                 <li><a href="{{url('/umkm')}}">UMKM</a></li>
-                <li><a href="{{url('/favorite')}}">FAVORITE</a></li>
-                <li><a href="">ABOUT-US</a></li>
+                <li><a href="{{url('/favorite')}}">Favorite</a></li>
+                <li><a href="">About us</a></li>
                 <li class="right"><a href="{{url('auth/register')}}">Daftar</a></li>
                 <li class="right" style="color: #087292; width: 5px;">|</li>
                 <li class="right"><a href="{{url('auth/')}}">Masuk</a></li>
             </ul>
         </nav>
+        <div class="main-sidebar">
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="open"></i>
+            </label>
+            <div class="sidebar">
+                <label for="check">
+                    <i class="fas fa-bars" id="btn"></i>
+                </label>
+                <ul>
+                    <li><a href="{{url('/')}}">Home</a> </li>
+                    <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                    <li><a href="{{url('/favorite')}}">Favorite</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="{{url('auth/register')}}">Daftar</a></li>
+                    <li><a href="{{url('auth/')}}">Masuk</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
     <main class="content">
         <div class="header-content">
