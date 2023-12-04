@@ -15,6 +15,8 @@ body {
     background-color: #f8f8f8;
     max-width: 100%;
     margin: 0 auto;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Header Styles */
@@ -91,9 +93,134 @@ body {
 
 .menu ul li .fa-solid {
     padding: 0;
-    width: 10px;
+    width: 20px;
 }
 
 #logoUser:hover{
     background-color: none !important;
+}
+
+.main-sidebar {
+    display: none;
+}
+
+@media (max-width: 965px) {
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .main-sidebar {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin: 0;
+        padding: 0;
+    }
+      
+    .sidebar {
+        position: fixed;
+        right: 0px;
+        width: 250px;
+        height: 100%;
+        background: #06546f;
+        transition: all 0.5s ease;
+        top: 0;
+    }
+    
+    .sidebar ul {
+        margin-top: 80px;
+    }
+      
+    .sidebar ul a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 65px;
+        font-size: 20px;
+        color: #fff;
+        padding-left: 40px;
+        box-sizing: border-box;
+        border-top: 1px solid rgba(6, 255, 251, 0.1);
+        border-bottom: 1px solid rgba(125, 134, 146, 0.302);
+        transition: all 0.5s ease;
+    }
+    
+    ul li:hover a {
+        padding-right: 100px;
+        background: #efe7bc;
+        color: rgb(0, 0, 0);
+    }
+    
+    .sidebar ul a i {
+        margin-right: 16px;
+    }
+    
+    
+    #check {
+        display: none;
+    }
+    
+    label #btn {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 3px;
+        z-index: 1111;
+        right: 195px;
+        top: 25px;
+        font-size: 20px;
+        color: #fff;
+        padding: 4px 9px;
+        transition: all 0.5s ease;
+        width: 20px;
+    }
+    
+    label #open {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 1px;
+        font-size: 50px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 6px 12px;
+        transition: all 0.5s ease;
+        width: 20px;
+    }
+    
+    #check:checked~.sidebar {
+        right:-250px;
+    }
+    
+    #check:checked~label #open {
+        right:30px;
+        font-size: 20px;
+    }
+    
+    #check:checked~label #btn {
+        right:-195px;
+    }
+    
+    section {
+        background: #ffffff;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+    }
+    
+    section h1 {
+        text-align: center;
+        padding-top: 200px;
+        font-size: 60px;
+        color: #004369;
+    }
 }
