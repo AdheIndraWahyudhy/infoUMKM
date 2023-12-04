@@ -113,9 +113,10 @@ ul li.right {
 .main-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     box-sizing: border-box;
     padding: 70px;
+    gap: 25px;
 }
 
 .umkm-container {
