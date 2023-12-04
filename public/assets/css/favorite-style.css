@@ -51,7 +51,7 @@ body {
     text-align: center;
 }
 
-.menu li:hover {
+.menu li a:hover {
     text-decoration: none;
     background-color: #087292;
     border-radius: 15px;
@@ -132,6 +132,7 @@ ul li.right {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
+    object-fit: cover;
 }
 
 .umkm-container h3 {
@@ -166,6 +167,10 @@ button:hover {
 .star {
     font-size: 1.5em;
     color: #FFD700; /* warna bintang diisi */
+}
+.info{
+    text-align: center;
+    padding-top: 30vh;
 }
 
 @media (max-width: 965px) {

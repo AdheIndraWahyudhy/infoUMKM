@@ -14,22 +14,23 @@
         </div>
         <nav class="menu">
             <ul>
-                <li>HOME</li>
-                <li>UMKM</li>
-                <li>FAVORITE</li>
-                <li>ABOUT-US</li>
-                <li class="right">Daftar</li>
+                <li><a href="{{url('/')}}">HOME</a> </li>
+                <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                <li><a href="{{url('/favorite')}}">FAVORITE</a></li>
+                <li><a href="">ABOUT-US</a></li>
+                <li class="right"><a href="{{url('auth/register')}}">Daftar</a></li>
                 <li class="right" style="color: #087292; width: 5px;">|</li>
-                <li class="right">Masuk</li>
+                <li class="right"><a href="{{url('auth/')}}">Masuk</a></li>
             </ul>
         </nav>
     </header>
     <main class="content">
         <div class="header-content">
-            <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
+            <h1>Kategori <span style="color: #0F3555;">{{$categoryName}}</span></h1>
+            {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p> --}}
         </div>
-        <div class="main-content">
+        @if ($stores->count() != 0)
+            <div class="main-content">
             @foreach ($stores as $store)
                 <div class="umkm-container">
                     <img src="{{url('StoresImg/'.$store->store_image)}}" alt="toko">
@@ -51,6 +52,10 @@
                 </div>
             @endforeach
         </div>
+        @else
+            <h3 class="info">Belum ada Toko dengan kategori {{$categoryName}}</h3>
+        @endif
+        
     </main>
 </body>
 </html>

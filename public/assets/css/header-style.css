@@ -54,14 +54,14 @@ body {
     grid-template-columns: repeat(5);
 }
 
-.menu li:hover {
+/* .menu li:hover {
     text-decoration: none;
     background-color: #087292;
     border-radius: 15px;
     padding: 8px;
     color: #fff;
     transition: 0.3s;
-}
+} */
 
 .menu li a:hover {
     text-decoration: none;
@@ -92,4 +92,8 @@ body {
     padding: 0;
     margin-left: 5%;
     width: 10px;
+}
+
+#logoUser:hover{
+    background-color: none !important;
 }

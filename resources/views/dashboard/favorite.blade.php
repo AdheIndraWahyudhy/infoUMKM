@@ -14,13 +14,13 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="">HOME</a> </li>
-                <li>UMKM</li>
-                <li>FAVORITE</li>
-                <li>ABOUT-US</li>
-                <li class="right">Daftar</li>
+                <li><a href="{{url('/')}}">HOME</a> </li>
+                <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                <li><a href="{{url('/favorite')}}">FAVORITE</a></li>
+                <li><a href="">ABOUT-US</a></li>
+                <li class="right"><a href="{{url('auth/register')}}">Daftar</a></li>
                 <li class="right" style="color: #087292; width: 5px;">|</li>
-                <li class="right">Masuk</li>
+                <li class="right"><a href="{{url('auth/')}}">Masuk</a></li>
             </ul>
         </nav>
     </header>

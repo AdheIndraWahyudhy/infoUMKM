@@ -19,8 +19,19 @@ class userController extends Controller
             $products=Product::where('store_id',$store->id_store)->get();
             return view('Test.user')->with(['no'=>$no, 'store'=>$store,'user'=>$userName,'products'=>$products]);
         }else
-        return view('user.umkm')->with(['no'=>$no, 'store'=>$store,'user'=>$userName]);
+        return view('Test.user')->with(['no'=>$no, 'store'=>$store,'user'=>$userName]);
         
+    }
+    function umkm(){
+        $stores=Store::get();
+        $userName=Auth::user()->name;
+        $idUser=Auth::user()->id;
+        $store=Store::where('user_id',$idUser)->first();
+        if($store != null){
+            $products=Product::where('store_id',$store->id_store)->get();
+            return view('user.umkm')->with(['stores'=>$stores, 'store'=>$store,'user'=>$userName,'products'=>$products]);
+        }else
+        return view('user.umkm')->with(['stores'=>$stores, 'store'=>$store,'user'=>$userName]);
     }
     function makeStore(){
         $categories=Category::get();

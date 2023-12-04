@@ -11,6 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/favorite-style.css')}}">
 </head>
 <body>
@@ -23,12 +24,13 @@
             <ul>
                 <li><a href="">UMKM</a></li>
                 <li><a href="">Account</a></li>
-                <li>Store</li>
+                <li><a href="">Store</a></li>
                 @if ($store != null)
-                    <li><a href=""></a>Product</li>
+                    <li><a href="">Product</a></li>
                 @endif
-                <li class="right" ><i class="fa-solid fa-user"></i></li>
-                <li class="right">Masuk</li>
+                <li id="logoUser"><i class="fa-solid fa-user" ></i></li>
+                <li>Hallo, {{$user}}</li>
+                <li><a href="{{url('auth/logout/user')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -38,7 +40,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
         </div>
         <div class="main-content">
-            {{-- @foreach ($stores as $store)
+            @foreach ($stores as $store)
                 <div class="umkm-container">
                     <img src="{{url('StoresImg/'.$store->store_image)}}" alt="toko">
                     <h3>{{$store->store_name}}</h3>
@@ -57,7 +59,7 @@
                         <button>Detail</button>
                     </a>
                 </div>
-            @endforeach --}}
+            @endforeach
         </div>
     </main>
 </body>

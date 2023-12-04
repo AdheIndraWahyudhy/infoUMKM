@@ -18,7 +18,7 @@ class isVisitor
     {
         if(Auth::check()){
             if(Auth::user()->role==='user'){
-                return redirect('/dashboard')->with('success','Anda sudah dalam keadaan Login');
+                return redirect('/user')->with('success','Anda sudah dalam keadaan Login');
             }
             if(Auth::user()->role==='admin'){
                 return redirect('/admin')->with('success','Anda sudah dalam keadaan Login');

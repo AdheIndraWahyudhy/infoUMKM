@@ -21,9 +21,10 @@ use Illuminate\Support\Facades\Route;
 // Halaman yang di akses oleh pengunjung
 Route::middleware('isVisitor')->group(function () {
     Route::get('/',[halamanController::class,'dashboard']);
+    Route::get('/store/{id}',[halamanController::class,'detailStore']);
+    Route::get('/umkm',[halamanController::class,'umkm']);
     Route::get('/category/{id}',[halamanController::class,'category']);
     Route::get('/favorite',[halamanController::class,'favoriteStore']);
-    Route::get('/store/{id}',[halamanController::class,'detailStore']);
     Route::get('/store/{id}/rating',[halamanController::class,'ratingSuggestion']);
     Route::post('/store/{id}/send',[halamanController::class,'sendRatingSuggestion']);
 });
@@ -53,6 +54,7 @@ Route::prefix('admin')->middleware('isAdmin')->group(function(){
 Route::middleware('isUser')->group(function(){
     Route::prefix('user')->group(function(){
         Route::get('/',[userController::class,'index']);
+        Route::get('/account',[userController::class,'account']);
     });
     Route::prefix('store')->group(function(){
         Route::get('/',[userController::class,'makeStore']);

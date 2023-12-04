@@ -17,8 +17,8 @@ class halamanController extends Controller
     }
     function category($id){
         $Stores=Store::where('category_id',$id)->get();
-        return view('Test.categories')->with(['stores' => $Stores]);
-
+        $categoryName=Category::Where('id_category',$id)->first()->category_name;
+        return view('dashboard.category')->with(['stores' => $Stores,'categoryName' => $categoryName]);
     }
     function favoriteStore(){
         $storesSorted = Store::orderByDesc('rating')->orderBy('store_name')->get();
@@ -31,6 +31,10 @@ class halamanController extends Controller
     }
     function ratingSuggestion($id){
         return view('Test.formRatingSuggestion')->with('id',$id);
+    }
+    function umkm(){
+        $stores = Store::get();
+        return view('dashboard.umkm')->with(['stores'=> $stores]);
     }
 
     function sendRatingSuggestion(Request $request, $id){
