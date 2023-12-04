@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InfoUMKM.com</title>
+    <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/detail-style.css')}}">
 </head>
 <body>
@@ -14,15 +15,34 @@
         </div>
         <nav class="menu">
             <ul>
-                <li>HOME</li>
-                <li>UMKM</li>
-                <li>FAVORITE</li>
-                <li>ABOUT-US</li>
-                <li class="right">Daftar</li>
-                <li class="right" style="color: #087292; width: 5px;">|</li>
-                <li class="right">Masuk</li>
+                <li><a href="{{url('/')}}">Home</a> </li>
+                <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                <li><a href="{{url('/favorite')}}">Favorite</a></li>
+                <li><a href="">About us</a></li>
+                <li><a href="{{url('auth/register')}}">Daftar</a></li>
+                <li style="color: #087292; width: 5px;">|</li>
+                <li><a href="{{url('auth/')}}">Masuk</a></li>
             </ul>
         </nav>
+        <div class="main-sidebar">
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="open"></i>
+            </label>
+            <div class="sidebar">
+                <label for="check">
+                    <i class="fas fa-bars" id="btn"></i>
+                </label>
+                <ul>
+                    <li><a href="{{url('/')}}">Home</a> </li>
+                    <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                    <li><a href="{{url('/favorite')}}">Favorite</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="{{url('auth/register')}}">Daftar</a></li>
+                    <li><a href="{{url('auth/')}}">Masuk</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
     <main class="content">
         <div class="header-content">

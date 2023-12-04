@@ -28,11 +28,30 @@
                 @if ($store != null)
                     <li><a href="">Product</a></li>
                 @endif
-                <li id="logoUser"><i class="fa-solid fa-user" ></i></li>
-                <li>Hallo, {{$user}}</li>
+                <li><i class="fa-solid fa-user" ></i>Hallo, {{$user}}</li>
                 <li><a href="{{url('auth/logout/user')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
+        <div class="main-sidebar">
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="open"></i>
+            </label>
+            <div class="sidebar">
+                <label for="check">
+                    <i class="fas fa-bars" id="btn"></i>
+                </label>
+                <ul>
+                    <li><a href="">UMKM</a></li>
+                    <li><a href="">Account</a></li>
+                    <li><a href="">Store</a></li>
+                    @if ($store != null)
+                    <li><a href="">Product</a></li>
+                    @endif
+                    <li><a href="{{url('auth/logout/user')}}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
     <main class="content">
         <div class="header-content">

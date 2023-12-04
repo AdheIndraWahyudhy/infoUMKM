@@ -17,73 +17,6 @@ body {
     margin: 0 auto;
 }
 
-/* Header Styles */
-.header {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    background-color: #fff;
-    color: #06546f;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 15px 0;
-    z-index: 1000;
-}
-
-.logo {
-    display: flex;
-    padding-left: 15px;
-}
-
-.logo img {
-    width: 40px;
-    height: 40px; 
-    margin-right: 10px;
-}
-
-.logo h3 {
-    font-size: 1.5em;
-    font-family: K2D;
-}
-
-.menu {
-    text-align: center;
-}
-
-.menu li a:hover {
-    text-decoration: none;
-    background-color: #087292;
-    border-radius: 15px;
-    padding: 8px;
-    color: #fff;
-    transition: 0.3s;
-}
-
-.menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu ul li {
-    display: inline;
-    margin-right: 20px;
-}
-.menu ul li a{
-    text-decoration: none; /* Menghilangkan garis bawah (dekorasi teks) */
-    color: inherit; /* Menggunakan warna teks warisan dari elemen induk */
-    cursor: pointer; 
-}
-
-ul li:last-child {
-    margin-right: 0;
-}
-
-ul li.right {
-    margin-left: auto;
-}
-
 .content {
     width: 100%;
 }
@@ -172,9 +105,6 @@ button:hover {
 .info{
     text-align: center;
     padding-top: 30vh;
-}
-
-@media (max-width: 965px) {
 }
 
 @media (max-width: 768px) {
