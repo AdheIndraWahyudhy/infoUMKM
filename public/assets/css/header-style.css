@@ -52,6 +52,7 @@ body {
     align-items: center;
     display: grid;
     grid-template-columns: repeat(5);
+    justify-content: flex-end;
 }
 
 /* .menu li:hover {
@@ -90,7 +91,6 @@ body {
 
 .menu ul li .fa-solid {
     padding: 0;
-    margin-left: 5%;
     width: 10px;
 }
 
