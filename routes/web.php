@@ -53,7 +53,7 @@ Route::prefix('admin')->middleware('isAdmin')->group(function(){
 // Route Halmana user/owner
 Route::middleware('isUser')->group(function(){
     Route::prefix('user')->group(function(){
-        Route::get('/',[userController::class,'index']);
+        Route::get('/',[userController::class,'umkm']);
         Route::get('/account',[userController::class,'account']);
     });
     Route::prefix('store')->group(function(){

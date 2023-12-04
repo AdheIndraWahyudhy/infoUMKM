@@ -20,6 +20,8 @@
         <input type="text" id="store_name" name="store_name" required>
         <label for="store_address">Alamat Toko:</label>
         <input type="text" id="store_address" name="store_address" required>
+        <label for="link_address">Alamat Toko:</label>
+        <input type="url" id="link_address" name="link_address" required>
         <label for="store_image">Gambar Toko:</label>
         <input type="file" id="store_address" name="store_image" accept="image/*"required>
         <label for="description">Deskripsi Toko</label>

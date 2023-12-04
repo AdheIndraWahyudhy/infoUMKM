@@ -12,7 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
-    <link rel="stylesheet" href="{{url('assets/css/favorite-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/umkm-style.css')}}">
 </head>
 <body>
     <header class="header">
