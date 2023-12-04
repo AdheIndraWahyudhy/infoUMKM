@@ -28,8 +28,7 @@
                 @if ($store != null)
                     <li><a href="">Product</a></li>
                 @endif
-                <li id="logoUser"><i class="fa-solid fa-user" ></i></li>
-                <li>Hallo, {{$user}}</li>
+                <li><i class="fa-solid fa-user" ></i>Hallo, {{$user}}</li>
                 <li><a href="{{url('auth/logout/user')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
