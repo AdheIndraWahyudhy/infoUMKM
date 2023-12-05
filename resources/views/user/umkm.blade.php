@@ -22,11 +22,11 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="">UMKM</a></li>
-                <li><a href="">Account</a></li>
-                <li><a href="">Store</a></li>
+                <li><a href="{{url('user/')}}">UMKM</a></li>
+                <li><a href="{{url('user/account')}}">Account</a></li>
+                <li><a href="{{url('user/store')}}">Store</a></li>
                 @if ($store != null)
-                    <li><a href="">Product</a></li>
+                    <li><a href="{{url('user/product')}}">Product</a></li>
                 @endif
                 <li><i class="fa-solid fa-user" ></i>Hallo, {{$user}}</li>
                 <li><a href="{{url('auth/logout/user')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>

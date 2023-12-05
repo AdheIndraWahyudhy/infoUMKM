@@ -55,6 +55,7 @@ Route::middleware('isUser')->group(function(){
     Route::prefix('user')->group(function(){
         Route::get('/',[userController::class,'umkm']);
         Route::get('/account',[userController::class,'account']);
+        Route::post('/account/update',[userController::class,'updateUser']);
     });
     Route::prefix('store')->group(function(){
         Route::get('/',[userController::class,'makeStore']);
