@@ -47,8 +47,9 @@
                 HANYA DI INFOUMKM.COM
               </h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, autem?</p>
-              <button>Daftar UMKM <br/>
-              Cari daftar restoran yang tersedia</button>
+              <a href="{{url('/umkm')}}">
+                <button>List UMKM</button>
+              </a>
             </div>
           </div>
         </div>

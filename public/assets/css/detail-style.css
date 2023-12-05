@@ -18,67 +18,61 @@
         }
 
         /* Header Styles */
-        .header {
-            display: flex;
-            flex: 1;
-            align-items: center;
-            background-color: #fff;
-            color: #06546f;
-            position: fixed;
-            top: 0;
+        .header-content {
+            background: linear-gradient(93deg, #1B81D7 16.71%, #05B7D0 98.22%);
+            color: #fff;
             width: 100%;
-            padding: 15px 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            display: flex;
-            padding-left: 15px;
-        }
-
-        .logo img {
-            width: 40px;
-            height: 40px; 
-            margin-right: 10px;
-        }
-
-        .logo h3 {
-            font-size: 1.5em;
-            font-family: K2D;
-        }
-
-        .menu {
+            max-height: 264px;
+            padding-top: 100px;
+            padding-bottom: 30px;
             text-align: center;
         }
-
-        .menu li:hover {
-            text-decoration: none;
-            background-color: #087292;
-            border-radius: 15px;
-            padding: 8px;
-            color: #fff;
-            transition: 0.3s;
+        
+        .header-content h1 {
+            font-size: 50px;
+            letter-spacing: -2.5px;
+            text-align: center;
+            padding-bottom: 10px;
         }
-
-        .menu ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        
+        .header-content p  {
+            padding-bottom: 10px;
+            font-size: 15px;
         }
-
-        .menu ul li {
-            display: inline;
-            margin-right: 20px;
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            padding: 70px;
+            gap: 25px;
         }
-
-        ul li:last-child {
-            margin-right: 0;
+        
+        .umkm-container {
+            width: calc(33.33% - 20px);
+            border: 1px solid #178BD6;
+            border-radius: 8px;
+            box-sizing: border-box;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 30px;
         }
-
-        ul li.right {
-            margin-left: auto;
+        
+        .umkm-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            object-fit: cover;
         }
-
+        
+        .umkm-container h3 {
+            color: #087292;
+        }
+        
+        .umkm-container p {
+            color: #555;
+        }        
         .content {
             width: 100%;
         }
@@ -135,6 +129,7 @@
         
         .small-image img {
             height: 90px;
+            object-fit: cover;
             padding: 5px;
         }
         
@@ -155,6 +150,10 @@
             padding-top: 30px;
         }
         
+        .desc p a{
+            color: inherit;
+        }
+
         a.button {
             width: 200px;
             background-color: rgb(17, 199, 227);
@@ -205,4 +204,5 @@
         .list img {
             height: 170px;
             border-radius: 5px;
+            object-fit: cover;
         }

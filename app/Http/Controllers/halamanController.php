@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Rating;
 use App\Models\Store;
 use App\Models\SugRep;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class halamanController extends Controller
@@ -26,8 +27,9 @@ class halamanController extends Controller
     }
     function detailStore($id){
         $store=Store::where('id_store',$id)->first();
-        $product=Product::where('store_id',$id)->get();
-        return view('dashboard.detail')->with(['store'=> $store,'product'=>$product]);
+        $owner=User::find($store->user_id);
+        $products=Product::where('store_id',$id)->get();
+        return view('dashboard.detail')->with(['store'=> $store,'products'=>$products,'owner'=>$owner]);
     }
     function ratingSuggestion($id){
         return view('Test.formRatingSuggestion')->with('id',$id);

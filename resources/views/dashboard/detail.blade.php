@@ -62,21 +62,29 @@
                     <div class="left">
                         <img src="{{url('StoresImg/'.$store->store_image)}}" style="object-fit: cover" alt="resto">
                         <div class="small-image">
-                            <img src="./img/resto.webp" alt="resto">
-                            <img src="./img/resto.webp" alt="resto">
-                            <img src="./img/resto.webp" alt="resto">
-                        </div>
+                            @foreach ($products as $key => $product)
+                                @if($key < 3)
+                                    <img src="{{ url('ProductsImg/'.$product->product_image) }}" alt="resto">
+                                @endif
+                            @endforeach
+                        </div>                        
                     </div>
-    
                     <div class="right">
                         <div id="title">
                             <h1>{{$store->store_name}}</h1>
                         </div>
                         <div class="desc">
-                            <h3>★ ★ ★ ★ ★ | {{$store->rating}} Penilian | {{$store->store_address}}</h3>
-                            <p>Lokasi : {{$store->store_address}}</p>
-                            <p>Website : -</p>
-                            <p>Contact : -</p>
+                            <h3>
+                                @for ($i = 0; $i < 5; $i++)
+                                    @if ($i < round($store->rating))
+                                        <span class="star">&#9733;</span>
+                                    @else
+                                        <span class="star">&#9734;</span>
+                                    @endif
+                                @endfor
+                             | {{$store->rating}} Penilian</h3>
+                            <p>Lokasi : <a href="{{$store->link_address}}">{{$store->store_address}}</a> </i></p>
+                            <p>Contact : {{$owner->number_phone}}</p>
                             <p>Deskripsi : {{$store->description}}</p>
                         </div>
                         <a href="{{url('store/'.$store->id_store.'/rating')}}" class="button">Beri Komentar</a>
@@ -88,24 +96,14 @@
                 <div class="title-produk">
                     <h1>Produk</h1>
                     <div class="list">
-                        <div class="list-item">
-                            <img src="./img/resto.webp" alt="resto">
-                            <div class="name"><h2>Bakso</h2></div>
-                            <h3>Rp. 15.000</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="list-item">
-                            <img src="./img/resto.webp" alt="resto">
-                            <div class="name"><h2>Ketoprak</h2></div>
-                            <h3>Rp. 15.000</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="list-item">
-                            <img src="./img/resto.webp" alt="resto">
-                            <div class="name"><h2>Rendang</h2></div>
-                            <h3>Rp. 15.000</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
+                        @foreach ($products as $product)
+                            <div class="list-item">
+                                <img src="{{url('ProductsImg/'.$product->product_image)}}" alt="resto">
+                                <div class="name"><h2>{{$product->product_name}}</h2></div>
+                                <h3>Rp. {{ number_format($product->product_price, 0, ',', '.') }}</h3>
+                                <p>{{$product->description}}</p>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
