@@ -57,6 +57,7 @@ Route::middleware('isUser')->group(function(){
         Route::get('/account',[userController::class,'account']);
         Route::post('/account/update',[userController::class,'updateUser']);
         Route::get('/product',[productController::class,'index']);
+        Route::get('/umkm/store/{id}',[userController::class,'detailStore']);
     });
     Route::prefix('store')->group(function(){
         Route::get('/',[userController::class,'makeStore']);

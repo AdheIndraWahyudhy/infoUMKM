@@ -29,10 +29,9 @@ class halamanController extends Controller
         $store=Store::where('id_store',$id)->first();
         $owner=User::find($store->user_id);
         $products=Product::where('store_id',$id)->get();
-        return view('dashboard.detail')->with(['store'=> $store,'products'=>$products,'owner'=>$owner]);
-    }
-    function ratingSuggestion($id){
-        return view('Test.formRatingSuggestion')->with('id',$id);
+        $comments=SugRep::where('store_id',$id)->where('type', 'saran')->get();
+        $ratings=Rating::where('store_id',$id)->get();
+        return view('dashboard.detail')->with(['store'=> $store,'products'=>$products,'owner'=>$owner, 'id'=>$id,'comments'=>$comments, 'ratings'=>$ratings]);
     }
     function umkm(){
         $stores = Store::get();

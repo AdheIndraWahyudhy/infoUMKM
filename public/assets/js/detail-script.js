@@ -1,7 +1,7 @@
 // Fungsi untuk memvalidasi dan mengirimkan komentar
   const submitComment = () => {
     const rating = document.querySelector('input[name="rating"]:checked');
-    const comment = document.getElementById('comment').value;
+    const comment = document.getElementById('suggestion').value;
 
     // Periksa apakah rating dan komentar telah diberikan
     if (!rating || comment.trim() === '') {

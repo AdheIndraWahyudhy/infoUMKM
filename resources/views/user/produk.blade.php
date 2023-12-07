@@ -11,7 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="produk.css">
+    <link rel="stylesheet" href="{{url('assets/css/produk-style.css')}}">
 </head>
 <body>
     <!-- NAVBAR -->
@@ -129,7 +129,7 @@
             </div>
         </div>
         
-        <div id="dataProduk" class="data-produk">
+        {{-- <div id="dataProduk" class="data-produk">
             <h2>Data Produk</h2>
             <div class="form-container">
                 <table id="productTable">
@@ -144,7 +144,7 @@
                     </thead>
                 </table>
             </div>
-        </div>
+        </div> --}}
         
     </main>
     

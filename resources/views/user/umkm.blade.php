@@ -74,7 +74,7 @@
                         @endfor
                     </div>
                     <p> Rate {{$store->rating}}</p>
-                    <a href="{{url('store/'.$store->id_store)}}">
+                    <a href="{{url('user/umkm/store/'.$store->id_store)}}">
                         <button>Detail</button>
                     </a>
                 </div>

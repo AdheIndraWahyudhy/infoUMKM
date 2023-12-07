@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Rating;
 use App\Models\Store;
+use App\Models\SugRep;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +39,18 @@ class userController extends Controller
         }else
         return view('user.umkm')->with(['stores'=>$stores, 'store'=>$store,'user'=>$userName]);
     }
+    // Function untuk mengarah ke detail toko
+    function detailStore($id){
+        $userName=Auth::user()->name;
+        $store=Store::where('id_store',$id)->first();
+        $owner=User::find($store->user_id);
+        $products=Product::where('store_id',$id)->get();
+        $comments=SugRep::where('store_id',$id)->where('type', 'saran')->get();
+        $ratings=Rating::where('store_id',$id)->get();
+        return view('user.detail')->with(['user'=>$userName, 'store'=> $store,'products'=>$products,'owner'=>$owner, 'id'=>$id,'comments'=>$comments, 'ratings'=>$ratings]);
+    }
+
+
     // Function yang berkaitan dengan Akun User
     function account(){
         $data=Auth::user();

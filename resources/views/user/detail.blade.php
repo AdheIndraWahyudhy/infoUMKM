@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{url('assets/css/detail-style.css')}}">
 </head>
 <body>
+    <!-- NAVBAR -->
     <header class="header">
         <div class="logo">
             <img src="{{url('assets/img/logo.png')}}" alt="logo InfoUMKM.com">
@@ -22,13 +23,14 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="{{url('/')}}">Home</a> </li>
-                <li><a href="{{url('/umkm')}}">UMKM</a></li>
-                <li><a href="{{url('/favorite')}}">Favorite</a></li>
-                <li><a href="">About us</a></li>
-                <li><a href="{{url('auth/register')}}">Daftar</a></li>
-                <li style="color: #087292; width: 5px;">|</li>
-                <li><a href="{{url('auth/')}}">Masuk</a></li>
+                <li><a href="{{url('user/')}}">UMKM</a></li>
+                <li><a href="{{url('user/account')}}">Account</a></li>
+                <li><a href="{{url('user/store')}}">Store</a></li>
+                @if ($store != null)
+                    <li><a href="{{url('user/product')}}">Product</a></li>
+                @endif
+                <li><i class="fa-solid fa-user" ></i>Hallo, {{$user}}</li>
+                <li><a href="{{url('auth/logout/user')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
@@ -41,12 +43,13 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="{{url('/')}}">Home</a> </li>
-                    <li><a href="{{url('/umkm')}}">UMKM</a></li>
-                    <li><a href="{{url('/favorite')}}">Favorite</a></li>
-                    <li><a href="">About us</a></li>
-                    <li><a href="{{url('auth/register')}}">Daftar</a></li>
-                    <li><a href="{{url('auth/')}}">Masuk</a></li>
+                    <li><a href="">UMKM</a></li>
+                    <li><a href="">Account</a></li>
+                    <li><a href="">Store</a></li>
+                    @if ($store != null)
+                    <li><a href="">Product</a></li>
+                    @endif
+                    <li><a href="{{url('auth/logout/user')}}">Logout</a></li>
                 </ul>
             </div>
         </div>
