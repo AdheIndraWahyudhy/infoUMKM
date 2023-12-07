@@ -87,7 +87,8 @@
                             <p>Contact : {{$owner->number_phone}}</p>
                             <p>Deskripsi : {{$store->description}}</p>
                         </div>
-                        <a href="" class="button" onclick="openCommandPopUp()">Beri Komentar</a>
+                        <a href="#" class="button" onclick="openCommentPopup()">Beri Komentar</a>
+
                     </div>
                 </div>
             </div>
