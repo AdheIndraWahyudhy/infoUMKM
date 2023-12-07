@@ -80,8 +80,11 @@ class userController extends Controller
 
     // Function yang berkaitan dengan toko
     function makeStore(){
+        $id=Auth::user()->id;
+        $username=Auth::user()->name;
+        $store=Store::where('user_id',$id)->first();
         $categories=Category::get();
-        return view('Test.createStore')->with(['categories'=>$categories]);
+        return view('Test.formUser.formStore')->with(['id'=>$id, 'categories'=>$categories,'store'=>$store, 'user'=>$username]);
     }
     function createStore(Request $request){
         $gambar=$request->file('store_image');
@@ -92,11 +95,46 @@ class userController extends Controller
             'category_id'=>$request->category_id,
             'owner'=>Auth::user()->name,
             'store_name'=>$request->store_name,
-            'store_address'=>$request->store_address,
+            'store_address'=>$request->input('store_address'),
             'store_image'=>$newFileName,
             'description'=>$request->description,
         ];
         Store::create($newStore);
         return redirect('user');
+    }
+    function updateStore(Request $request){
+        $idUser=Auth::user()->id;
+        $idStore=Store::where('user_id',$idUser)->first()->id_store;
+        $recentImage=Store::where('user_id',$idUser)->first()->store_image;
+        if($request->hasFile('store_image')){
+            unlink(public_path('/storesImg/'.$recentImage));
+            $image=$request->file('store_image');
+            $newFileName='img' . date('ymdhis') . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('/StoresImg'), $newFileName);
+            $updateStore=[
+                'user_id'=>Auth::user()->id,
+                'category_id'=>$request->category_id,
+                'owner'=>Auth::user()->name,
+                'store_name'=>$request->store_name,
+                'store_address'=>$request->input('store_address'),
+                'store_image'=>$newFileName,
+                'description'=>$request->description,
+            ];
+            Store::where('id_store',$idStore)->update($updateStore);
+            return redirect('user/store');
+            
+        }
+        $updateStore=[
+            'user_id'=>Auth::user()->id,
+            'category_id'=>$request->category_id,
+            'owner'=>Auth::user()->name,
+            'store_name'=>$request->store_name,
+            'store_address'=>$request->input('store_address'),
+            'store_image'=>$recentImage,
+            'description'=>$request->description,
+        ];
+        Store::where('id_store',$idStore)->update($updateStore);
+
+        return redirect('user/store');
     }
 }

@@ -42,7 +42,8 @@
 
 .umkm-container img {
     max-width: 100%;
-    height: auto;
+    height: 45vh;
+    object-fit: cover;
     border-radius: 4px;
     object-fit: cover;
 }

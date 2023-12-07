@@ -58,10 +58,11 @@ Route::middleware('isUser')->group(function(){
         Route::post('/account/update',[userController::class,'updateUser']);
         Route::get('/product',[productController::class,'index']);
         Route::get('/umkm/store/{id}',[userController::class,'detailStore']);
-    });
-    Route::prefix('store')->group(function(){
-        Route::get('/',[userController::class,'makeStore']);
-        Route::post('/create',[userController::class,'createStore']);
+        Route::prefix('store')->group(function(){
+            Route::get('/',[userController::class,'makeStore']);
+            Route::post('/create',[userController::class,'createStore']);
+            Route::post('/update/',[userController::class,'updateStore']);
+        });
     });
     Route::prefix('product')->group(function(){
         Route::post('/create',[productController::class,'createProduct']);
