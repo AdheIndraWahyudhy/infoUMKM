@@ -11,8 +11,14 @@ use function PHPUnit\Framework\returnSelf;
 
 class productController extends Controller
 {
-    function formProduct(){
-        return view('Test.formProduct');
+    function index(){
+        $no=1;
+        $userName=Auth::user()->name;
+        $idUser=Auth::user()->id;
+        $store=Store::where('user_id',$idUser)->first();
+        $products=Product::where('store_id',$store->id_store)->get();
+
+        return view('test.formUser.formProduct')->with(['no'=>$no, 'store'=>$store,'user'=>$userName,'products'=>$products]);
     }
     function createProduct(Request $request){
         $gambar=$request->file('product_image');
@@ -29,12 +35,26 @@ class productController extends Controller
             'description'=>$request->description,
         ];
         Product::create($newProduct);
-        return redirect('user');
+        return redirect('user/product');
     }
     function editProduct($id){
         $edit='edit';
-        $product=Product::where('id_product',$id)->first();
-        return view('Test.formProduct')->with(['product'=>$product,'edit'=>$edit]);
+        $no=1;
+        $userName=Auth::user()->name;
+        $idUser=Auth::user()->id;
+        $store=Store::where('user_id',$idUser)->first();
+        $products=Product::where('store_id',$store->id_store)->get();
+        $productEdit=Product::where('id_product',$id)->first();
+        return view('Test.formUser.formProduct')->with(['no'=>$no,'idUser'=>$idUser, 'user'=>$userName, 'products'=>$products,'edit'=>$edit, 'productEdit'=>$productEdit]);
+    }
+    function updateProduct(Request $request, $id){
+        $recentData=Product::where('id_product',$id)->first();
+        $recentImage=$recentData->product_image;
+        // if($request->hasFile('product_image')){
+        //     unlink(pu)
+        // }
+
+        return $recentImage;
     }
     function deleteProduct($id){
         Product::where('id_product',$id)->delete();

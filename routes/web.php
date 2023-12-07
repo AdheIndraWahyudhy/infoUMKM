@@ -56,15 +56,16 @@ Route::middleware('isUser')->group(function(){
         Route::get('/',[userController::class,'umkm']);
         Route::get('/account',[userController::class,'account']);
         Route::post('/account/update',[userController::class,'updateUser']);
+        Route::get('/product',[productController::class,'index']);
     });
     Route::prefix('store')->group(function(){
         Route::get('/',[userController::class,'makeStore']);
         Route::post('/create',[userController::class,'createStore']);
     });
     Route::prefix('product')->group(function(){
-        Route::get('/',[productController::class,'formProduct']);
         Route::post('/create',[productController::class,'createProduct']);
         Route::get('/edit/{id}',[productController::class,'editProduct']);
+        Route::post('/update/{id}',[productController::class,'updateProduct']);
         Route::get('/delete/{id}',[productController::class,'deleteProduct']);
     });
 });

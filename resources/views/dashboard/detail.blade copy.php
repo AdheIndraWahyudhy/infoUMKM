@@ -87,7 +87,7 @@
                             <p>Contact : {{$owner->number_phone}}</p>
                             <p>Deskripsi : {{$store->description}}</p>
                         </div>
-                        <a href="" class="button" onclick="openCommandPopUp()">Beri Komentar</a>
+                        <a href="{{url('store/'.$store->id_store.'/rating')}}" class="button">Beri Komentar</a>
                     </div>
                 </div>
             </div>
@@ -108,43 +108,6 @@
                 </div>
             </div>
         </div>
-
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-              <span class="close" onclick="closeCommentPopup()">&times;</span>
-              <h2>Beri Komentar</h2>
-              <form id="commentForm" action="" method="POST">
-                    <div class="rating-container">
-                        <label for="rating"></label>
-                        <div class="star-rating">
-                            <input type="radio" id="star5" name="rating" value="5" required>
-                            <label for="star5" title="5 stars">★</label>
-                            <input type="radio" id="star4" name="rating" value="4" required>
-                            <label for="star4" title="4 stars">★</label>
-                            <input type="radio" id="star3" name="rating" value="3" required>
-                            <label for="star3" title="3 stars">★</label>
-                            <input type="radio" id="star2" name="rating" value="2" required>
-                            <label for="star2" title="2 stars">★</label>
-                            <input type="radio" id="star1" name="rating" value="1" required>
-                            <label for="star1" title="1 star">★</label>
-                        </div>
-                    </div>
-    
-                    <label for="comment">Komentar :</label>
-                    <textarea id="comment" name="comment" rows="4" required></textarea>
-                    <button type="button" onclick="submitComment()">Submit</button>
-                    {{-- <input type="submit" value="Submit"> --}}
-              </form>
-            </div>
-        </div>
-
-        <div class="Komentar">
-            <div class="comments-section">
-                <h2>Komentar</h2>
-                <ul id="commentList"></ul>
-            </div>
-        </div>
     </main>
-    <script src="{{url('assets/js/detail-script.js')}}"></script>
 </body>
 </html>

@@ -12,6 +12,10 @@
     </style>
 </head>
 <body>
+    <h2>User</h2>
+    {{-- tombol logout --}}
+    <a href="auth/logout/user"><b>Logout -> </b></a>
+
     <form id="myForm" action="{{url('user/account/update')}}" method="POST">
         @csrf
         <label for="name">Name:</label>
