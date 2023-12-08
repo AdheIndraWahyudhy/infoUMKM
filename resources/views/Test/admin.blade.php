@@ -13,18 +13,30 @@
         <thead>
             <tr>
                 <th>Nama</th>
+                <th>Toko</th>
                 <th>Email</th>
                 <th>No Hp</th>
-                <th>Aksi</th>
+                <th>Laporan</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($users as $user)
                 <tr>
                     <td>{{$user->name}}</td>
+                    <td>
+                        @foreach ($stores as $store)
+                            @if ( $store->user_id == $user->id)
+                                {{$store->store_name}}
+                            @endif
+                        @endforeach
+                    </td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->number_phone}}</td>
-                    <td><a href="">Lihat Produk</a></td>
+                    <td><a href="">@if (isset($user->riport))
+                        {{$user->riport}}
+                    @else
+                        0
+                    @endif Laporan</a></td>
                 </tr>
             @endforeach
         </tbody>

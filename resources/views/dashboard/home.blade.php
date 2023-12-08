@@ -27,8 +27,9 @@
             </div>
             <ul class="menu">
               <li><a href="#home">Home</a></li>
-              <li><a href="#services">UMKM</a></li>
-              <li><a href="{{url('favorite')}}">Favorite</a></li>
+              <li><a href="#restoran">Kategori</a></li>
+              <li><a href="{{url('/umkm')}}">UMKM</a></li>
+              <li><a href="{{url('/favorite')}}">Favorite</a></li>
               <li><a href="#pantai">Contact</a></li>
               <li class="active"><a href="{{url('auth/register')}}">Daftar</a></li>
               <li class="active"><a href="{{url('auth/')}}">Masuk</a></li>
@@ -77,7 +78,7 @@
         </div>
       </div>
     </div>
-
+    <h2 id="kategori">Kategori</h2>
     <div class="restoran" id="restoran">
       <div class="container">
         <div class="box-restoran">
@@ -116,9 +117,9 @@
           <div class="box">
             <h3>Menu</h3>
             <a href="#home">Home</a>
-            <a href="#umkm">UMKM</a>
-            <a href="#favorite">Favorite</a>
-            <a href="#contact">Contact</a>
+            <a href="{{url('/umkm')}}">UMKM</a>
+            <a href="{{url('/favorite')}}">Favorite</a>
+            <a href="{{url('/')}}">Contact</a>
           </div>
           <div class="box">
             <p>&copy; Copyright by <span>Capstone Team | Dicoding Indonesia</span> All Rights Reserved 2023, Indonesia</p>

@@ -14,7 +14,8 @@ class adminController extends Controller
         $users = User::where('role','user')->get();
         $stores =Store::get();
         $admin= Auth::user()->name;
-        return view('Test.admin')->with(['users'=> $users, 'stores'=>$stores, 'name'=>$admin]);
+        $idUser=Auth::user()->id;
+        return view('Test.admin')->with(['idUser'=>$idUser, 'users'=> $users, 'stores'=>$stores, 'name'=>$admin]);
     }
     function productUser($id){
         $name=Auth::user()->name;
