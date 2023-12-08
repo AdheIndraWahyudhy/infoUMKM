@@ -101,8 +101,7 @@ body {
 }
 
 .header-content {
-    /* background-color: linear-gradient(93deg, #1B81D7 16.71%, #05B7D0 98.22%); */
-    background-image: url(./img/Frame\ 22.png);
+    /* background: linear-gradient(93deg, #1B81D7 16.71%, #05B7D0 98.22%); */
     color: #fff;
     width: 100%;
     max-height: 264px;
@@ -144,7 +143,7 @@ body {
     padding: 50px;
 }
 
-.form input, select, textarea {
+.form .form-input, select, textarea {
     border: 1px solid #ABABAB;
     border-radius: 7px;
     background: #FFF;
@@ -152,14 +151,38 @@ body {
     margin: 10px 0;
 }
 
-.form input, select {
+.form .form-input, select {
     height: 40px;
 }
 
+.form .input-file{
+    padding: 10px 0;
+}
+
+form img{
+    object-fit: cover;
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+}
+
 .form .button {
-    background-color: #36D100;
-    width: 15%;
+    background-color: #36D100; /* Warna latar belakang lebih terang */
+    border: none; /* Hilangkan border */
     color: #fff;
+    padding: 10px 20px; /* Padding lebih besar untuk membuat tombol lebih besar */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px; /* Tambahkan border radius untuk membuat sudut tombol lebih lembut */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animasi perubahan warna latar belakang */
+}
+
+/* Hover effect */
+.form .button:hover {
+    background-color: #45a049; /* Warna latar belakang lebih gelap saat dihover */
 }
 
 .main-sidebar {

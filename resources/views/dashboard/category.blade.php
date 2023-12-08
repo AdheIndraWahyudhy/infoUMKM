@@ -52,7 +52,7 @@
         </div>
     </header>
     <main class="content">
-        <div class="header-content">
+        <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>Kategori <span style="color: #0F3555;">{{$categoryName}}</span></h1>
             {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p> --}}
         </div>

@@ -17,7 +17,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./img/logo.png" alt="logo InfoUMKM.com">
+            <img src="{{url('assets/img/logo.png')}}" alt="logo InfoUMKM.com">
             <h3>INFOUMKM.COM</h3>
         </div>
         <nav class="menu">
@@ -28,7 +28,7 @@
                 @if ($store != null)
                 <li><a href="">Product</a></li>
                 @endif
-                <li><a><i class="fa-solid fa-user"></i>Halo, Aulia</a></li>
+                <li><a><i class="fa-solid fa-user"></i>Hallo, {{$user}}</a></li>
                 <li><a href="{{url('auth/logout/user')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
@@ -54,7 +54,7 @@
         </div>
     </header>
     <main class="main">
-        <div class="header-content">
+        <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
         </div>
@@ -74,18 +74,18 @@
                     @endforeach
                 </select><br>
                 <label for="store_name">Nama Toko:</label>
-                <input type="text" id="store_name" name="store_name" value="{{$store->store_name}}" required><br>
+                <input type="text" id="store_name" class="form-input" name="store_name" value="{{$store->store_name}}" required><br>
 
                 <label for="store_address">Alamat Toko:</label>
-                <input type="text" id="store_address" name="store_address"  value="{{$store->store_address}}" required><br>
+                <input type="text" id="store_address" class="form-input" name="store_address"  value="{{$store->store_address}}" required><br>
 
                 <label for="link_address">Link alamat pada google maps:</label>
-                <input type="url" id="link_address" name="link_address"  value="{{$store->link_address}}"><br>
+                <input type="url" id="link_address" class="form-input" name="link_address"  value="{{$store->link_address}}"><br>
 
-                <img src="{{url('StoresImg/'.$store->store_image)}}" alt="" height="100px"><br>
+                <img src="{{url('StoresImg/'.$store->store_image)}}" alt=""><br>
 
                 <label for="store_image">Gambar Toko:</label>
-                <input type="file" id="store_address" name="store_image" accept="image/*"> <br>
+                <input type="file" id="store_address" class="input-file" name="store_image" accept="image/*"> <br>
 
                 <label for="description">Deskripsi Toko</label>
                 <textarea name="description" id="description" cols="30" rows="10">{{$store->description}}</textarea><br>
@@ -104,13 +104,13 @@
                     @endforeach
                 </select><br>
                 <label for="store_name">Nama Toko:</label>
-                <input type="text" id="store_name" name="store_name" required><br>
+                <input type="text" id="store_name" class="form-input" name="store_name" required><br>
                 <label for="store_address">Alamat Toko:</label>
-                <input type="text" id="store_address" name="store_address" required><br>
+                <input type="text" id="store_address" class="form-input" name="store_address" required><br>
                 <label for="link_address">Link alamat pada google maps:</label>
-                <input type="url" id="link_address" name="link_address" ><br>
+                <input type="url" id="link_address" class="form-input" name="link_address" ><br>
                 <label for="store_image">Gambar Toko:</label>
-                <input type="file" id="store_address" name="store_image" accept="image/*"required> <br>
+                <input type="file" id="store_address" class="input-file" name="store_image" accept="image/*"required> <br>
                 <label for="description">Deskripsi Toko</label>
                 <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
                 <input type="submit" value="Membuat toko" class="button">

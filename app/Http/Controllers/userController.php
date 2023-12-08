@@ -84,7 +84,7 @@ class userController extends Controller
         $username=Auth::user()->name;
         $store=Store::where('user_id',$id)->first();
         $categories=Category::get();
-        return view('Test.formUser.formStore')->with(['id'=>$id, 'categories'=>$categories,'store'=>$store, 'user'=>$username]);
+        return view('user/store')->with(['id'=>$id, 'categories'=>$categories,'store'=>$store, 'user'=>$username]);
     }
     function createStore(Request $request){
         $gambar=$request->file('store_image');
@@ -100,7 +100,7 @@ class userController extends Controller
             'description'=>$request->description,
         ];
         Store::create($newStore);
-        return redirect('user');
+        return redirect('user/store');
     }
     function updateStore(Request $request){
         $idUser=Auth::user()->id;
