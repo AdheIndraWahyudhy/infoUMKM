@@ -73,7 +73,7 @@ class authController extends Controller
             'email.required' =>'Email Wajib di isi',
             'email.email' =>'Masukkan email dengan benar',
             'name.unique' =>'Username Sudah terdaftar',
-            'number_phone.required' =>'Masukkan Nomor WA',
+            'number_phone.required' =>'Masukkan Nomor HP/WhatsApp',
             'password.min' =>'Masukkan password minimum 5 karakter',
             'password.required' =>'Password Wajib di isi',
         ]);

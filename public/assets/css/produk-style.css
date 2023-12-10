@@ -289,7 +289,9 @@ a.edit {
     box-sizing: border-box;
     padding: 70px;
 }
-
+.message{
+    max-width: 65vw;
+}
 .form-header {
     display: flex;
     justify-content: space-between;
@@ -306,7 +308,6 @@ a.edit {
     display: flex;
     gap: 10px;
     align-self: flex-end;
-    padding-right: 250px;
     padding-bottom: 20px;
     justify-content: flex-end;
     
@@ -319,13 +320,13 @@ a.edit {
     border-radius: 5px;
     margin: auto 5px;
 }
-.form-buttons input[type="submit"] {
+input[type="submit"] {
     background-color: #4CAF50;
     text-align: center;
     text-decoration: none;
     color: white;
 }
-.form-buttons a#btnCancel {
+a#btnCancel {
     background-color: #f44336;
     text-align: center;
     text-decoration: none;
@@ -490,4 +491,9 @@ button {
     background-color: #FF0000; /* Warna merah */
     color: white;
     
+}
+@media (max-width: 768px) {
+    .message{
+        max-width: 86vw;
+    }
 }

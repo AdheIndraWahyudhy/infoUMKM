@@ -12,6 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="{{url('assets/css/produk-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/alert-style.css')}}">
 </head>
 <body>
     <!-- NAVBAR -->
@@ -62,6 +63,7 @@
         <!-- Produk -->
         <div class="title">
             <div class="form-header">
+                
                 <h2>Produk</h2>
                 {{-- <div class="form-buttons">
                     <button id="submitBtn" type="submit">Simpan</button>
@@ -80,6 +82,9 @@
                 @endif
                 method="post" enctype="multipart/form-data">
                     @csrf
+                    <div class="message">
+                        @include('message.notification')
+                    </div>
                     <div class="form-group">
                         <label for="productName">Nama Produk</label>
                         <input type="text" id="productName" name="product_name"
@@ -161,20 +166,20 @@
                 <table id="productTable">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th class="hidden">#</th>
                             <th>Nama Produk</th>
                             <th>Harga</th>
-                            <th>Detail</th>
+                            <th class="hidden">Detail</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($products as $product)
                             <tr>
-                                <td>{{$no++}}</td>
+                                <td class="hidden">{{$no++}}</td>
                                 <td>{{$product->product_name}}</td>
                                 <td>{{$product->product_price}}</td>
-                                <td>{{$product->description}}</td>
+                                <td class="hidden">{{$product->description}}</td>
                                 <td class="action-buttons">
                                     <a href="{{url('product/edit/'.$product->id_product)}}" class="edit">Edit</a>
                                     <a href="{{url('product/delete/'.$product->id_product)}}" class="delete">Delete</a>

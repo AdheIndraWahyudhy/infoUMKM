@@ -12,7 +12,8 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
-    <link rel="stylesheet" href="{{url('assets/css/umkm-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/umkm-style.css')}}"> 
+    <link rel="stylesheet" href="{{url('assets/css/alert-style.css')}}"> 
 </head>
 <body>
     <header class="header">
@@ -59,6 +60,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
         </div>
         <div class="main-content">
+            @include('message.notification')
             @foreach ($stores as $store)
                 <div class="umkm-container">
                     <img src="{{url('StoresImg/'.$store->store_image)}}" alt="toko">

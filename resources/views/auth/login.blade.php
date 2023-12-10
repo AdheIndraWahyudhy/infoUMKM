@@ -12,6 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="{{url('assets/css/login-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/alert-style.css')}}">
 </head>
 <body>
     <header class="header">
@@ -52,6 +53,7 @@
         <form action="{{url('auth/login')}}" method="POST" class="quickForm">
             @csrf
             <h2>Login</h2>
+            @include('message.notification')
             <div class="form-group">
                 <label for="username">User Name</label>
                 <input type="text" class="form-control" id="username" name="username" value="{{Session::get('name')}}">

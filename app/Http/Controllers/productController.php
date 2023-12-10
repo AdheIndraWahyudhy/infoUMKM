@@ -35,7 +35,7 @@ class productController extends Controller
             'description'=>$request->input('description'),
         ];
         Product::create($newProduct);
-        return redirect('user/product');
+        return redirect('user/product')->with('success','Berhasil Menambahkan Produk '.$request->input('product_name'));
     }
     function editProduct($id){
         $edit='edit';
@@ -65,7 +65,7 @@ class productController extends Controller
                 'description'=>$request->input('description'),
             ];
             Product::where('id_product',$id)->update($updateProduct);
-            return redirect('user/product');
+            return redirect('user/product')->with('success','Berhasil Memperbarui Produk'.$request->input('product_name'));
         }
         $product=[
             'store_id'=>$store->id_store,
@@ -76,7 +76,7 @@ class productController extends Controller
         ];
         Product::where('id_product',$id)->update($product);
 
-        return redirect('user/product');
+        return redirect('user/product')->with('success','Berhasil Memperbarui Produk'.$request->input('product_name'));
     }
     function deleteProduct($id){
         $recentData=Product::where('id_product',$id)->first();
@@ -84,7 +84,7 @@ class productController extends Controller
         unlink(public_path('ProductsImg/'.$recentImage));
         
         $recentData->delete();
-        return redirect('user/product');
+        return redirect('user/product')->with('success', 'Berhasil Menghapus Produk');
     }
     
 }

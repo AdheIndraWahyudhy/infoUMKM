@@ -12,6 +12,8 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="{{url('assets/css/register-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/alert-style.css')}}">
+
 </head>
 <body>
     <header class="header">
@@ -21,9 +23,9 @@
         </div>
         <nav class="menu">
             <ul>
-                <li>Home</li>
-                <li>UMKM</li>
-                <li>Favorite</li>
+                <li><a href="{{url('/')}}">Home</a></li>
+                <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                <li><a href="{{url('/favorite')}}">Favorite</a></li>
                 <li>About us</li>
             </ul>
         </nav>
@@ -37,9 +39,9 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">UMKM</a></li>
-                    <li><a href="">Favorite</a></li>
+                    <li><a href="{{url('/')}}">Home</a></li>
+                    <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                    <li><a href="{{url('/favorite')}}">Favorite</a></li>
                     <li><a href="">About us</a></li>
                 </ul>
             </div>
@@ -49,6 +51,7 @@
         <img src="{{url('assets/img/group14.png')}}" alt="toko">
         <form action="{{url('auth/register/create')}}" method="POST" class="quickForm">
             @csrf
+            @include('message.notification')
             <h2>Register</h2>
             <label for="name">User Name</label>
             <input type="text" id="name" name="name" class="form-control" value="{{Session::get('name')}}">
