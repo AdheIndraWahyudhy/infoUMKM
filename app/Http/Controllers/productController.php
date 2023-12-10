@@ -18,7 +18,7 @@ class productController extends Controller
         $store=Store::where('user_id',$idUser)->first();
         $products=Product::where('store_id',$store->id_store)->get();
 
-        return view('Test.formUser.formProduct')->with(['no'=>$no, 'store'=>$store,'user'=>$userName,'products'=>$products]);
+        return view('user/produk')->with(['no'=>$no, 'store'=>$store,'user'=>$userName,'products'=>$products]);
     }
     function createProduct(Request $request){
         $gambar=$request->file('product_image');
@@ -45,7 +45,7 @@ class productController extends Controller
         $store=Store::where('user_id',$idUser)->first();
         $products=Product::where('store_id',$store->id_store)->get();
         $productEdit=Product::where('id_product',$id)->first();
-        return view('Test.formUser.formProduct')->with(['no'=>$no,'idUser'=>$idUser, 'user'=>$userName, 'products'=>$products,'edit'=>$edit, 'productEdit'=>$productEdit]);
+        return view('user.produk')->with(['no'=>$no,'idUser'=>$idUser, 'user'=>$userName, 'products'=>$products,'edit'=>$edit, 'productEdit'=>$productEdit, 'store'=>$store]);
     }
     function updateProduct(Request $request, $id){
         $idUser=Auth::user()->id;

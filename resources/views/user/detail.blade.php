@@ -13,6 +13,19 @@
     />
     <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/detail-style.css')}}">
+    <style>
+        #messageContainer {
+            display: none;
+            position: fixed;
+            background-color: #ffcccb; /* Warna untuk peringatan */
+            padding: 10px;
+            border-radius: 5px;
+            pointer-events: none; /* Menyembunyikan pesan dari interaksi pengguna */
+            max-width: 200px;
+            text-align: center;
+            color: #333; /* Warna teks */
+        }
+    </style>
 </head>
 <body>
     <!-- NAVBAR -->
@@ -90,7 +103,8 @@
                             <p>Contact : {{$owner->number_phone}}</p>
                             <p>Deskripsi : {{$store->description}}</p>
                         </div>
-                        <a class="button" onclick="openCommentPopup()">Beri Komentar</a>
+                        <a class="button" id="myButton" disabled onmouseover="showMessage(event)" onmouseout="hideMessage()">Berikan Komentar</a>
+                        <div id="messageContainer">Hanya pengunjung yang bisa memberikan komentar</div>
 
                     </div>
                 </div>
@@ -191,5 +205,22 @@
         </div>
     </main>
     <script src="{{url('assets/js/detail-script.js')}}"></script>
+    <script>
+        function showMessage(event) {
+    var messageContainer = document.getElementById("messageContainer");
+
+    // Mengatur posisi pesan di bawah kursor
+    messageContainer.style.top = event.clientY + 10 + "px";
+    messageContainer.style.left = event.clientX + 10 + "px";
+
+    // Menampilkan pesan
+    messageContainer.style.display = "block";
+  }
+
+  function hideMessage() {
+    var messageContainer = document.getElementById("messageContainer");
+    messageContainer.style.display = "none";
+  }
+    </script>
 </body>
 </html>

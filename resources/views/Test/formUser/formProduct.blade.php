@@ -48,7 +48,6 @@
             <img src="{{url('ProductsImg/'.$productEdit->product_image)}}" alt="" height="100px"><br>
         @endif
 
-        {{--  --}}
         <label for="product_image">Product Image:</label>
         <input type="file" id="product_image" name="product_image" accept="image/*" @if (!isset($edit)) required @else masukkan Deskripsi @endif><br>
     
@@ -85,8 +84,8 @@
                     <td>{{$product->product_price}}</td>
                     <td>{{$product->description}}</td>
                     <td>
-                        <a href="{{url('product/edit/'.$product->id_product)}}">Edit</a>
-                        <a href="{{url('product/delete/'.$product->id_product)}}">Delete</a>
+                        <a href="{{url('product/edit/'.$product->id_product)}}" class="edit">Edit</a>
+                        <a href="{{url('product/delete/'.$product->id_product)}}" class="delete">Delete</a>
                     </td>
                 </tr>
             @endforeach

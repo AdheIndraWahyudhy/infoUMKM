@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -63,41 +63,67 @@
         <div class="title">
             <div class="form-header">
                 <h2>Produk</h2>
-                <div class="form-buttons">
+                {{-- <div class="form-buttons">
                     <button id="submitBtn" type="submit">Simpan</button>
                     <button id="cancelBtn" type="cancel">Batal</button>
-                </div>
+                </div> --}}
             </div>
         </div>
         
         <div class="produk">
             <div class="form-container">
-                <form id="productForm">
+                <form id="productForm"
+                @if (isset($edit))
+                    action="{{url('product/update/'.$idUser)}}"
+                @else
+                    action="{{url('product/create')}}"
+                @endif
+                method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
-                        <label>Nama Produk</label>
-                        <input type="text" id="productName" required>
+                        <label for="productName">Nama Produk</label>
+                        <input type="text" id="productName" name="product_name"
+                        @if (isset($edit))
+                            value= "{{$productEdit->product_name}}"
+                        @else
+                            placeholder="Masukkan Nama Produk"
+                        @endif required>
                     </div>
                     <div class="form-group">
-                        <label>Harga</label>
-                        <input type="text" id="productPrice" required>
+                        <label for="productPrice">Harga</label>
+                        <input type="text" id="productPrice" name="product_price"
+                        @if (isset($edit))
+                            value= "{{$productEdit->product_price}}"
+                        @else
+                            placeholder="Masukkan Harga"
+                        @endif required>
                     </div>
+                    
+                    @if (isset($edit))
                     <div class="form-group">
-                        <label>Kategori</label>
-                        <select id="productCategory" required>
-                            <option value="">Pilih Kategori...</option>
-                            <option value="makanan">Makanan</option>
-                            <option value="fashion">Fashion</option>
-                            <option value="jasa">Jasa</option>
-                        </select>
+                        <img src="{{url('ProductsImg/'.$productEdit->product_image)}}" alt="" ><br>
                     </div>
+                    @endif
                     
                     <div class="form-group">
                         <label>Foto</label>
-                        <input type="file" id="productPhoto" accept=".png, .jpg, .jpeg" required>
+                        <input type="file" name="product_image" id="productPhoto" accept=".png, .jpg, .jpeg" @if (!isset($edit)) required  @endif>
                     </div>
                     <div class="form-group">
                         <label>Detail</label>
-                        <textarea id="productDetail" required></textarea>
+                        <textarea id="productDetail" name="description" required placeholder="Masukkan Deskripsi">@if (isset($edit)){{$productEdit->description}}@endif</textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <input type="submit" @if (isset($edit))
+                            value="Ubah Produk"
+                        @else
+                            value="Buat Produk"
+                        @endif>
+                        @if (isset($edit))
+                            <a href="{{url('user/product')}}" id="btnCancel">
+                                Batal Edit
+                            </a><br>
+                        @endif
                     </div>
                 </form>
             </div>
@@ -129,7 +155,7 @@
             </div>
         </div>
         
-        {{-- <div id="dataProduk" class="data-produk">
+        <div id="dataProduk" class="data-produk">
             <h2>Data Produk</h2>
             <div class="form-container">
                 <table id="productTable">
@@ -142,9 +168,23 @@
                             <th>Aksi</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        @foreach ($products as $product)
+                            <tr>
+                                <td>{{$no++}}</td>
+                                <td>{{$product->product_name}}</td>
+                                <td>{{$product->product_price}}</td>
+                                <td>{{$product->description}}</td>
+                                <td class="action-buttons">
+                                    <a href="{{url('product/edit/'.$product->id_product)}}" class="edit">Edit</a>
+                                    <a href="{{url('product/delete/'.$product->id_product)}}" class="delete">Delete</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
-        </div> --}}
+        </div>
         
     </main>
     

@@ -21,10 +21,10 @@
         </div>
         <nav class="menu">
             <ul>
-                <li>Home</li>
-                <li>UMKM</li>
-                <li>Favorite</li>
-                <li>About us</li>
+                <li><a href="{{url('/')}}">Beranda</a></li>
+                <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                <li><a href="{{url('/favorite')}}">Favorit</a></li>
+                <li><a href="">About us</a></li>    
             </ul>
         </nav>
         <div class="main-sidebar">
@@ -37,9 +37,9 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">UMKM</a></li>
-                    <li><a href="">Favorite</a></li>
+                    <li><a href="{{url('/')}}">Beranda</a></li>
+                    <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                    <li><a href="{{url('/favorite')}}">Favorit</a></li>
                     <li><a href="">About us</a></li>
                 </ul>
             </div>

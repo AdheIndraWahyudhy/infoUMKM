@@ -112,6 +112,27 @@ body {
 .main-sidebar {
     display: none;
 }
+a.edit {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  a.edit:hover{
+    background-color: #42c347;
+  }
+  
+  a.delete {
+    background-color: #f44336; /* Red */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  a.delete:hover{
+    background-color: #d33125;
+  }
 
 @media (max-width: 965px) {
     * {
@@ -274,6 +295,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    margin-top: 40px;
 }
 .form-header h2 {
     margin: 0;
@@ -289,19 +311,24 @@ body {
     justify-content: flex-end;
     
 }
-.form-buttons button {
+.form-buttons a {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     width: 100px;
-    border-radius: 15px;
+    border-radius: 5px;
+    margin: auto 5px;
 }
-.form-buttons button[type="cancel"] {
-    background-color: #f44336;
+.form-buttons input[type="submit"] {
+    background-color: #4CAF50;
+    text-align: center;
+    text-decoration: none;
     color: white;
 }
-.form-buttons button[type="submit"] {
-    background-color: #4CAF50;
+.form-buttons a#btnCancel {
+    background-color: #f44336;
+    text-align: center;
+    text-decoration: none;
     color: white;
 }
 
@@ -321,6 +348,13 @@ body {
   
 .form-group {
     margin-bottom: 20px;
+}
+.form-group img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
   
 label {
@@ -426,6 +460,9 @@ th, td {
 th {
     background-color: #f2f2f2;
     padding: 8px; /* Atur padding untuk mengatur jarak antar kolom */
+}
+tr td{
+    padding: 8px;
 }
 
 tr:hover {
