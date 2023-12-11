@@ -1,13 +1,6 @@
 window.onload = function() {
     const table = document.getElementById("laporanTable");
 
-    // Data untuk mengisi tabel
-    const data = [
-        ["1", "User 1", "Toko 1", "user1@example.com", "10"],
-        ["2", "User 2", "Toko 2", "user2@example.com", "15"],
-        ["3", "User 3", "Toko 3", "user3@example.com", "20"]
-    ];
-
     // Membuat elemen tombol
     const button = document.createElement("button");
     button.innerHTML = "Lihat Laporan";
