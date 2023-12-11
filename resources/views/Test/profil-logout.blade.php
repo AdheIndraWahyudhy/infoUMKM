@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>UMKM</title>
 
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/profil-reset.css" />
+        <link rel="stylesheet" href="css/profil-style.css" />
 
         <!-- font awesome  -->
         <link
