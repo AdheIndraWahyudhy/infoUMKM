@@ -17,14 +17,14 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./img/logo.png" alt="logo InfoUMKM.com">
+            <img src="{{url('assets/img/logo.png')}}" alt="logo InfoUMKM.com">
             <h3>INFOUMKM.COM</h3>
         </div>
         <nav class="menu">
             <ul>
-                <li>Beranda</li>
-                <li>UMKM</li>
-                <li>Favorit</li>
+                <li><a href="{{url('/')}}">Beranda</a></li>
+                <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                <li><a href="{{url('/favorite')}}">Favorit</a></li>
                 <li>Tentang kami</li>
             </ul>
         </nav>
@@ -38,9 +38,9 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">Beranda</a></li>
-                    <li><a href="">UMKM</a></li>
-                    <li><a href="">Favorit</a></li>
+                    <li><a href="{{url('/')}}">Beranda</a></li>
+                    <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                    <li><a href="{{url('/favorite')}}">Favorit</a></li>
                     <li><a href="">Tentang kami</a></li>
                 </ul>
             </div>
