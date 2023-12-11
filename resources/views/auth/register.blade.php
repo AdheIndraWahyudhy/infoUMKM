@@ -23,10 +23,10 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="{{url('/')}}">Home</a></li>
+                <li><a href="{{url('/')}}">Beranda</a></li>
                 <li><a href="{{url('/umkm')}}">UMKM</a></li>
-                <li><a href="{{url('/favorite')}}">Favorite</a></li>
-                <li>About us</li>
+                <li><a href="{{url('/favorite')}}">Favorit</a></li>
+                <li>Tentang kami</li>
             </ul>
         </nav>
         <div class="main-sidebar">
@@ -39,10 +39,10 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="{{url('/')}}">Home</a></li>
+                    <li><a href="{{url('/')}}">Beranda</a></li>
                     <li><a href="{{url('/umkm')}}">UMKM</a></li>
-                    <li><a href="{{url('/favorite')}}">Favorite</a></li>
-                    <li><a href="">About us</a></li>
+                    <li><a href="{{url('/favorite')}}">Favorit</a></li>
+                    <li><a href="">Tentang kami</a></li>
                 </ul>
             </div>
         </div>
