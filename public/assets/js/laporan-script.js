@@ -1,10 +1,10 @@
 window.onload = function() {
     const table = document.getElementById("laporanTable");
 
-    // Membuat elemen tombol
-    const button = document.createElement("button");
-    button.innerHTML = "Lihat Laporan";
-    button.className = "aksi-btn";
+     // Membuat elemen a
+    const a = document.createElement("a");
+    a.innerHTML = "Lihat Laporan";
+    a.className = "aksi-btn";
 
     // Mengisi tabel dengan data
     for (let i = 0; i < data.length; i++) {
@@ -13,7 +13,7 @@ window.onload = function() {
             let cell = row.insertCell(j); // Menambahkan sel baru
             cell.innerHTML = data[i][j]; // Mengisi sel dengan data
         }
-        let cell = row.insertCell(data[i].length); // Menambahkan sel untuk tombol
-        cell.appendChild(button.cloneNode(true)); // Menambahkan tombol ke sel
+        let cell = row.insertCell(data[i].length); // Menambahkan sel untuk aksi
+        cell.appendChild(a.cloneNode(true)); // Menambahkan a ke sel
     }
 };
