@@ -310,11 +310,15 @@ tr:hover {
 }
 
 .aksi-btn {
+    display: inline-block;
     background-color: #4CAF50; 
     color: white;
-    border: none;
-    padding: 5px; 
-    margin: 4px -10px;
+    width: 100px;
+    padding: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 .aksi-btn:hover {
