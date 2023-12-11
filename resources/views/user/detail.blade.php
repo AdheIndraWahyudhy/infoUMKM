@@ -157,27 +157,6 @@
             </div>
         </div>
 
-        <div class="popup" id="reportPopup">
-            <div class="popup-content">
-                <span class="close" onclick="closeReportPopup()">&times;</span>
-                <h2>Mengapa Anda Melaporkan Toko Ini?</h2>
-                <form>
-                    <label for="reportReason">Alasan Melaporkan :</label>
-                    <textarea id="reportReason" name="reportReason" rows="4" placeholder="Tulis alasan Anda di sini..."></textarea>
-        
-                    <button type="submit">Kirim Laporan</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="popup" id="confirmationPopup">
-            <div class="popup-content">
-                <span class="close" onclick="closeConfirmationPopup()">&times;</span>
-                <h2>Toko Sudah Dilaporkan!</h2>
-                <button onclick="closeConfirmationPopup()">Tutup</button>
-            </div>
-        </div>
-
         <div class="Komentar">
             <div class="comments-section">
                 <h2>Komentar</h2>
