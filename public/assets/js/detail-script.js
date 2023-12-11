@@ -63,3 +63,40 @@
   const commentInput = document.getElementById('comment');
   commentInput.value = '';
 };
+
+// Pop Up Laporkan
+// Fungsi untuk membuka popup
+const openReportPopup = () => {
+  document.getElementById("reportPopup").style.display = "flex";
+};
+
+// Fungsi untuk menutup popup
+const closeReportPopup = () => {
+  document.getElementById("reportPopup").style.display = "none";
+};
+
+// Tambahkan event listener untuk menutup popup jika klik di luar popup
+window.addEventListener("click", (event) => {
+  const popup = document.getElementById("reportPopup");
+  if (event.target === popup) {
+      closeReportPopup();
+  }
+});
+
+// Fungsi untuk membuka popup konfirmasi
+const openConfirmationPopup = () => {
+  document.getElementById("confirmationPopup").style.display = "flex";
+};
+
+// Fungsi untuk menutup popup konfirmasi
+const closeConfirmationPopup = () => {
+  document.getElementById("confirmationPopup").style.display = "none";
+};
+
+// Tambahkan event listener untuk form submit
+document.querySelector('#reportPopup form').addEventListener('submit', (event) => {
+  event.preventDefault(); // Menghentikan aksi default form submit
+  document.getElementById('reportReason').value = ''; // Membersihkan isian form
+  closeReportPopup(); // Menutup popup laporan
+  openConfirmationPopup(); // Membuka popup konfirmasi
+});
