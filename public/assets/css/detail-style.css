@@ -154,13 +154,51 @@
             color: inherit;
         }
 
+        .info-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid #17a2b8; /* Warna batas */
+            color: #17a2b8; /* Warna teks */
+            background-color: #fff; /* Warna latar belakang */
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    
+        /* Efek hover pada tombol */
+        .info-btn:hover {
+            background-color: #17a2b8; /* Warna latar belakang saat dihover */
+            color: #fff; /* Warna teks saat dihover */
+        }
+
+        .warning-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid #ffc107; /* Warna batas */
+            color: #ffc107; /* Warna teks */
+            background-color: #fff; /* Warna latar belakang */
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    
+        /* Efek hover pada tombol */
+        .warning-btn:hover {
+            background-color: #ffc107; /* Warna latar belakang saat dihover */
+            color: #fff; /* Warna teks saat dihover */
+        }
         a.button {
             width: 200px;
             background-color: rgb(17, 199, 227);
-            border-radius: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            padding: 5px ;
             color: white;
             text-decoration: none;
-            padding: 3px;
             text-align: center;
             cursor: pointer;
         }

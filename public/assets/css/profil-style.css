@@ -192,6 +192,24 @@ hr {
     padding: 40px 70px;
 }
 
+#passwordInput {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Poppins", "sans-serif";
+    margin-top: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.form-toggle label{
+    font-family: "Poppins", "sans-serif";
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#password{
+    padding: 15px;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;

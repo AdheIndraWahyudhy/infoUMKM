@@ -87,9 +87,12 @@
                             <p>Contact : {{$owner->number_phone}}</p>
                             <p>Deskripsi : {{$store->description}}</p>
                         </div>
+                        <br>
+                        <hr>
+                        <br>
                         <div class="button-container">
-                            <a href="#" class="button" onclick="openCommentPopup()">Beri Komentar</a>
-                            <a href="#" class="button" onclick="openReportPopup()">Laporkan</a>
+                            <a href="#" class="info-btn" onclick="openCommentPopup()">Beri Komentar</a>
+                            <a href="#" class="warning-btn" onclick="openReportPopup()">Laporkan</a>
                         </div>
 
                     </div>

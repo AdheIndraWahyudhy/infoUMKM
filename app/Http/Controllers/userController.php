@@ -54,12 +54,44 @@ class userController extends Controller
     // Function yang berkaitan dengan Akun User
     function account(){
         $data=Auth::user();
-        return view('Test.formUser.formAccount')->with(['data'=>$data]);
+        $idUser=Auth::user()->id;
+        $store=Store::where('user_id',$idUser)->first();
+        return view('user.index-profil')->with(['data'=>$data, 'store'=>$store]);
     }
 
     function updateUser(Request $request){
         $dataLogin=Auth::user();
+        $request->validate([
+            // proses pengecekan/validasi
+            // required artinya di perlukan
+            'name' =>'required',
+            'email' =>'required|email',
+            'number_phone' =>'required'
+
+        ],[
+            'name.required' =>'Nama Wajib di isi',
+            'email.required' =>'Email Wajib di isi',
+            'email.email' =>'Masukkan email dengan benar',
+            'name.unique' =>'Username Sudah terdaftar',
+            'number_phone.required' =>'Masukkan Nomor HP/WhatsApp',
+        ]);
         if(isset($request->password)){
+            $request->validate([
+                // proses pengecekan/validasi
+                // required artinya di perlukan
+                'name' =>'required',
+                'email' =>'required|email',
+                'password' =>'required|min:5',
+                'number_phone' =>'required'
+    
+            ],[
+                'name.required' =>'Nama Wajib di isi',
+                'email.required' =>'Email Wajib di isi',
+                'email.email' =>'Masukkan email dengan benar',
+                'number_phone.required' =>'Masukkan Nomor HP/WhatsApp',
+                'password.min' =>'Masukkan password minimum 5 karakter',
+                'password.required' =>'Password Wajib di isi',
+            ]);
             $data=[
                 'name'=>$request->input('name'),
                 'email'=>$request->input('email'),
@@ -67,7 +99,7 @@ class userController extends Controller
                 'number_phone'=>$request->input('number_phone')
             ];
             User::where('id',$dataLogin->id)->update($data);
-            return redirect('user/account');
+            return redirect('user/account')->with('success','Berhasil Memperbarui Akun');
         }
         $data=[
             'name'=>$request->input('name'),
@@ -75,7 +107,7 @@ class userController extends Controller
             'number_phone'=>$request->input('number_phone')
         ];
         User::where('id',$dataLogin->id)->update($data);
-        return redirect('user/account');
+        return redirect('user/account')->with('success','Berhasil Memperbarui Akun');
     }
 
     // Function yang berkaitan dengan toko

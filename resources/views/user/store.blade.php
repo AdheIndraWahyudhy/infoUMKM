@@ -26,10 +26,10 @@
                 <li><a href="{{url('user/account')}}">Akun</a></li>
                 <li><a href="{{url('user/store')}}">Store</a></li>
                 @if ($store != null)
-                <li><a href="{{url('user/produk')}}">Produk</a></li>
+                <li><a href="{{url('user/product')}}">Produk</a></li>
                 @endif
                 <li><a><i class="fa-solid fa-user"></i>Hallo, {{$user}}</a></li>
-                <li><a href="{{url('auth/logout/user')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a href="{{url('auth/logout/user')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">

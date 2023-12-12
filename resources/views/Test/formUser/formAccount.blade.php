@@ -24,7 +24,7 @@
         <br>
     
         <label for="number_phone">Number Phone:</label>
-        <input type="tel" id="number_phone" name="number_phone" value="{{$data->number_phone}}" required>
+        <input type="text" id="number_phone" name="number_phone" value="{{$data->number_phone}}" required>
     
         <br>
     

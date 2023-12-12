@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>UMKM</title>
 
-        <link rel="stylesheet" href="css/profil-reset.css" />
-        <link rel="stylesheet" href="css/profil-style.css" />
+        <link rel="stylesheet" href="{{url('assets/css/profil-reset.css')}}" />
+        <link rel="stylesheet" href="{{url('assets/css/profil-style.css')}}" />
 
         <!-- font awesome  -->
         <link
@@ -22,7 +22,7 @@
         <nav class="navbar">
             <div class="navbar-container container">
                 <div class="navbar-brand">
-                    <img src="img/shop.png" width="30" alt="shop.png" />
+                    <img src="{{url('assets/img/logo.png')}}" width="30" alt="shop.png" />
                     <h1 class="logo">INFOUMKM.COM</h1>
                 </div>
                 <ul class="menu-items">
