@@ -22,7 +22,7 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="{{url('/admin')}}">Pengguna</a></li>
+                <li><a href="{{url('/admin/users')}}">Pengguna</a></li>
                 <li><a href="{{url('/admin/reports')}}">Laporan</a></li>
                 <li><a href="{{url('/admin/profile')}}">Profil</a></li>
                 <li><a><i class="fa-solid fa-user"></i>Halo, {{$name}}</a></li>
@@ -39,7 +39,7 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="{{url('/admin')}}">Pengguna</a></li>
+                    <li><a href="{{url('/admin/users')}}">Pengguna</a></li>
                     <li><a href="{{url('/admin/reports')}}">Laporan</a></li>
                     <li><a href="{{url('/admin/profile')}}">Profil</a></li>
                     <li><a href="{{url('auth/logout/admin')}}">Logout</a></li>
@@ -113,7 +113,7 @@
                                 @else
                                 <a href="{{url('admin/report/restore/'.$store->id_store)}}" class="aksi-btn">Pulihkan Toko</a>
                                 @endif
-                                <a href="" class="red-btn">Hapus</a>
+                                <a href="{{url('admin/store/delete/'.$store->id_store)}}" class="red-btn">Hapus</a>
                             </td>
                         </tr>
                     @endforeach

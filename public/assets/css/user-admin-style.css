@@ -57,14 +57,14 @@ body {
     justify-content: flex-end;
 }
 
-.menu li:hover {
+/* .menu li:hover {
     text-decoration: none;
     background-color: #087292;
     border-radius: 15px;
     padding: 8px;
     color: #fff;
     transition: 0.3s;
-}
+} */
 
 .menu li a:hover {
     text-decoration: none;
@@ -190,10 +190,24 @@ th, td:first-child {
 
 .action-column .lihat {
     background: #07BC03;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #F8F8F8;
+}
+.action-column .lihat:hover{
+    background: #1e631d;
 }
 
 .action-column .hapus {
     background: #C60808;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #F8F8F8;
+}
+.action-column .hapus:hover{
+    background: #511a1a;
 }
 
 @media (max-width: 965px) {

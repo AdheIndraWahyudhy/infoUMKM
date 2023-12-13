@@ -71,7 +71,7 @@
                 </div> --}}
             </div>
         </div>
-        
+
         @if ($store->status == 'Bermasalah')
             <div class="produk">
 
@@ -188,7 +188,7 @@
                                 <tr>
                                     <td class="hidden">{{$no++}}</td>
                                     <td>{{$product->product_name}}</td>
-                                    <td>{{$product->product_price}}</td>
+                                    <td>Rp. {{number_format($product->product_price, 0, ',', '.')}}</td>
                                     <td class="hidden">{{$product->description}}</td>
                                     <td class="action-buttons">
                                         <a href="{{url('product/edit/'.$product->id_product)}}" class="edit">Edit</a>

@@ -17,5 +17,6 @@ class Store extends Model
         'store_address',
         'store_image',
         'description',
+        'status'
     ];
 }

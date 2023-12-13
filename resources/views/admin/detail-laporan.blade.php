@@ -22,9 +22,9 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="{{url('/admin')}}">Pengguna</a></li>
-                <li><a href="{{url('/reports')}}">Laporan</a></li>
-                <li><a href="{{url('/profile')}}">Profil</a></li>
+                <li><a href="{{url('/admin/users')}}">Pengguna</a></li>
+                <li><a href="{{url('/admin/reports')}}">Laporan</a></li>
+                <li><a href="{{url('/admin/profile')}}">Profil</a></li>
                 <li><i class="fa-solid fa-user"></i>Halo, {{$admin}}</li>
                 <li><a href="{{url('auth/logout/admin')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
@@ -39,9 +39,9 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="{{url('/admin')}}">Pengguna</a></li>
-                    <li><a href="{{url('/reports')}}">Laporan</a></li>
-                    <li><a href="{{url('/profile')}}">Profil</a></li>
+                    <li><a href="{{url('/admin/users')}}">Pengguna</a></li>
+                    <li><a href="{{url('/admin/reports')}}">Laporan</a></li>
+                    <li><a href="{{url('/admin/profile')}}">Profil</a></li>
                     <li><a href="{{url('auth/logout/admin')}}">Keluar</a></li>
                 </ul>
             </div>
