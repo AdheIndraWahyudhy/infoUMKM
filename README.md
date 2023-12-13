@@ -64,14 +64,7 @@ Pastikan Anda telah memenuhi persyaratan berikut sebelum menginstal proyek:
 
     Opsional: Jika Anda ingin mengisi database dengan data awal, jalankan perintah ini.
 
-7. **Instal Dependensi Node.js dan Compile Asset**
-
-    ```bash
-    npm install
-    npm run dev
-    ```
-
-8. **Jalankan Server Pengembangan**
+7. **Jalankan Server Pengembangan**
 
     ```bash
     php artisan serve
