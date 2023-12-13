@@ -1,64 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# infoUMKM
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Website InfoUMKM.com ini merupakan sistem informasi yang menyediakan informasi UMKM dan produknya yang menjadi wadah dalam membantu promosi dan pemasaran UMKM. Website informasi mengenai lapak penjualan ini bertujuan untuk memberikan dukungan yang sangat dibutuhkan kepada pedagang kecil dan individu yang ingin sukses dalam penjualan online. Dengan adanya website InfoUMKM ini diharapkan masyarakat lebih mudah dalam menemukan berbagai produk UMKM. 
 
-## About Laravel
+## Instalasi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Ikuti langkah-langkah di bawah ini untuk menginstal proyek ini di lingkungan pengembangan Anda.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Persyaratan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Pastikan Anda telah memenuhi persyaratan berikut sebelum menginstal proyek:
 
-## Learning Laravel
+- PHP versi >= 7.4
+- Composer
+- MySQL 
+- Memiliki lingkungan pengembangan lokal (local development environment). Seperti XAMPP dan Laragon
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Langkah-langkah Instalasi
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Clone Repositori**
 
-## Laravel Sponsors
+    Sebelum melakukan clone, buatlah folder baru, dan buka terminal yang Anda Miliki Seperti PowerShell, CMD, dan Lain-lain.
+    Kemudian jalankan perintah berikut
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    ```bash
+    git clone https://github.com/AdheIndraWahyudhy/infoUMKM.git
+    ```
 
-### Premium Partners
+2. **Pindah ke Direktori Proyek**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+    ```bash
+    cd nama-proyek
+    ```
 
-## Contributing
+3. **Salin Berkas .env**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    Salin berkas `.env.example` dan ubah nama menjadi `.env`.
 
-## Code of Conduct
+    Untuk menyalin file `.env.example`menjadi `.env` bisa jalankan perintah berikut dalam bash.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+    cp .env.example .env
+    ```
 
-## Security Vulnerabilities
+    Buatlah Database terlebih dahulu pada mysql, dan kemudian lakukan pengisian file `.env` pada `DB_DATABASE=` kemudian isi sesuai dengan database yang anda buat sebelumnya jangan lupa untuk mengisi `DB_USERNAME=`sesuai pada database dan `DB_PASSWORD=` jika ada passwordnya
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. **Instal Dependensi PHP dengan Composer**
 
-## License
+    ```bash
+    composer install
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5. **Buat Kunci Aplikasi**
+
+    ```bash
+    php artisan key:generate
+    ```
+
+6. **Migrasi dan Isi Database**
+
+    ```bash
+    php artisan migrate --seed
+    ```
+
+    Opsional: Jika Anda ingin mengisi database dengan data awal, jalankan perintah ini.
+
+7. **Instal Dependensi Node.js dan Compile Asset**
+
+    ```bash
+    npm install
+    npm run dev
+    ```
+
+8. **Jalankan Server Pengembangan**
+
+    ```bash
+    php artisan serve
+    ```
+
+    Proyek Laravel Anda akan berjalan di [http://localhost:8000](http://localhost:8000).
+
+## Kontribusi
+
+
+### Designer
+- [Caecario Yonim Betta Sabillah](https://www.instagram.com/caecario.ybs_/)
+
+### Front-End Developer
+- [Aulia Augusta](https://www.instagram.com/gus.ta__/)
+- [Dimas Aryansyah](https://www.instagram.com/aryandinataa/)
+- [Vico Pratama Fajareno](https://www.instagram.com/vico_prtma27/)
+
+### Back-End Developer
+- [Adhe Indra Wahyudhy](https://github.com/AdheIndraWahyudhy)
+
+Jika Anda ingin berkontribusi pada proyek ini, silakan buat cabang baru dan ajukan pull request.
