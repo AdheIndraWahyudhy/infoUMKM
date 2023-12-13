@@ -92,7 +92,7 @@ hr {
 }
 .navbar-brand .logo {
     font-size: 24px;
-    color: var(--font-color);
+    color: var(--primary-color);
     font-weight: bold;
 }
 
@@ -105,7 +105,7 @@ hr {
 
 .menu-items li a {
     text-decoration: none;
-    color: var(--font-color);
+    color: var(--primary-color);
     font-weight: 600;
     padding: 8px 15px;
     border-radius: 13px;
@@ -139,6 +139,7 @@ hr {
 
 .hero {
     background-color: var(--primary-color);
+    background-image: url("../img/banner.png");
 }
 
 .hero div.container {
@@ -153,9 +154,9 @@ hr {
 .hero-title {
     font-weight: 500;
     text-align: center;
-    line-height: 30px;
+    line-height: 70px;
     color: var(--white-color);
-    font-size: 1.5em;
+    font-size: 3.5em;
     font-family: "Poppins", "sans-serif";
 }
 
