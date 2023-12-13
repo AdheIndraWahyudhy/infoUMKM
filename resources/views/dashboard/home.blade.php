@@ -30,7 +30,7 @@
               <li><a href="#restoran">Kategori</a></li>
               <li><a href="{{url('/umkm')}}">UMKM</a></li>
               <li><a href="{{url('/favorite')}}">Favorite</a></li>
-              <li><a href="#pantai">Contact</a></li>
+              <li><a href="{{url('/aboutus')}}">Tentang Kami</a></li>
               <li class="active"><a href="{{url('auth/register')}}">Daftar</a></li>
               <li class="active"><a href="{{url('auth/')}}">Masuk</a></li>
             </ul>

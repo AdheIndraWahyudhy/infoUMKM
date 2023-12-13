@@ -320,8 +320,39 @@ tr:hover {
     text-decoration: none;
     border-radius: 5px;
 }
+.warning-btn {
+    display: inline-block;
+    background-color: #ffc107; 
+    color: white;
+    width: 100px;
+    padding: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
 
+
+.red-btn {
+    display: inline-block;
+    background-color: #DC3545; 
+    color: white;
+    width: 100px;
+    padding: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
 .aksi-btn:hover {
     background-color: #008CBA; 
+    color: white;
+}
+.red-btn:hover {
+    background-color: #ba4854; 
+    color: white;
+}
+.warning-btn:hover {
+    background-color: #e7c86b; 
     color: white;
 }

@@ -11,20 +11,20 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./about.css">
+    <link rel="stylesheet" href="{{('assets/css/about-us.css')}}">
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./img/logo.png" alt="logo InfoUMKM.com">
+            <img src="{{url('assets/img/logo.png')}}" alt="logo InfoUMKM.com">
             <h3>INFOUMKM.COM</h3>
         </div>
         <nav class="menu">
             <ul>
-                <li>Beranda</li>
-                <li>UMKM</li>
-                <li>Favorit</li>
-                <li>Tentang kami</li>
+                <li><a href="{{url('/')}}">Beranda</a></li>
+                <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                <li><a href="{{url('/favorite')}}">Favorit</a></li>
+                <li><a href="{{url('/aboutus')}}">Tentang kami</a></li>
                 <li><a href="{{url('auth/register')}}">Daftar</a></li>
                 <li style="color: #087292; width: 5px;">|</li>
                 <li><a href="{{url('auth/')}}">Masuk</a></li>
@@ -60,7 +60,7 @@
         <h1>OUR TEAM</h1>
         <div class="team">
             <div class="team-container" id="team1">
-                <img src="./img/adhe.jpg">
+                <img src="{{url('assets/img/adhe.jpg')}}">
                 <h2>Adhe Indra Wahyudhy</h2>
                 <h4>Back-End Developer</h4>
                 <p>Universitas Muhammadiyah Riau</p>
@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="team-container" id="team2">
-                <img src="./img/caecario.jpg">
+                <img src="{{url('assets/img/caecario.jpg')}}">
                 <h2>Caecario Yonim Betta Sabillah</h2>
                 <h4>Designer</h4>
                 <p>Universitas Jember</p>
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div class="team-container" id="team3">
-                <img src="./img/gusta.png">
+                <img src="{{url('assets/img/gusta.png')}}">
                 <h2>Aulia Augusta</h2>
                 <h4>Front-End Developer</h4>
                 <p>Universitas Jember</p>
@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="team-container" id="team4">
-                <img src="./img/dimas.jpg">
+                <img src="{{url('assets/img/dimas.jpg')}}">
                 <h2>Dimas Aryansyah</h2>
                 <h4>Front-End Developer</h4>
                 <p>Universitas Singaperbangsa Karawang</p>
@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div class="team-container" id="team5">
-                <img src="./img/vico.jpg">
+                <img src="{{url('assets/img/vico.jpg')}}">
                 <h2>Vico Pratama Fajareno</h2>
                 <h4>Front-End Developer</h4>
                 <p>Universitas Muhammadiyah Malang</p>

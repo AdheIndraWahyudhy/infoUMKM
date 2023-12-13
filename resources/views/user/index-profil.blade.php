@@ -8,22 +8,19 @@
         <link rel="stylesheet" href="{{url('assets/css/profil-reset.css')}}" />
         <link rel="stylesheet" href="{{url('assets/css/profil-style.css')}}" />
         <link rel="stylesheet" href="{{url('assets/css/alert-style.css')}}" />
-        <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}" />
-
 
         <!-- font awesome  -->
-        
         <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css"
+            integrity="sha512-pZlKGs7nEqF4zoG0egeK167l6yovsuL8ap30d07kA5AJUq+WysFlQ02DLXAmN3n0+H3JVz5ni8SJZnrOaYXWBA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
     </head>
     <body>
         <!-- navbar  -->
-        {{-- <nav class="navbar">
+        <nav class="navbar">
             <div class="navbar-container container">
                 <div class="navbar-brand">
                     <img src="{{url('assets/img/logo.png')}}" width="30" alt="" />
@@ -40,55 +37,11 @@
                     <span>Aulia Agusta</span>
                 </div>
             </div>
-        </nav> --}}
+        </nav>
         <!-- navbar end -->
-        <header class="header">
-            <div class="logo">
-                <img src="./img/logo.png" alt="logo InfoUMKM.com">
-                <h3>INFOUMKM.COM</h3>
-            </div>
-            <nav class="menu">
-                <ul>
-                    <li><a href="">UMKM</a></li>
-                    <li><a href="">Akun</a></li>
-                    <li><a>Toko</a></li>
-                    @if ($store != null)
-                    <li><a href="">Produk</a></li>
-                    @endif
-                    <li><a><i class="fa-solid fa-user"></i>Halo, Aulia</a></li>
-                    <li><a href="{{url('auth/logout/user')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-                </ul>
-            </nav>
-            <div class="main-sidebar">
-                <input type="checkbox" id="check">
-                <label for="check">
-                    <i class="fas fa-bars" id="open"></i>
-                </label>
-                <div class="sidebar">
-                    <label for="check">
-                        <i class="fas fa-bars" id="btn"></i>
-                    </label>
-                    <ul>
-                        <li><a href="">UMKM</a></li>
-                        <li><a href="">Akun</a></li>
-                        <li><a href="">Toko</a></li>
-                        @if ($store != null)
-                        <li><a href="">Produk</a></li>
-                        @endif
-                        <li><a href="{{url('auth/logout/user')}}">Keluar</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-        <main class="content">
-            <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
-                <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
-            </div>
-            <!-- konten seterusnya disini -->
-        </main>
+
         <!-- hero section -->
-        {{-- <div class="hero">
+        <div class="hero">
             <div class="container">
                 <p class="hero-title">
                     CARI INFO UMKM KAMU <br />
@@ -99,7 +52,7 @@
                     Suscipit, neque.
                 </p>
             </div>
-        </div> --}}
+        </div>
         <!-- hero sectiond end -->
 
         <!-- section profile  -->

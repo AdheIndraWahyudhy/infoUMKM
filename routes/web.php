@@ -27,6 +27,8 @@ Route::middleware('isVisitor')->group(function () {
     Route::get('/favorite',[halamanController::class,'favoriteStore']);
     Route::get('/store/{id}/rating',[halamanController::class,'ratingSuggestion']);
     Route::post('/store/{id}/send',[halamanController::class,'sendRatingSuggestion']);
+    Route::post('/store/{id}/report',[halamanController::class,'reportAccount']);
+    Route::get('/aboutus',[halamanController::class,'aboutus']);
 });
 
 // Route autentifikasi
@@ -46,6 +48,7 @@ Route::prefix('/auth')->group(function(){
 // Route halaman Admin
 Route::prefix('admin')->middleware('isAdmin')->group(function(){
     Route::get('/',[adminController::class,'index']);
+    Route::get('/profil',[adminController::class,'profil']);
 
 });
 // Route::get('coba',[cobaController::class,'index']);

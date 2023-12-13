@@ -22,10 +22,10 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="{{url('/')}}">Home</a> </li>
+                <li><a href="{{url('/')}}">Beranda</a> </li>
                 <li><a href="{{url('/umkm')}}">UMKM</a></li>
-                <li><a href="{{url('/favorite')}}">Favorite</a></li>
-                <li><a href="">About us</a></li>
+                <li><a href="{{url('/favorite')}}">Favorit</a></li>
+                <li><a href="{{url('/aboutus')}}">Tentang Kami</a></li>
                 <li><a href="{{url('auth/register')}}">Daftar</a></li>
                 <li style="color: #087292; width: 5px;">|</li>
                 <li><a href="{{url('auth/')}}">Masuk</a></li>
@@ -41,10 +41,10 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="{{url('/')}}">Home</a> </li>
+                    <li><a href="{{url('/')}}">Beranda</a> </li>
                     <li><a href="{{url('/umkm')}}">UMKM</a></li>
-                    <li><a href="{{url('/favorite')}}">Favorite</a></li>
-                    <li><a href="">About us</a></li>
+                    <li><a href="{{url('/favorite')}}">Favorit</a></li>
+                    <li><a href="{{url('/aboutus')}}">Tentang Kami</a></li>
                     <li><a href="{{url('auth/register')}}">Daftar</a></li>
                     <li><a href="{{url('auth/')}}">Masuk</a></li>
                 </ul>

@@ -94,9 +94,9 @@ const closeConfirmationPopup = () => {
 };
 
 // Tambahkan event listener untuk form submit
-document.querySelector('#reportPopup form').addEventListener('submit', (event) => {
-  event.preventDefault(); // Menghentikan aksi default form submit
-  document.getElementById('reportReason').value = ''; // Membersihkan isian form
-  closeReportPopup(); // Menutup popup laporan
-  openConfirmationPopup(); // Membuka popup konfirmasi
-});
+// document.querySelector('#reportPopup form').addEventListener('submit', (event) => {
+//   event.preventDefault(); // Menghentikan aksi default form submit
+//   document.getElementById('reportReason').value = ''; // Membersihkan isian form
+//   closeReportPopup(); // Menutup popup laporan
+//   openConfirmationPopup(); // Membuka popup konfirmasi
+// });

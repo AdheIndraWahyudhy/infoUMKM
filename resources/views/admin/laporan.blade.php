@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Laporan</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -11,7 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="laporan.css">
+    <link rel="stylesheet" href="{{url('assets/css/laporan-style.css')}}">
 </head>
 <body>
     <!-- NAVBAR -->
@@ -25,7 +25,8 @@
                 <li><a href="">Pengguna</a></li>
                 <li><a href="">Laporan</a></li>
                 <li><a href="">Profil</a></li>
-                <li><a><i class="fa-solid fa-user"></i>Halo, Admin</a></li>
+                <li><a><i class="fa-solid fa-user"></i>Halo, {{$name}}</a></li>
+                <li><a href="{{url('auth/logout/user')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
@@ -41,7 +42,7 @@
                     <li><a href="">Pengguna</a></li>
                     <li><a href="">Laporan</a></li>
                     <li><a href="">Profil</a></li>
-                    <li>Keluar</a></li>
+                    <li><a href="{{url('auth/logout/user')}}">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -65,7 +66,7 @@
             <table id="laporanTable">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th style="max-width: 10px">#</th>
                         <th>Nama User</th>
                         <th>Toko</th>
                         <th>Email</th>
@@ -73,7 +74,48 @@
                         <th>Aksi</th>
                     </tr>
                 </thead>
+                <tbody>
+                    @foreach ($stores as $store)
+                        <tr>
+                            <td style="max-width: 10px">{{$no++}}</td>
+                            <td>
+                                @foreach ($users as $user)
+                                    @if ($user->id == $store->user_id )
+                                        {{$user->name}}
+                                    @endif
+                                @endforeach
+                            </td>
+                            <td>{{$store->store_name}}</td>
+                            <td>
+                                @foreach ($users as $user)
+                                    @if ($user->id == $store->user_id )
+                                        <a href="mailto:{{$user->email}}">{{$user->email}}</a>
+                                    @endif
+                                @endforeach
+                            </td>
+                            <td>
+                                <a href="" 
+                                    @if ($user->report > 3)
+                                        class="red-btn"
+                                    @else
+                                        class="aksi-btn"
+                                    @endif 
+                                    >@if (isset($user->riport))
+                                        {{$user->riport}}
+                                    @else
+                                        0
+                                    @endif Laporan
+                                </a>
+                            </td>
+                            <td>
+                                <a href="" class="warning-btn">Tahan Akun</a>
+                                <a href="" class="red-btn">Hapus</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
+            <i><h5>Note:</h5> Setelah melakukan penahanan, silahkan chat owner akun lewat email.</i>
         </div>
     </div>
 

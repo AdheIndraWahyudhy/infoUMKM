@@ -37,6 +37,9 @@ class halamanController extends Controller
         $stores = Store::get();
         return view('dashboard.umkm')->with(['stores'=> $stores]);
     }
+    function aboutus(){
+        return view('dashboard/about-us');
+    }
 
     function sendRatingSuggestion(Request $request, $id){
         $newSuggest=[
@@ -66,5 +69,17 @@ class halamanController extends Controller
         Store::where('id_store',$id)->update($updateRatingStore);
         return redirect('store/'.$id);
 
+    }
+    function reportAccount(Request $request, $id) {
+        $newReport=[
+            'message'=>$request->input('reportReason'),
+            'type'=>'laporan',
+            'store_id'=>$id,
+        ];
+        SugRep::create($newReport);
+        $reportCount=Sugrep::where('store_id',$id)->where('type','laporan')->count();
+        Store::Where('id_store',$id)->update(['total_reports'=>$reportCount]);
+        session(['reportSuccess' => true]);
+        return redirect('store/'.$id)->with('success','Berhasil Melaporkan toko');
     }
 }

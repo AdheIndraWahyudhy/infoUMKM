@@ -22,10 +22,10 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="{{url('/')}}">Home</a> </li>
+                <li><a href="{{url('/')}}">Beranda</a> </li>
                 <li><a href="{{url('/umkm')}}">UMKM</a></li>
-                <li><a href="{{url('/favorite')}}">Favorite</a></li>
-                <li><a href="">About us</a></li>
+                <li><a href="{{url('/favorite')}}">Favorit</a></li>
+                <li><a href="{{url('/aboutus')}}">Tentang Kami</a></li>
                 <li><a href="{{url('auth/register')}}">Daftar</a></li>
                 <li style="color: #087292; width: 5px;">|</li>
                 <li><a href="{{url('auth/')}}">Masuk</a></li>
@@ -41,10 +41,10 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="{{url('/')}}">Home</a> </li>
+                    <li><a href="{{url('/')}}">Beranda</a> </li>
                     <li><a href="{{url('/umkm')}}">UMKM</a></li>
-                    <li><a href="{{url('/favorite')}}">Favorite</a></li>
-                    <li><a href="">About us</a></li>
+                    <li><a href="{{url('/favorite')}}">Favorit</a></li>
+                    <li><a href="{{url('/aboutus')}}">Tentang Kami</a></li>
                     <li><a href="{{url('auth/register')}}">Daftar</a></li>
                     <li><a href="{{url('auth/')}}">Masuk</a></li>
                 </ul>
@@ -91,8 +91,8 @@
                         <hr>
                         <br>
                         <div class="button-container">
-                            <a href="#" class="info-btn" onclick="openCommentPopup()">Beri Komentar</a>
-                            <a href="#" class="warning-btn" onclick="openReportPopup()">Laporkan</a>
+                            <a class="info-btn" onclick="openCommentPopup()">Beri Komentar</a>
+                            <a class="warning-btn" onclick="openReportPopup()">Laporkan</a>
                         </div>
 
                     </div>
@@ -150,7 +150,8 @@
             <div class="popup-content">
                 <span class="close" onclick="closeReportPopup()">&times;</span>
                 <h2>Mengapa Anda Melaporkan Toko Ini?</h2>
-                <form>
+                <form action="{{url('store/'.$id.'/report')}}" method="POST">
+                    @csrf
                     <label for="reportReason">Alasan Melaporkan :</label>
                     <textarea id="reportReason" name="reportReason" rows="4" placeholder="Tulis alasan Anda di sini..."></textarea>
         
@@ -194,5 +195,11 @@
         </div>
     </main>
     <script src="{{url('assets/js/detail-script.js')}}"></script>
+    @if(session('reportSuccess'))
+    <script>
+        // Buka pop-up konfirmasi jika flag reportSuccess ada
+        openConfirmationPopup();
+    </script>
+@endif
 </body>
 </html>
