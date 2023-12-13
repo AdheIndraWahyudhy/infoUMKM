@@ -25,15 +25,14 @@
                     <img src="img/shop.png" width="30" alt="shop.png" />
                     <h1 class="logo">INFOUMKM.COM</h1>
                 </div>
-                <ul class="menu-items">
-                    <li><a href="#">Home</a></li>
+                <ul class="menu-items"> 
+                    <li><a href="#">Pengguna</a></li>
+                    <li><a href="#">Laporan</a></li>
                     <li><a href="#">Profil</a></li>
-                    <li><a href="#">Toko</a></li>
-                    <li><a href="#">Product</a></li>
                 </ul>
                 <div class="user-items">
                     <img src="img/user-solid.svg" alt="" srcset="" />
-                    <span>Aulia Agusta</span>
+                    <span>Halo, Aulia</span>
                 </div>
             </div>
         </nav>
