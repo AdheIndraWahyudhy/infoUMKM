@@ -48,7 +48,12 @@ Route::prefix('/auth')->group(function(){
 // Route halaman Admin
 Route::prefix('admin')->middleware('isAdmin')->group(function(){
     Route::get('/',[adminController::class,'index']);
-    Route::get('/profil',[adminController::class,'profil']);
+    Route::get('/profile',[adminController::class,'profil']);
+    Route::get('/report/{id}',[adminController::class,'detailLaporan']);
+    Route::get('/report/stop/{id}',[adminController::class,'stopTheStore']);
+    Route::get('/report/restore/{id}',[adminController::class,'restoreTheStore']);
+    Route::get('/store/delete/{id}',[adminController::class,'deleteStore']);
+    Route::get('/account/delete/{id}',[adminController::class,'deleteAccount']);
 
 });
 // Route::get('coba',[cobaController::class,'index']);

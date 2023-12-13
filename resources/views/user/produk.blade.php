@@ -72,124 +72,137 @@
             </div>
         </div>
         
-        <div class="produk">
-            <div class="form-container">
-                <form id="productForm"
-                @if (isset($edit))
-                    action="{{url('product/update/'.$idUser)}}"
-                @else
-                    action="{{url('product/create')}}"
-                @endif
-                method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="message">
-                        @include('message.notification')
-                    </div>
-                    <div class="form-group">
-                        <label for="productName">Nama Produk</label>
-                        <input type="text" id="productName" name="product_name"
-                        @if (isset($edit))
-                            value= "{{$productEdit->product_name}}"
-                        @else
-                            placeholder="Masukkan Nama Produk"
-                        @endif required>
-                    </div>
-                    <div class="form-group">
-                        <label for="productPrice">Harga</label>
-                        <input type="text" id="productPrice" name="product_price"
-                        @if (isset($edit))
-                            value= "{{$productEdit->product_price}}"
-                        @else
-                            placeholder="Masukkan Harga"
-                        @endif required>
-                    </div>
-                    
+        @if ($store->status == 'Bermasalah')
+            <div class="produk">
+
+                <div class="form-container">
+                    <h3><i>Hallo, {{$user}} <br> <br>Toko anda banyak mendapat laporan dari pengunjung, Kami telah mengirim alasan mengapa akun anda dibekukan. Diharapkan anda membalas Email kami jika laporan dari pihak pengunjung tidak benar beserta bukti yang memperkuat bahwa toko anda tidak bermasalah!</i></h3>
+                    <br>
+                    <h3><i>Jika anda tidak mengonfirmasi dalam 1 minggu, Kami anggap Laporan tersebut benar dan akun Anda akan terHapus</i></h3>
+                </div>
+            </div>
+        @else
+            <div class="produk">
+                <div class="form-container">
+                    <form id="productForm"
                     @if (isset($edit))
-                    <div class="form-group">
-                        <img src="{{url('ProductsImg/'.$productEdit->product_image)}}" alt="" ><br>
-                    </div>
+                        action="{{url('product/update/'.$idUser)}}"
+                    @else
+                        action="{{url('product/create')}}"
                     @endif
-                    
-                    <div class="form-group">
-                        <label>Foto</label>
-                        <input type="file" name="product_image" id="productPhoto" accept=".png, .jpg, .jpeg" @if (!isset($edit)) required  @endif>
-                    </div>
-                    <div class="form-group">
-                        <label>Detail</label>
-                        <textarea id="productDetail" name="description" required placeholder="Masukkan Deskripsi">@if (isset($edit)){{$productEdit->description}}@endif</textarea>
-                    </div>
-                    <div class="form-buttons">
-                        <input type="submit" @if (isset($edit))
-                            value="Ubah Produk"
-                        @else
-                            value="Buat Produk"
-                        @endif>
+                    method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="message">
+                            @include('message.notification')
+                        </div>
+                        <div class="form-group">
+                            <label for="productName">Nama Produk</label>
+                            <input type="text" id="productName" name="product_name"
+                            @if (isset($edit))
+                                value= "{{$productEdit->product_name}}"
+                            @else
+                                placeholder="Masukkan Nama Produk"
+                            @endif required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productPrice">Harga</label>
+                            <input type="text" id="productPrice" name="product_price"
+                            @if (isset($edit))
+                                value= "{{$productEdit->product_price}}"
+                            @else
+                                placeholder="Masukkan Harga"
+                            @endif required>
+                        </div>
+                        
                         @if (isset($edit))
-                            <a href="{{url('user/product')}}" id="btnCancel">
-                                Batal Edit
-                            </a><br>
+                        <div class="form-group">
+                            <img src="{{url('ProductsImg/'.$productEdit->product_image)}}" alt="" ><br>
+                        </div>
                         @endif
-                    </div>
-                </form>
+                        
+                        <div class="form-group">
+                            <label>Foto</label>
+                            <input type="file" name="product_image" id="productPhoto" accept=".png, .jpg, .jpeg" @if (!isset($edit)) required  @endif>
+                        </div>
+                        <div class="form-group">
+                            <label>Detail</label>
+                            <textarea id="productDetail" name="description" required placeholder="Masukkan Deskripsi">@if (isset($edit)){{$productEdit->description}}@endif</textarea>
+                        </div>
+                        <div class="form-buttons">
+                            <input type="submit" @if (isset($edit))
+                                value="Ubah Produk"
+                            @else
+                                value="Buat Produk"
+                            @endif>
+                            @if (isset($edit))
+                                <a href="{{url('user/product')}}" id="btnCancel">
+                                    Batal Edit
+                                </a><br>
+                            @endif
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
 
-        <!-- Pop Up Produk -->
-        <div id="popup" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup()">&times;</span>
-                <p id="popupMessage">Silakan Isi Semua Form</p>
-                <button onclick="closePopup()">OK</button>
+            <!-- Pop Up Produk -->
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup()">&times;</span>
+                    <p id="popupMessage">Silakan Isi Semua Form</p>
+                    <button onclick="closePopup()">OK</button>
+                </div>
             </div>
-        </div>
-        
-        <div id="successPopup" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closeSuccessPopup()">&times;</span>
-                <p id="successMessage">Produk Berhasil Ditambahkan</p>
-                <button onclick="closeSuccessPopup()">OK</button>
+            
+            <div id="successPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closeSuccessPopup()">&times;</span>
+                    <p id="successMessage">Produk Berhasil Ditambahkan</p>
+                    <button onclick="closeSuccessPopup()">OK</button>
+                </div>
             </div>
-        </div>
 
-        <div id="editConfirmationPopup" class="popup">
-            <div class="popup-edit-content">
-                <span class="close" onclick="closeEditConfirmationPopup()">&times;</span>
-                <p>Anda yakin akan mengedit?</p>
-                <button onclick="proceedWithEdit()">Yakin</button>
-                <button onclick="closeEditConfirmationPopup()">Tidak</button>
+            <div id="editConfirmationPopup" class="popup">
+                <div class="popup-edit-content">
+                    <span class="close" onclick="closeEditConfirmationPopup()">&times;</span>
+                    <p>Anda yakin akan mengedit?</p>
+                    <button onclick="proceedWithEdit()">Yakin</button>
+                    <button onclick="closeEditConfirmationPopup()">Tidak</button>
+                </div>
             </div>
-        </div>
-        
-        <div id="dataProduk" class="data-produk">
-            <h2>Data Produk</h2>
-            <div class="form-container">
-                <table id="productTable">
-                    <thead>
-                        <tr>
-                            <th class="hidden">#</th>
-                            <th>Nama Produk</th>
-                            <th>Harga</th>
-                            <th class="hidden">Detail</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($products as $product)
+            
+            <div id="dataProduk" class="data-produk">
+                <h2>Data Produk</h2>
+                <div class="form-container">
+                    <table id="productTable">
+                        <thead>
                             <tr>
-                                <td class="hidden">{{$no++}}</td>
-                                <td>{{$product->product_name}}</td>
-                                <td>{{$product->product_price}}</td>
-                                <td class="hidden">{{$product->description}}</td>
-                                <td class="action-buttons">
-                                    <a href="{{url('product/edit/'.$product->id_product)}}" class="edit">Edit</a>
-                                    <a href="{{url('product/delete/'.$product->id_product)}}" class="delete">Delete</a>
-                                </td>
+                                <th class="hidden">#</th>
+                                <th>Nama Produk</th>
+                                <th>Harga</th>
+                                <th class="hidden">Detail</th>
+                                <th>Aksi</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach ($products as $product)
+                                <tr>
+                                    <td class="hidden">{{$no++}}</td>
+                                    <td>{{$product->product_name}}</td>
+                                    <td>{{$product->product_price}}</td>
+                                    <td class="hidden">{{$product->description}}</td>
+                                    <td class="action-buttons">
+                                        <a href="{{url('product/edit/'.$product->id_product)}}" class="edit">Edit</a>
+                                        <a href="{{url('product/delete/'.$product->id_product)}}" class="delete">Delete</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
+            
+        @endif
+
         
     </main>
     

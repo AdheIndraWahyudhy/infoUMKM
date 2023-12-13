@@ -29,7 +29,7 @@ class userController extends Controller
     }
     // Function Untuk mengarah ke halaman UMKM pada user
     function umkm(){
-        $stores=Store::get();
+        $stores=Store::where('status','Tidak Bermasalah')->get();
         $userName=Auth::user()->name;
         $idUser=Auth::user()->id;
         $store=Store::where('user_id',$idUser)->first();

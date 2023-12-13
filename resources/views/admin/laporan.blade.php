@@ -22,11 +22,11 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="">Pengguna</a></li>
-                <li><a href="">Laporan</a></li>
-                <li><a href="">Profil</a></li>
+                <li><a href="{{url('/admin')}}">Pengguna</a></li>
+                <li><a href="{{url('/admin/reports')}}">Laporan</a></li>
+                <li><a href="{{url('/admin/profile')}}">Profil</a></li>
                 <li><a><i class="fa-solid fa-user"></i>Halo, {{$name}}</a></li>
-                <li><a href="{{url('auth/logout/user')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a href="{{url('auth/logout/admin')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
@@ -39,10 +39,10 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">Pengguna</a></li>
-                    <li><a href="">Laporan</a></li>
-                    <li><a href="">Profil</a></li>
-                    <li><a href="{{url('auth/logout/user')}}">Logout</a></li>
+                    <li><a href="{{url('/admin')}}">Pengguna</a></li>
+                    <li><a href="{{url('/admin/reports')}}">Laporan</a></li>
+                    <li><a href="{{url('/admin/profile')}}">Profil</a></li>
+                    <li><a href="{{url('auth/logout/admin')}}">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -89,26 +89,30 @@
                             <td>
                                 @foreach ($users as $user)
                                     @if ($user->id == $store->user_id )
-                                        <a href="mailto:{{$user->email}}">{{$user->email}}</a>
+                                        <a href="https://mail.google.com/mail/?view=cm&to={{$user->email}}">{{$user->email}}</a>
                                     @endif
                                 @endforeach
                             </td>
                             <td>
-                                <a href="" 
-                                    @if ($user->report > 3)
+                                <a href="{{url('admin/report/'.$store->id_store)}}" 
+                                    @if ($store->total_reports > 3)
                                         class="red-btn"
                                     @else
                                         class="aksi-btn"
                                     @endif 
-                                    >@if (isset($user->riport))
-                                        {{$user->riport}}
+                                    >@if (isset($store->total_reports))
+                                        {{$store->total_reports}}
                                     @else
                                         0
                                     @endif Laporan
                                 </a>
                             </td>
                             <td>
-                                <a href="" class="warning-btn">Tahan Akun</a>
+                                @if ($store->status == 'Tidak Bermasalah')
+                                    <a href="{{url('admin/report/stop/'.$store->id_store)}}" class="warning-btn">Tahan Toko</a>
+                                @else
+                                <a href="{{url('admin/report/restore/'.$store->id_store)}}" class="aksi-btn">Pulihkan Toko</a>
+                                @endif
                                 <a href="" class="red-btn">Hapus</a>
                             </td>
                         </tr>

@@ -17,12 +17,12 @@ class halamanController extends Controller
         return view('dashboard.home')->with(['categories' => $categories]);
     }
     function category($id){
-        $Stores=Store::where('category_id',$id)->get();
+        $Stores=Store::where('category_id',$id)->where('status','Tidak Bermasalah')->get();
         $categoryName=Category::Where('id_category',$id)->first()->category_name;
         return view('dashboard.category')->with(['stores' => $Stores,'categoryName' => $categoryName]);
     }
     function favoriteStore(){
-        $storesSorted = Store::orderByDesc('rating')->orderBy('store_name')->get();
+        $storesSorted = Store::where('status','Tidak Bermasalah')->orderByDesc('rating')->orderBy('store_name')->get();
         return view('dashboard.favorite')->with(['stores'=> $storesSorted]);
     }
     function detailStore($id){
@@ -34,7 +34,7 @@ class halamanController extends Controller
         return view('dashboard.detail')->with(['store'=> $store,'products'=>$products,'owner'=>$owner, 'id'=>$id,'comments'=>$comments, 'ratings'=>$ratings]);
     }
     function umkm(){
-        $stores = Store::get();
+        $stores = Store::where('status','Tidak Bermasalah')->get();
         return view('dashboard.umkm')->with(['stores'=> $stores]);
     }
     function aboutus(){

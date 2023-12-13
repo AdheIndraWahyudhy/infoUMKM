@@ -59,64 +59,72 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
         </div>
         <div class="main-content">
-        <h2>Toko</h2>
-        {{-- Pengecekan apakah sudah ada toko atau belum --}}
-        @if ($store != null)
-            <form action="{{url('user/store/update/')}}" method="POST" enctype="multipart/form-data" class="form">
-                @csrf
-                <label for="category_id">Kategori</label>
-                <select name="category_id" id="category_id" required>
-                    <option value="">--- PILIH ---</option>
-                    @foreach ($categories as $category)
+            <h2>Toko</h2>
+            @if ($store->status == 'Bermasalah')
+                <div class="form">
+                    <h3><i>Hallo, {{$user}} <br> <br>Toko anda banyak mendapat laporan dari pengunjung, Kami telah mengirim alasan mengapa akun anda dibekukan. Diharapkan anda membalas Email kami jika laporan dari pihak pengunjung tidak benar beserta bukti yang memperkuat bahwa toko anda tidak bermasalah!</i></h3>
+                    <br>
+                    <h3><i>Jika anda tidak mengonfirmasi dalam 1 minggu, Kami anggap Laporan tersebut benar dan akun Anda akan terHapus</i></h3>    
+                </div>
+            @else
+            {{-- Pengecekan apakah sudah ada toko atau belum --}}
+                @if ($store != null)
+                <form action="{{url('user/store/update/')}}" method="POST" enctype="multipart/form-data" class="form">
+                    @csrf
+                    <label for="category_id">Kategori</label>
+                    <select name="category_id" id="category_id" required>
+                        <option value="">--- PILIH ---</option>
+                        @foreach ($categories as $category)
                         <option value="{{$category->id_category}}" @if ($category->id_category == $store->category_id)
                             selected
-                        @endif>{{$category->category_name}}</option>
-                    @endforeach
-                </select><br>
-                <label for="store_name">Nama Toko:</label>
-                <input type="text" id="store_name" class="form-input" name="store_name" value="{{$store->store_name}}" required><br>
+                            @endif>{{$category->category_name}}</option>
+                            @endforeach
+                        </select><br>
+                        <label for="store_name">Nama Toko:</label>
+                        <input type="text" id="store_name" class="form-input" name="store_name" value="{{$store->store_name}}" required><br>
 
-                <label for="store_address">Alamat Toko:</label>
-                <input type="text" id="store_address" class="form-input" name="store_address"  value="{{$store->store_address}}" required><br>
-
-                <label for="link_address">Link alamat pada google maps:</label>
-                <input type="url" id="link_address" class="form-input" name="link_address"  value="{{$store->link_address}}"><br>
-
-                <img src="{{url('StoresImg/'.$store->store_image)}}" alt=""><br>
-
-                <label for="store_image">Gambar Toko:</label>
-                <input type="file" id="store_address" class="input-file" name="store_image" accept="image/*"> <br>
-
-                <label for="description">Deskripsi Toko</label>
-                <textarea name="description" id="description" cols="30" rows="10">{{$store->description}}</textarea><br>
-
-                <input type="submit" value="Update toko" class="button">
-            </form>
-        @else
-            <h2>Daftarkan toko anda</h2>
-            <form action="{{url('user/store/create')}}" method="POST" enctype="multipart/form-data" class="form">
-                @csrf
-                <label for="category_id">Kategori</label>
-                <select name="category_id" id="category_id" required>
-                    <option value="">--- PILIH ---</option>
-                    @foreach ($categories as $category)
+                        <label for="store_address">Alamat Toko:</label>
+                        <input type="text" id="store_address" class="form-input" name="store_address"  value="{{$store->store_address}}" required><br>
+                        
+                        <label for="link_address">Link alamat pada google maps:</label>
+                        <input type="url" id="link_address" class="form-input" name="link_address"  value="{{$store->link_address}}"><br>
+                        
+                        <img src="{{url('StoresImg/'.$store->store_image)}}" alt=""><br>
+                        
+                        <label for="store_image">Gambar Toko:</label>
+                        <input type="file" id="store_address" class="input-file" name="store_image" accept="image/*"> <br>
+                        
+                        <label for="description">Deskripsi Toko</label>
+                        <textarea name="description" id="description" cols="30" rows="10">{{$store->description}}</textarea><br>
+                        
+                        <input type="submit" value="Update toko" class="button">
+                    </form>
+                @else
+                <h2>Daftarkan toko anda</h2>
+                <form action="{{url('user/store/create')}}" method="POST" enctype="multipart/form-data" class="form">
+                    @csrf
+                    <label for="category_id">Kategori</label>
+                    <select name="category_id" id="category_id" required>
+                        <option value="">--- PILIH ---</option>
+                        @foreach ($categories as $category)
                         <option value="{{$category->id_category}}">{{$category->category_name}}</option>
-                    @endforeach
-                </select><br>
-                <label for="store_name">Nama Toko:</label>
-                <input type="text" id="store_name" class="form-input" name="store_name" required><br>
-                <label for="store_address">Alamat Toko:</label>
-                <input type="text" id="store_address" class="form-input" name="store_address" required><br>
-                <label for="link_address">Link alamat pada google maps:</label>
-                <input type="url" id="link_address" class="form-input" name="link_address" ><br>
-                <label for="store_image">Gambar Toko:</label>
-                <input type="file" id="store_address" class="input-file" name="store_image" accept="image/*"required> <br>
-                <label for="description">Deskripsi Toko</label>
-                <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
-                <input type="submit" value="Membuat toko" class="button">
-            </form>
+                        @endforeach
+                    </select><br>
+                    <label for="store_name">Nama Toko:</label>
+                        <input type="text" id="store_name" class="form-input" name="store_name" required><br>
+                        <label for="store_address">Alamat Toko:</label>
+                        <input type="text" id="store_address" class="form-input" name="store_address" required><br>
+                        <label for="link_address">Link alamat pada google maps:</label>
+                        <input type="url" id="link_address" class="form-input" name="link_address" ><br>
+                        <label for="store_image">Gambar Toko:</label>
+                        <input type="file" id="store_address" class="input-file" name="store_image" accept="image/*"required> <br>
+                        <label for="description">Deskripsi Toko</label>
+                        <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
+                        <input type="submit" value="Membuat toko" class="button">
+                    </form>
+                @endif
+            @endif
         </div>
     </main>
-    @endif
 </body>
 </html>

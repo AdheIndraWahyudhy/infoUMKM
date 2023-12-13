@@ -93,6 +93,7 @@ body {
 .menu ul li {
     display: inline;
     margin-right: 20px;
+    background-color: none;
 }
 
 .menu ul li a {
@@ -278,8 +279,13 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0.3, 0.3, 0.3, 0.3);
-    margin: 0 auto; 
+    margin: 10px auto; 
     max-width: 90%; 
+}
+
+.bg-green{
+    background-color: #4CAF50; 
+    color: white;
 }
 
 .section {
@@ -289,4 +295,28 @@ body {
 }
 .date {
     font-weight: bold;
+}
+
+.back-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.back-button a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db; /* Warna latar belakang */
+    color: #ffffff; /* Warna teks */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    max-width: 70px;
+    transition: background-color 0.3s ease; 
+    margin: 20px auto;
+    text-align: center;
+}
+.back-button a:hover{
+    background-color: #2980b9;
 }

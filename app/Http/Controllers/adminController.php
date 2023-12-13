@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Store;
+use App\Models\SugRep;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,5 +38,25 @@ class adminController extends Controller
     function profil(){
         $data=Auth::user();
         return view('Test.formAdmin.formProfil')->with(['data'=>$data]);
+    }
+    function detailLaporan($id){
+        $admin= Auth::user()->name;
+        $reports=SugRep::where('store_id',$id)->where('type','laporan')->get();
+        return view('admin.detail-laporan')->with(['admin'=>$admin, 'reports'=>$reports]);
+    }
+
+    function stopTheStore($id){
+        Store::where('id_store',$id)->update(['status'=> 'Bermasalah']);
+        return redirect('admin');
+    }
+    function restoreTheStore($id){
+        Store::where('id_store',$id)->update(['status'=> 'Tidak Bermasalah']);
+        return redirect('admin');
+    }
+    function deleteStore($id){
+        
+    }
+    function deleteAccount($id){
+
     }
 }

@@ -11,7 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="detail-laporan.css">
+    <link rel="stylesheet" href="{{url('assets/css/detail-laporan-style.css')}}">
 </head>
 <body>
     <!-- NAVBAR -->
@@ -22,10 +22,11 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="">Pengguna</a></li>
-                <li><a href="">Laporan</a></li>
-                <li><a href="">Profil</a></li>
-                <li><a><i class="fa-solid fa-user"></i>Halo, Admin</a></li>
+                <li><a href="{{url('/admin')}}">Pengguna</a></li>
+                <li><a href="{{url('/reports')}}">Laporan</a></li>
+                <li><a href="{{url('/profile')}}">Profil</a></li>
+                <li><i class="fa-solid fa-user"></i>Halo, {{$admin}}</li>
+                <li><a href="{{url('auth/logout/admin')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
@@ -38,10 +39,10 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">Pengguna</a></li>
-                    <li><a href="">Laporan</a></li>
-                    <li><a href="">Profil</a></li>
-                    <li>Keluar</a></li>
+                    <li><a href="{{url('/admin')}}">Pengguna</a></li>
+                    <li><a href="{{url('/reports')}}">Laporan</a></li>
+                    <li><a href="{{url('/profile')}}">Profil</a></li>
+                    <li><a href="{{url('auth/logout/admin')}}">Keluar</a></li>
                 </ul>
             </div>
         </div>
@@ -59,13 +60,24 @@
             <h2>Detail Laporan</h2>
         </div>
     </div>
-
-    <div class="form-container">
-        <div class="section">
-            <p class="date">2022-05-03</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    @if ($reports->count() != 0)
+        @foreach ($reports as $report)
+            <div class="form-container">
+                <div class="section">
+                    <p class="date">{{ $report->created_at->format('d-m-y') }}</p>
+                    <p>{{$report->message}}</p>
+                </div>
+            </div>
+        @endforeach
+    @else
+        <div class="form-container bg-green">
+            <h3>Toko Tidak Bermasalah</h3>
         </div>
+    @endif
+    
+    
+    <div class="back-button">
+        <a href="{{url('admin/')}}">Kembali</a>
     </div>
-
 </body>
 </html>
