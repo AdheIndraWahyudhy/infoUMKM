@@ -107,8 +107,11 @@ button:hover {
     text-align: center;
     padding-top: 30vh;
 }
-.umkm-container img {
-        height: 150px;
+
+@media (max-width: 965px) {
+    .umkm-container img {
+            height: 150px;
+    }
 }
 
 @media (max-width: 768px) {
