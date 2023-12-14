@@ -139,7 +139,7 @@
                     </div>
     
                     <label for="suggestion">Komentar :</label>
-                    <textarea id="suggestion" name="suggestion" rows="4" required></textarea>
+                    <textarea id="suggestion" name="message" rows="4" required></textarea>
                     <button type="submit" onclick="submitComment()">Submit</button>
                     {{-- <input type="submit" value="Submit"> --}}
               </form>

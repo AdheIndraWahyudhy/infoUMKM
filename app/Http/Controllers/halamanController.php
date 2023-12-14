@@ -45,7 +45,7 @@ class halamanController extends Controller
         $newSuggest=[
             'store_id'=>$id,
             'type'=>'saran',
-            'message'=>$request->sugesstion,
+            'message'=>$request->input('message'),
         ];
         $newRating=[
             'store_id'=>$id,
