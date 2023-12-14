@@ -65,7 +65,7 @@ body {
 
 .umkm-container img {
     max-width: 100%;
-    height: 45vh;
+    max-height: 200px;
     border-radius: 4px;
     object-fit: cover;
 }
@@ -107,6 +107,9 @@ button:hover {
     text-align: center;
     padding-top: 30vh;
 }
+.umkm-container img {
+        height: 150px;
+}
 
 @media (max-width: 768px) {
     .umkm-container {
@@ -126,5 +129,8 @@ button:hover {
     }
     .header-content h1 {
         font-size: 30px;
+    }
+    .umkm-container img {
+        height: 200px;
     }
 }
