@@ -11,7 +11,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/detail-style.css')}}">
     <style>
         #messageContainer {
@@ -62,7 +61,7 @@
         </div>
     </header>
     <main class="content">
-        <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
+        <div class="header-content" >
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
         </div>
