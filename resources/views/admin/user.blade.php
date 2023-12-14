@@ -80,10 +80,10 @@
                                 <td class="action-column">
                                     @foreach ($stores as $store)
                                         @if ($store->user_id == $user->id)
-                                            <a href="{{url('admin/user/'.$user->id)}}" class="lihat">Lihat Toko</a>
+                                            <a href="{{url('admin/user/'.$user->id)}}"><button class="lihat">Lihat Toko</button></a>
                                         @endif
                                     @endforeach
-                                    <a href="{{url('admin/account/delete/'.$user->id)}}" class="hapus">Hapus</a>
+                                        <a href="{{url('admin/account/delete/'.$user->id)}}"><button class="hapus">Hapus</button></a>
                                 </td>
                             </tr>
                         @endforeach
