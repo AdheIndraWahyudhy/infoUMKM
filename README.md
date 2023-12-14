@@ -59,7 +59,7 @@ Pastikan Anda telah memenuhi persyaratan berikut sebelum menginstal proyek:
 6. **Migrasi dan Isi Database**
 
     ```bash
-    php artisan migrate --seed
+    php artisan migrate
     ```
 
     Opsional: Jika Anda ingin mengisi database dengan data awal, jalankan perintah ini.
