@@ -43,7 +43,7 @@
             </ul>
         </nav>
         <div class="main-sidebar">
-            <input type="checkbox" id="check">
+            <input type="checkbox" id="check" checked>
             <label for="check">
                 <i class="fas fa-bars" id="open"></i>
             </label>
@@ -69,7 +69,7 @@
             <div class="detail-card">
                 <div class="detail">
                     <div class="left">
-                        <img src="{{url('StoresImg/'.$store->store_image)}}" style="object-fit: cover" alt="resto">
+                        <img src="./img/resto.webp" style="object-fit: cover" alt="resto">
                         <div class="small-image">
                             @foreach ($products as $key => $product)
                                 @if($key < 3)
@@ -98,7 +98,6 @@
                         </div>
                         <a class="button" id="myButton" disabled onmouseover="showMessage(event)" onmouseout="hideMessage()">Berikan Komentar</a>
                         <div id="messageContainer">Hanya pengunjung yang bisa memberikan komentar</div>
-
                     </div>
                 </div>
             </div>
@@ -115,6 +114,21 @@
                                 <p>{{$product->description}}</p>
                             </div>
                         @endforeach
+                        <div class="list-item">
+                            <img src="./img/resto.webp" alt="www">
+                                <div class="name"><h2>{{$product->product_name}}</h2></div>
+                                <h3>Rp. {{ number_format($product->product_price, 0, ',', '.') }}</h3>
+                                <p>{{$product->description}}</p>
+                                
+                        </div>
+
+                        <div class="list-item">
+                            <img src="./img/resto.webp" alt="www">
+                                <div class="name"><h2>{{$product->product_name}}</h2></div>
+                                <h3>Rp. {{ number_format($product->product_price, 0, ',', '.') }}</h3>
+                                <p>{{$product->description}}</p>
+                                
+                        </div>
                     </div>
                 </div>
             </div>
