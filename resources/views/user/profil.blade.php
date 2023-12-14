@@ -12,7 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./profil-user.css">
+    <link rel="stylesheet" href="{{url('assets/css/profil_user_baru.css')}}">
     <style>
         #passwordInput {
             display: none;
@@ -22,7 +22,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./img/logo.png" alt="logo InfoUMKM.com">
+            <img src="{{url('assets/img/logo.png')}}" alt="logo InfoUMKM.com">
             <h3>INFOUMKM.COM</h3>
         </div>
         <nav class="menu">
@@ -59,7 +59,7 @@
         </div>
     </header>
     <main class="content">
-        <div class="header-content">
+        <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
         </div>

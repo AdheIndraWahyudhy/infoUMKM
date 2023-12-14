@@ -101,13 +101,15 @@ class adminController extends Controller
             // Menghapus record dari database
             Product::where('store_id', $store->id_store)->delete();
         }
-        $imagePath = public_path('StoresImg/'.$store->store_image);
-        if (file_exists($imagePath)) {
-            unlink($imagePath);
+        if($store->count() != 0) {
+            $imagePath = public_path('StoresImg/'.$store->store_image);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+            SugRep::where('store_id', $store->id_store)->delete();
+            // $store->delete();
+            Store::where('id_store',$store->id_store)->delete();
         }
-        SugRep::where('store_id', $store->id_store)->delete();
-        // $store->delete();
-        Store::where('id_store',$store->id_store)->delete();
         User::where('id',$id)->delete();
         return redirect('admin/users');
     }

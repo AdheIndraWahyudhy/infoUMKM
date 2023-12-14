@@ -12,6 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="{{url('assets/css/produk-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/alert-style.css')}}">
 </head>
 <body>
@@ -24,17 +25,17 @@
         <nav class="menu">
             <ul>
                 <li><a href="{{url('user/')}}">UMKM</a></li>
-                <li><a href="{{url('user/account')}}">Account</a></li>
-                <li><a href="{{url('user/store')}}">Store</a></li>
+                <li><a href="{{url('user/account')}}">Akun</a></li>
+                <li><a href="{{url('user/store')}}">Toko</a></li>
                 @if ($store != null)
-                    <li><a href="{{url('user/product')}}">Product</a></li>
+                    <li><a href="{{url('user/product')}}">Produk</a></li>
                 @endif
                 <li><i class="fa-solid fa-user" ></i>Hallo, {{$user}}</li>
-                <li><a href="{{url('auth/logout/user')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a href="{{url('auth/logout/user')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
-            <input type="checkbox" id="check">
+            <input type="checkbox" id="check" checked>
             <label for="check">
                 <i class="fas fa-bars" id="open"></i>
             </label>
@@ -43,11 +44,11 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">UMKM</a></li>
-                    <li><a href="">Account</a></li>
-                    <li><a href="">Store</a></li>
+                    <li><a href="{{url('user/')}}">UMKM</a></li>
+                    <li><a href="{{url('user/account')}}">Akun</a></li>
+                    <li><a href="{{url('user/store')}}">Toko</a></li>
                     @if ($store != null)
-                    <li><a href="">Product</a></li>
+                        <li><a href="{{url('user/product')}}">Produk</a></li>
                     @endif
                     <li><a href="{{url('auth/logout/user')}}">Logout</a></li>
                 </ul>
@@ -115,7 +116,7 @@
                         </div>
                         
                         @if (isset($edit))
-                        <div class="form-group">
+                        <div class=" image">
                             <img src="{{url('ProductsImg/'.$productEdit->product_image)}}" alt="" ><br>
                         </div>
                         @endif
@@ -178,7 +179,7 @@
                             <tr>
                                 <th class="hidden">#</th>
                                 <th>Nama Produk</th>
-                                <th>Harga</th>
+                                <th class="hidden">Harga</th>
                                 <th class="hidden">Detail</th>
                                 <th>Aksi</th>
                             </tr>
@@ -188,11 +189,11 @@
                                 <tr>
                                     <td class="hidden">{{$no++}}</td>
                                     <td>{{$product->product_name}}</td>
-                                    <td>Rp. {{number_format($product->product_price, 0, ',', '.')}}</td>
+                                    <td class="hidden">Rp. {{number_format($product->product_price, 0, ',', '.')}}</td>
                                     <td class="hidden">{{$product->description}}</td>
                                     <td class="action-buttons">
-                                        <a href="{{url('product/edit/'.$product->id_product)}}" class="edit">Edit</a>
-                                        <a href="{{url('product/delete/'.$product->id_product)}}" class="delete">Delete</a>
+                                        <a href="{{url('product/edit/'.$product->id_product)}}" class="btn edit">Edit</a>
+                                        <a href="{{url('product/delete/'.$product->id_product)}}" class="btn delete">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -206,6 +207,6 @@
         
     </main>
     
-    <script src="produk.js"></script>
+    {{-- <script src="produk.js"></script> --}}
 </body>
 </html>

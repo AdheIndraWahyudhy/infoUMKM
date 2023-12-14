@@ -11,6 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/laporan-style.css')}}">
 </head>
 <body>
@@ -30,7 +31,7 @@
             </ul>
         </nav>
         <div class="main-sidebar">
-            <input type="checkbox" id="check">
+            <input type="checkbox" id="check" checked>
             <label for="check">
                 <i class="fas fa-bars" id="open"></i>
             </label>
@@ -49,11 +50,11 @@
     </header>
     </header>
     <main class="content">
-        <div class="header-content">
+        <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
         </div>
-
+    </main>
     <!-- Laporan  -->
     <div class="title">
         <div class="form-header">
@@ -66,34 +67,34 @@
             <table id="laporanTable">
                 <thead>
                     <tr>
-                        <th style="max-width: 10px">#</th>
-                        <th>Nama User</th>
+                        <th style="max-width: 10px" class="hide">#</th>
+                        <th class="hide">Nama User</th>
                         <th>Toko</th>
-                        <th>Email</th>
+                        <th class="hide">Email</th>
                         <th>Total Laporan</th>
-                        <th>Aksi</th>
+                        <th class="hide">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($stores as $store)
                         <tr>
-                            <td style="max-width: 10px">{{$no++}}</td>
-                            <td>
+                            <td style="max-width: 10px" class="hide">{{$no++}}</td>
+                            <td class="hide">
                                 @foreach ($users as $user)
                                     @if ($user->id == $store->user_id )
                                         {{$user->name}}
                                     @endif
                                 @endforeach
                             </td>
-                            <td>{{$store->store_name}}</td>
-                            <td>
+                            <td class="mini">{{$store->store_name}}</td>
+                            <td  class="hide">
                                 @foreach ($users as $user)
                                     @if ($user->id == $store->user_id )
                                         <a href="https://mail.google.com/mail/?view=cm&to={{$user->email}}">{{$user->email}}</a>
                                     @endif
                                 @endforeach
                             </td>
-                            <td>
+                            <td class="mini">
                                 <a href="{{url('admin/report/'.$store->id_store)}}" 
                                     @if ($store->total_reports > 3)
                                         class="red-btn"
@@ -107,7 +108,7 @@
                                     @endif Laporan
                                 </a>
                             </td>
-                            <td>
+                            <td class="hide">
                                 @if ($store->status == 'Tidak Bermasalah')
                                     <a href="{{url('admin/report/stop/'.$store->id_store)}}" class="warning-btn">Tahan Toko</a>
                                 @else
@@ -123,6 +124,6 @@
         </div>
     </div>
 
-    <script src="laporan.js"></script>
+    {{-- <script src="laporan.js"></script> --}}
 </body>
 </html>

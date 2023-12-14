@@ -43,11 +43,11 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">UMKM</a></li>
-                    <li><a href="">Account</a></li>
-                    <li><a href="">Store</a></li>
+                    <li><a href="{{url('user/')}}">UMKM</a></li>
+                    <li><a href="{{url('user/account')}}">Account</a></li>
+                    <li><a href="{{url('user/store')}}">Store</a></li>
                     @if ($store != null)
-                    <li><a href="">Product</a></li>
+                        <li><a href="{{url('user/product')}}">Product</a></li>
                     @endif
                     <li><a href="{{url('auth/logout/user')}}">Logout</a></li>
                 </ul>

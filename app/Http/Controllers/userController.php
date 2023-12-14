@@ -56,7 +56,7 @@ class userController extends Controller
         $data=Auth::user();
         $idUser=Auth::user()->id;
         $store=Store::where('user_id',$idUser)->first();
-        return view('user.index-profil')->with(['data'=>$data, 'store'=>$store]);
+        return view('user.profil')->with(['data'=>$data, 'store'=>$store]);
     }
 
     function updateUser(Request $request){

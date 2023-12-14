@@ -12,6 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="{{url('assets/css/detail-laporan-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
 </head>
 <body>
     <!-- NAVBAR -->
@@ -30,8 +31,8 @@
             </ul>
         </nav>
         <div class="main-sidebar">
-            <input type="checkbox" id="check">
-            <label for="check">
+            <input type="checkbox" id="check" checked>
+            <label for="check" >
                 <i class="fas fa-bars" id="open"></i>
             </label>
             <div class="sidebar">
@@ -49,7 +50,7 @@
     </header>
     </header>
     <main class="content">
-        <div class="header-content">
+        <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
         </div>

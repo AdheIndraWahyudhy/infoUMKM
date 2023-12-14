@@ -11,8 +11,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/detail-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <style>
         #messageContainer {
             display: none;
@@ -37,17 +37,17 @@
         <nav class="menu">
             <ul>
                 <li><a href="{{url('user/')}}">UMKM</a></li>
-                <li><a href="{{url('user/account')}}">Account</a></li>
-                <li><a href="{{url('user/store')}}">Store</a></li>
+                <li><a href="{{url('user/account')}}">Akun</a></li>
+                <li><a href="{{url('user/store')}}">Toko</a></li>
                 @if ($store != null)
-                    <li><a href="{{url('user/product')}}">Product</a></li>
+                    <li><a href="{{url('user/product')}}">Produk</a></li>
                 @endif
                 <li><i class="fa-solid fa-user" ></i>Hallo, {{$user}}</li>
-                <li><a href="{{url('auth/logout/user')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a href="{{url('auth/logout/user')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
-            <input type="checkbox" id="check">
+            <input type="checkbox" id="check" checked>
             <label for="check">
                 <i class="fas fa-bars" id="open"></i>
             </label>
@@ -56,11 +56,11 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">UMKM</a></li>
-                    <li><a href="">Account</a></li>
-                    <li><a href="">Store</a></li>
+                    <li><a href="{{url('user/')}}">UMKM</a></li>
+                    <li><a href="{{url('user/account')}}">Akun</a></li>
+                    <li><a href="{{url('user/store')}}">Toko</a></li>
                     @if ($store != null)
-                    <li><a href="">Product</a></li>
+                        <li><a href="{{url('user/product')}}">Produk</a></li>
                     @endif
                     <li><a href="{{url('auth/logout/user')}}">Logout</a></li>
                 </ul>

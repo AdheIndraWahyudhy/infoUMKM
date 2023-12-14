@@ -31,7 +31,7 @@
             </ul>
         </nav>
         <div class="main-sidebar">
-            <input type="checkbox" id="check">
+            <input type="checkbox" id="check" checked>
             <label for="check">
                 <i class="fas fa-bars" id="open"></i>
             </label>
@@ -40,10 +40,10 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">Beranda</a></li>
-                    <li><a href="">UMKM</a></li>
-                    <li><a href="">Favorit</a></li>
-                    <li><a href="">Tentang kami</a></li>
+                    <li><a href="{{url('/')}}">Beranda</a></li>
+                    <li><a href="{{url('/umkm')}}">UMKM</a></li>
+                    <li><a href="{{url('/favorite')}}">Favorit</a></li>
+                    <li><a href="{{url('/aboutus')}}">Tentang kami</a></li>
                     <li class="right"><a href="{{url('auth/register')}}">Daftar</a></li>
                     <li class="right"><a href="{{url('auth/')}}">Masuk</a></li>
                 </ul>

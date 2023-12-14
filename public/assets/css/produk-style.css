@@ -141,7 +141,15 @@ a.edit {
         list-style: none;
         text-decoration: none;
     }
-
+    .action-buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    a.btn{
+        max-width: 50px;
+    }
     .menu {
         display: none;
     }
@@ -253,6 +261,28 @@ a.edit {
         font-size: 60px;
         color: #004369;
     }
+    
+    .form-container {
+        width: auto !important;
+    }
+}
+.image{
+    width: auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+    padding-bottom: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.image img {
+    max-width: 500px;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 5px 50px 5px 50px;
 }
 
 .content {
@@ -444,6 +474,7 @@ textarea {
     align-items: center;
     display: flex;
     flex-direction: column;
+
 }
 
 table {
@@ -495,5 +526,8 @@ button {
 @media (max-width: 768px) {
     .message{
         max-width: 86vw;
+    }
+    .hidden{
+        display: none;
     }
 }
