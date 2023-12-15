@@ -21,6 +21,13 @@ class productController extends Controller
         return view('user/produk')->with(['no'=>$no, 'store'=>$store,'user'=>$userName,'products'=>$products]);
     }
     function createProduct(Request $request){
+        $request->validate([
+            'product_price' => 'required|numeric|max:10000000.00',
+        ],[
+            'product_price.required' => 'Harga Wajib di isi',
+            'product_price.numeric' => 'Harga harus berupa angka',
+            'product_price.max' => 'Harga tidak boleh melebihi batas yang ditentukan',
+        ]);
         $gambar=$request->file('product_image');
         $newFileName='img' . date('ymdhis') . '.' . $gambar->getClientOriginalExtension();
         $gambar->move(public_path('ProductsImg'),$newFileName);
@@ -52,6 +59,13 @@ class productController extends Controller
         $store=Store::where('user_id',$idUser)->first();
         $recentData=Product::where('id_product',$id)->first();
         $recentImage=$recentData->product_image;
+        $request->validate([
+            'product_price' => 'required|numeric|max:10000000.00',
+        ],[
+            'product_price.required' => 'Harga Wajib di isi',
+            'product_price.numeric' => 'Harga harus berupa angka',
+            'product_price.max' => 'Harga tidak boleh melebihi batas yang ditentukan',
+        ]);
         if($request->hasFile('product_image')){
             unlink(public_path('/ProductsImg/'.$recentImage));
             $image=$request->file('product_image');

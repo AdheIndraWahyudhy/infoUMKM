@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/favorite-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/footer-style.css')}}">
 </head>
 <body>
     <header class="header">
@@ -84,5 +85,6 @@
         @endif
         
     </main>
+    @include('footer/footer-visitor')
 </body>
 </html>
