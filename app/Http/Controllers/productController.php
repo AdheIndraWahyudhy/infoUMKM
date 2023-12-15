@@ -52,13 +52,13 @@ class productController extends Controller
         $store=Store::where('user_id',$idUser)->first();
         $products=Product::where('store_id',$store->id_store)->get();
         $productEdit=Product::where('id_product',$id)->first();
-        return view('user.produk')->with(['no'=>$no,'idUser'=>$idUser, 'user'=>$userName, 'products'=>$products,'edit'=>$edit, 'productEdit'=>$productEdit, 'store'=>$store]);
+        return view('user.produk')->with(['id'=>$id, 'no'=>$no,'idUser'=>$idUser, 'user'=>$userName, 'products'=>$products,'edit'=>$edit, 'productEdit'=>$productEdit, 'store'=>$store]);
     }
     function updateProduct(Request $request, $id){
         $idUser=Auth::user()->id;
         $store=Store::where('user_id',$idUser)->first();
         $recentData=Product::where('id_product',$id)->first();
-        
+        $recentImage=$recentData->product_image;
         $request->validate([
             'product_price' => 'required|numeric|max:10000000.00',
         ],[
@@ -67,7 +67,7 @@ class productController extends Controller
             'product_price.max' => 'Harga tidak boleh melebihi batas yang ditentukan',
         ]);
         if($request->hasFile('product_image')){
-            $recentImage=$recentData->product_image;
+            
             unlink(public_path('/ProductsImg/'.$recentImage));
             $image=$request->file('product_image');
             $newFileName='img' . date('ymdhis') . '.' . $image->getClientOriginalExtension();

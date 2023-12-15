@@ -87,7 +87,7 @@
                 <div class="form-container">
                     <form id="productForm"
                     @if (isset($edit))
-                        action="{{url('product/update/'.$idUser)}}"
+                        action="{{url('product/update/'.$id)}}"
                     @else
                         action="{{url('product/create')}}"
                     @endif
