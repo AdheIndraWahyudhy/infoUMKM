@@ -30,11 +30,11 @@
                     <li><a href="{{url('user/product')}}">Product</a></li>
                 @endif
                 <li><i class="fa-solid fa-user" ></i>Hallo, {{$user}}</li>
-                <li><a href="{{url('auth/logout/user')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a href="{{url('auth/logout/user')}}">Keluar <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
-            <input type="checkbox" id="check">
+            <input type="checkbox" id="check" checked>
             <label for="check">
                 <i class="fas fa-bars" id="open"></i>
             </label>
@@ -49,7 +49,7 @@
                     @if ($store != null)
                         <li><a href="{{url('user/product')}}">Product</a></li>
                     @endif
-                    <li><a href="{{url('auth/logout/user')}}">Logout</a></li>
+                    <li><a href="{{url('auth/logout/user')}}">Keluar</a></li>
                 </ul>
             </div>
         </div>

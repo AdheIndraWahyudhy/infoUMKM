@@ -149,7 +149,11 @@ body {
     padding: 50px;
 }
 
-.form input, select, textarea {
+.form input[type="text"],
+ input[type="email"],
+  input[type="tel"],
+   input[type="password"],
+    select, textarea {
     border: 1px solid #ABABAB;
     border-radius: 7px;
     background: #FFF;
@@ -157,14 +161,36 @@ body {
     margin: 10px 0;
 }
 
-.form input, select {
+.form-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.form-checkbox input{
+    max-width: 20px;
+    margin: 5px;
+}
+
+.form input[type="email"],
+input[type="text"],
+input[type="tel"],
+ input[type="password"], select {
     height: 40px;
 }
 
-.form .button {
+.button {
     background-color: #36D100;
     width: 15%;
+    padding: 5px;
     color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.button:hover{
+    background-color: #397b22;
+    transition: 0.5s;
+
 }
 
 .fom .chek {

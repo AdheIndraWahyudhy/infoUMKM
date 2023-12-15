@@ -11,7 +11,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./user-baru.css">
+    <link rel="stylesheet" href="{{url('assets/css/profil_user_baru.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/alert-style.css')}}">
     <style>
         .password-container {
             display: none;
@@ -21,19 +22,21 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./img/logo.png" alt="logo InfoUMKM.com">
+            <img src="{{url('assets/img/logo.png')}}" alt="logo InfoUMKM.com">
             <h3>INFOUMKM.COM</h3>
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="">Pengguna</a></li>
-                <li><a href="">Laporan</a></li>
-                <li><a href="">Profil</a></li>
+                <li><a href="{{url('admin/users')}}">Pengguna</a></li>
+                <li><a href="{{url('admin/')}}">Laporan</a></li>
+                <li><a href="{{url('admin/profile')}}">Profil</a></li>
                 <li><a><i class="fa-solid fa-user"></i>Halo, Admin</a></li>
+                
+                <li><a href="{{url('auth/logout/admin')}}">Keluar <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
-            <input type="checkbox" id="check">
+            <input type="checkbox" id="check" checked   >
             <label for="check">
                 <i class="fas fa-bars" id="open"></i>
             </label>
@@ -42,33 +45,39 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">Pengguna</a></li>
-                    <li><a href="">Laporan</a></li>
-                    <li><a href="">Profil</a></li>
-                    <li>Keluar</a></li>
+                    <li><a href="{{url('admin/users')}}">Pengguna</a></li>
+                    <li><a href="{{url('admin/')}}">Laporan</a></li>
+                    <li><a href="{{url('admin/profile')}}">Profil</a></li>
+                    <li><a href="{{url('auth/logout/admin')}}">Keluar</a></li>
                 </ul>
             </div>
         </div>
     </header>
     <div class="content">
-        <div class="header-content">
+        <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
         </div>
         <div class="main-content">
-            <form id="myForm" class="form">
+            <h2>Profil</h2>
+            <button id="editButton" onclick="toggleEditMode()" class="button">Edit</button>
+            <form id="myForm" class="form" action="{{url('admin/profile/update')}}" method="POST">
+                @include('message.notification')
+                @csrf
                 <label for="name">Nama:</label>
-                <input type="text" id="name" name="name" required readonly><br>
+                <input type="text" id="name" name="name" value="{{$data->name}}" required readonly><br>
 
                 <label for="number_phone">Nomor Telepon:</label>
-                <input type="tel" id="number_phone" name="number_phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required readonly>
-                <small>Format: 123-456-7890</small><br>
+                <input type="tel" id="number_phone" name="number_phone" value="{{$data->number_phone}}" required readonly>
+                
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required readonly><br>
+                <input type="email" id="email" name="email" value="{{$data->email}}" required readonly><br>
 
-                <label for="includePassword">Sertakan Password:</label>
-                <input type="checkbox" id="includePassword" name="includePassword" onchange="togglePasswordInput()" disabled><br>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="includePassword" name="includePassword" onchange="togglePasswordInput()" disabled><br>
+                    <label for="includePassword">Ubah Password</label>
+                </div>
 
                 <div class="password-container">
                     <label for="password">Password:</label>
@@ -81,7 +90,7 @@
                     <input type="submit" value="Submit" class="button">
                 </div>
                 <!-- <input type="submit" value="Edit" class="button" id="editButton" onclick="toggleEditMode()"> -->
-                <button id="editButton" onclick="toggleEditMode()" class="button">Edit</button>
+                
             </form>
         </div>
     </div>

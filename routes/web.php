@@ -49,6 +49,7 @@ Route::prefix('/auth')->group(function(){
 Route::prefix('admin')->middleware('isAdmin')->group(function(){
     Route::get('/',[adminController::class,'index']);
     Route::get('/profile',[adminController::class,'profil']);
+    Route::post('/profile/update',[adminController::class,'profilUpdate']);
     Route::get('/users',[adminController::class,'usersList']);
     Route::get('/user/{id}',[adminController::class,'detailUser']);
     Route::get('/report/{id}',[adminController::class,'detailLaporan']);

@@ -9,6 +9,7 @@ use App\Models\SugRep;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class adminController extends Controller
 {
@@ -38,7 +39,58 @@ class adminController extends Controller
     }
     function profil(){
         $data=Auth::user();
-        return view('Test.formAdmin.formProfil')->with(['data'=>$data]);
+        return view('admin.profil-baru')->with(['data'=>$data]);
+    }
+    
+    function profilUpdate(Request $request){
+        $dataLogin=Auth::user();
+        $request->validate([
+            // proses pengecekan/validasi
+            // required artinya di perlukan
+            'name' =>'required',
+            'email' =>'required|email',
+            'number_phone' =>'required'
+
+        ],[
+            'name.required' =>'Nama Wajib di isi',
+            'email.required' =>'Email Wajib di isi',
+            'email.email' =>'Masukkan email dengan benar',
+            'name.unique' =>'Username Sudah terdaftar',
+            'number_phone.required' =>'Masukkan Nomor HP/WhatsApp',
+        ]);
+        if(isset($request->password)){
+            $request->validate([
+                // proses pengecekan/validasi
+                // required artinya di perlukan
+                'name' =>'required',
+                'email' =>'required|email',
+                'password' =>'required|min:5',
+                'number_phone' =>'required'
+    
+            ],[
+                'name.required' =>'Nama Wajib di isi',
+                'email.required' =>'Email Wajib di isi',
+                'email.email' =>'Masukkan email dengan benar',
+                'number_phone.required' =>'Masukkan Nomor HP/WhatsApp',
+                'password.min' =>'Masukkan password minimum 5 karakter',
+                'password.required' =>'Password Wajib di isi',
+            ]);
+            $data=[
+                'name'=>$request->input('name'),
+                'email'=>$request->input('email'),
+                'password'=>Hash::make($request->input('password')),
+                'number_phone'=>$request->input('number_phone')
+            ];
+            User::where('id',$dataLogin->id)->update($data);
+            return redirect('admin/profile')->with('success','Berhasil Memperbarui Akun');
+        }
+        $data=[
+            'name'=>$request->input('name'),
+            'email'=>$request->input('email'),
+            'number_phone'=>$request->input('number_phone')
+        ];
+        User::where('id',$dataLogin->id)->update($data);
+        return redirect('admin/profile')->with('success','Berhasil Memperbarui Akun');
     }
 
     function usersList(){

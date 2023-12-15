@@ -25,7 +25,7 @@
                 <li><a href="{{url('admin/')}}">Laporan</a></li>
                 <li><a href="{{url('admin/profile')}}">Profil</a></li>
                 <li><a><i class="fa-solid fa-user"></i>Halo, Admin</a></li>
-                <li><a href="{{url('auth/logout/admin')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a href="{{url('auth/logout/admin')}}">Keluar <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
@@ -38,10 +38,10 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">Pengguna</a></li>
-                    <li><a href="">Laporan</a></li>
-                    <li><a href="">Profil</a></li>
-                    <li>Keluar</a></li>
+                    <li><a href="{{url('admin/users')}}">Pengguna</a></li>
+                    <li><a href="{{url('admin/')}}">Laporan</a></li>
+                    <li><a href="{{url('admin/profile')}}">Profil</a></li>
+                    <li><a href="{{url('auth/logout/admin')}}">Keluar</a></li>
                 </ul>
             </div>
         </div>

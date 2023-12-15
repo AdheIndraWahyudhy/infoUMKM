@@ -27,18 +27,18 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="">UMKM</a></li>
-                <li><a href="">Akun</a></li>
-                <li><a>Toko</a></li>
+                <li><a href="{{url('user/')}}">UMKM</a></li>
+                <li><a href="{{url('user/account')}}">Account</a></li>
+                <li><a href="{{url('user/store')}}">Store</a></li>
                 @if ($store != null)
-                <li><a href="">Produk</a></li>
+                    <li><a href="{{url('user/product')}}">Product</a></li>
                 @endif
-                <li><a><i class="fa-solid fa-user"></i>Halo, Aulia</a></li>
-                <li><a href="{{url('auth/logout/user')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><i class="fa-solid fa-user" ></i>Hallo, {{$data->name}}</li>
+                <li><a href="{{url('auth/logout/user')}}">Keluar <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
-            <input type="checkbox" id="check">
+            <input type="checkbox" id="check" checked>
             <label for="check">
                 <i class="fas fa-bars" id="open"></i>
             </label>
@@ -47,11 +47,11 @@
                     <i class="fas fa-bars" id="btn"></i>
                 </label>
                 <ul>
-                    <li><a href="">UMKM</a></li>
-                    <li><a href="">Akun</a></li>
-                    <li><a href="">Toko</a></li>
+                    <li><a href="{{url('user/')}}">UMKM</a></li>
+                    <li><a href="{{url('user/account')}}">Account</a></li>
+                    <li><a href="{{url('user/store')}}">Store</a></li>
                     @if ($store != null)
-                    <li><a href="">Produk</a></li>
+                        <li><a href="{{url('user/product')}}">Product</a></li>
                     @endif
                     <li><a href="{{url('auth/logout/user')}}">Keluar</a></li>
                 </ul>
@@ -65,9 +65,8 @@
         </div>
         <div class="main-content">
             <h2>User</h2>
-    <!-- {{-- tombol logout --}} -->
             <form id="myForm" action="{{url('user/account/update')}}" method="POST" class="form">
-                <!-- @csrf -->
+                @csrf
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" value="{{$data->name}}" required>
             
@@ -82,9 +81,11 @@
                 <input type="tel" id="email" name="email" value="{{$data->email}}" required>
             
                 <br>
+                <div class="form-checkbox">
 
-                <input type="checkbox" id="togglePassword" name="togglePassword" onchange="togglePasswordField()" class="chek">
-                <label for="togglePassword">Ubah Password</label>
+                    <input type="checkbox" id="togglePassword" name="togglePassword" onchange="togglePasswordField()" class="chek">
+                    <label for="togglePassword">Ubah Password</label>
+                </div>
             
                 <br>
 
@@ -96,7 +97,7 @@
             
                 <br>
                 <i>Note: Mohon ingat username  dan password yang anda rubah, karena itu berlaku untuk login</i> 
-                <br>
+                <br><br>
                 <input type="submit" value="Submit" class="button">
             </form>
         </div>

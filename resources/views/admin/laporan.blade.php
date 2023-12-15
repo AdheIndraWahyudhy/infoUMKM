@@ -27,7 +27,7 @@
                 <li><a href="{{url('/admin/reports')}}">Laporan</a></li>
                 <li><a href="{{url('/admin/profile')}}">Profil</a></li>
                 <li><a><i class="fa-solid fa-user"></i>Halo, {{$name}}</a></li>
-                <li><a href="{{url('auth/logout/admin')}}">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a href="{{url('auth/logout/admin')}}">Keluar <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
@@ -43,7 +43,7 @@
                     <li><a href="{{url('/admin/users')}}">Pengguna</a></li>
                     <li><a href="{{url('/admin/reports')}}">Laporan</a></li>
                     <li><a href="{{url('/admin/profile')}}">Profil</a></li>
-                    <li><a href="{{url('auth/logout/admin')}}">Logout</a></li>
+                    <li><a href="{{url('auth/logout/admin')}}">Keluar</a></li>
                 </ul>
             </div>
         </div>
