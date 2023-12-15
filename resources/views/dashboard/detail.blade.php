@@ -164,7 +164,10 @@
             <div class="popup-content">
                 <span class="close" onclick="closeConfirmationPopup()">&times;</span>
                 <h2>Toko Sudah Dilaporkan!</h2>
-                <button onclick="closeConfirmationPopup()">Tutup</button>
+                <form action="{{url('close/'.$id)}}" method="POST">
+                    @csrf
+                    <button onclick="closeConfirmationPopup()" class="button-after-report">Tutup</button>
+                </form>
             </div>
         </div>
 

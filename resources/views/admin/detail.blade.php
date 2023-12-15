@@ -69,7 +69,7 @@
             <div class="detail-card">
                 <div class="detail">
                     <div class="left">
-                        <img src="./img/resto.webp" style="object-fit: cover" alt="resto">
+                        <img src="{{url('StoresImg/'.$store->store_image)}}" style="object-fit: cover" alt="resto">
                         <div class="small-image">
                             @foreach ($products as $key => $product)
                                 @if($key < 3)
@@ -114,21 +114,6 @@
                                 <p>{{$product->description}}</p>
                             </div>
                         @endforeach
-                        <div class="list-item">
-                            <img src="./img/resto.webp" alt="www">
-                                <div class="name"><h2>{{$product->product_name}}</h2></div>
-                                <h3>Rp. {{ number_format($product->product_price, 0, ',', '.') }}</h3>
-                                <p>{{$product->description}}</p>
-                                
-                        </div>
-
-                        <div class="list-item">
-                            <img src="./img/resto.webp" alt="www">
-                                <div class="name"><h2>{{$product->product_name}}</h2></div>
-                                <h3>Rp. {{ number_format($product->product_price, 0, ',', '.') }}</h3>
-                                <p>{{$product->description}}</p>
-                                
-                        </div>
                     </div>
                 </div>
             </div>

@@ -29,6 +29,7 @@ Route::middleware('isVisitor')->group(function () {
     Route::post('/store/{id}/send',[halamanController::class,'sendRatingSuggestion']);
     Route::post('/store/{id}/report',[halamanController::class,'reportAccount']);
     Route::get('/aboutus',[halamanController::class,'aboutus']);
+    Route::post('/close/{id}',[halamanController::class,'close']);
 });
 
 // Route autentifikasi

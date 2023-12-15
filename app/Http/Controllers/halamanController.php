@@ -82,4 +82,9 @@ class halamanController extends Controller
         session(['reportSuccess' => true]);
         return redirect('store/'.$id)->with('success','Berhasil Melaporkan toko');
     }
+
+    function close($id){
+        session(['reportSuccess' => false]);
+        return redirect('store/'.$id)->with('success','Berhasil Melaporkan toko');
+    }
 }
