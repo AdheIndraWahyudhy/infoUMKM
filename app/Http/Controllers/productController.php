@@ -58,7 +58,7 @@ class productController extends Controller
         $idUser=Auth::user()->id;
         $store=Store::where('user_id',$idUser)->first();
         $recentData=Product::where('id_product',$id)->first();
-        $recentImage=$recentData->product_image;
+        
         $request->validate([
             'product_price' => 'required|numeric|max:10000000.00',
         ],[
@@ -67,6 +67,7 @@ class productController extends Controller
             'product_price.max' => 'Harga tidak boleh melebihi batas yang ditentukan',
         ]);
         if($request->hasFile('product_image')){
+            $recentImage=$recentData->product_image;
             unlink(public_path('/ProductsImg/'.$recentImage));
             $image=$request->file('product_image');
             $newFileName='img' . date('ymdhis') . '.' . $image->getClientOriginalExtension();
@@ -83,7 +84,6 @@ class productController extends Controller
         }
         $product=[
             'store_id'=>$store->id_store,
-            'product_image'=>$recentImage,
             'product_name'=>$request->input('product_name'),
             'product_price'=>$request->input('product_price'),
             'description'=>$request->input('description'),
