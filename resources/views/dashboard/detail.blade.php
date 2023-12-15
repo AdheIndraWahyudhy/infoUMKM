@@ -140,7 +140,7 @@
     
                     <label for="suggestion">Komentar :</label>
                     <textarea id="suggestion" name="message" rows="4" required></textarea>
-                    <button type="submit" onclick="submitComment()">Submit</button>
+                    <button type="submit" onclick="submitComment()" class="button-saran">Submit</button>
                     {{-- <input type="submit" value="Submit"> --}}
               </form>
             </div>
@@ -155,7 +155,7 @@
                     <label for="reportReason">Alasan Melaporkan :</label>
                     <textarea id="reportReason" name="reportReason" rows="4" placeholder="Tulis alasan Anda di sini..."></textarea>
         
-                    <button type="submit">Kirim Laporan</button>
+                    <button type="submit" class="submit-report">Kirim Laporan</button>
                 </form>
             </div>
         </div>
@@ -196,10 +196,10 @@
     </main>
     <script src="{{url('assets/js/detail-script.js')}}"></script>
     @if(session('reportSuccess'))
-    <script>
-        // Buka pop-up konfirmasi jika flag reportSuccess ada
-        openConfirmationPopup();
-    </script>
-@endif
+        <script>
+            // Buka pop-up konfirmasi jika flag reportSuccess ada
+            openConfirmationPopup();
+        </script>
+    @endif
 </body>
 </html>

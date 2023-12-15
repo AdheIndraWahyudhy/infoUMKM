@@ -340,6 +340,17 @@ button:hover {
     height: 30%;
 }
 
+textarea {
+    padding: 10px; /* Atur padding sesuai kebutuhan Anda */
+    font-family: 'Arial', sans-serif; /* Ganti jenis font sesuai preferensi Anda */
+    font-size: 14px; /* Sesuaikan ukuran font sesuai keinginan */
+    line-height: 1.5; /* Sesuaikan line-height agar teks lebih mudah dibaca */
+    border: 1px solid #ccc; /* Atur warna dan ketebalan border sesuai kebutuhan */
+    border-radius: 5px; /* Atur border-radius agar sudut textarea lebih lembut */
+    box-sizing: border-box; /* Hindari padding dan border menambah lebar elemen */
+    width: 100%; /* Atur lebar textarea agar responsif */
+    resize: vertical; /* Biarkan pengguna dapat meresize tinggi textarea (vertikal) */
+}
 .close {
     color: #aaa;
     float: right;
@@ -624,6 +635,15 @@ body {
     h1 {
         text-align: center;
     }
+    .popup-content {
+        height: 40%;
+    }
+    .submit-report{
+        width: auto;
+    }
+    .button-saran{
+        width: auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -638,6 +658,12 @@ body {
 @media (max-width:550px) {
     .header-content h1 {
         font-size: 30px;
+    }
+    .popup-content {
+        height: 55%;
+    }
+    .submit-report{
+        width: auto;
     }
 }
 
