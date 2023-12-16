@@ -303,7 +303,6 @@ body {
         color: #004369;
     }
 }
-
 @media (max-width: 768px) {
     .about h1 {
         font-size: 35px;
@@ -326,6 +325,7 @@ body {
     .team-container img {
         max-width: 300px;
     }
+    
 }
 
 @media (max-width:550px) {

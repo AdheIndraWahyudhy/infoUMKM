@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/detail-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/footer-style.css')}}">
 </head>
 <body>
     <header class="header">
@@ -91,8 +92,8 @@
                         <hr>
                         <br>
                         <div class="button-container">
-                            <a class="info-btn" onclick="openCommentPopup()">Beri Komentar</a>
-                            <a class="warning-btn" onclick="openReportPopup()">Laporkan</a>
+                            <a class="btn info-btn" onclick="openCommentPopup()">Beri Komentar</a>
+                            <a class="btn warning-btn" onclick="openReportPopup()">Laporkan</a>
                         </div>
 
                     </div>
@@ -197,6 +198,7 @@
             </div>
         </div>
     </main>
+    @include('footer.footer-visitor')
     <script src="{{url('assets/js/detail-script.js')}}"></script>
     @if(session('reportSuccess'))
         <script>

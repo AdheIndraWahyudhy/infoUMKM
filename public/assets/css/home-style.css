@@ -393,7 +393,7 @@ h2#kategori{
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
-    background-color: #0050b3;
+    background-color: linear-gradient(93deg, #1B81D7 16.71%, #05B7D0 98.22%);
   }
 
   .navbar .box-navbar .menu.menu-active {

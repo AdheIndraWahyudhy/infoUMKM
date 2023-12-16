@@ -15,36 +15,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{url('assets/css/home-style.css')}}" />
+    <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}" />
     <title>INFO UMKM</title>
   </head>
   <body>
     <header>
-      <div class="navbar">
-        <div class="container">
-          <div class="box-navbar">
-            <div class="logo">
-              <h1>INFOUMKM</h1>
-            </div>
-            <ul class="menu">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#restoran">Kategori</a></li>
+      <div class="header">
+        <div class="logo">
+          <img src="{{url('assets/img/logo.png')}}" alt="logo InfoUMKM.com">
+          <h3>INFOUMKM.COM</h3>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="{{url('/')}}">Beranda</a> </li>
+            <li><a href="#kategori">Kategroi</a> </li>
+            <li><a href="{{url('/umkm')}}">UMKM</a></li>
+            <li><a href="{{url('/favorite')}}">Favorit</a></li>
+            <li><a href="{{url('/aboutus')}}">Tentang Kami</a></li>
+            <li><a href="{{url('auth/register')}}">Daftar</a></li>
+            <li style="color: #087292; width: 5px;">|</li>
+            <li><a href="{{url('auth/')}}">Masuk</a></li>
+          </ul>
+        </nav>
+        <div class="main-sidebar">
+          <input type="checkbox" id="check" checked>
+          <label for="check">
+            <i class="fas fa-bars" id="open"></i>
+          </label>
+          <div class="sidebar">
+            <label for="check">
+              <i class="fas fa-bars" id="btn"></i>
+            </label>
+            <ul>
+              <li><a href="{{url('/')}}">Beranda</a> </li>
               <li><a href="{{url('/umkm')}}">UMKM</a></li>
-              <li><a href="{{url('/favorite')}}">Favorite</a></li>
+              <li><a href="{{url('/favorite')}}">Favorit</a></li>
               <li><a href="{{url('/aboutus')}}">Tentang Kami</a></li>
-              <li class="active"><a href="{{url('auth/register')}}">Daftar</a></li>
-              <li class="active"><a href="{{url('auth/')}}">Masuk</a></li>
+              <li><a href="{{url('auth/register')}}">Daftar</a></li>
+              <li><a href="{{url('auth/')}}">Masuk</a></li>
             </ul>
-            <i class="fa-solid fa-bars menu-bar"></i>
           </div>
         </div>
       </div>
-
-      <div class="hero">
+          
+      {{-- <div class="hero" style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) url('{{url('assets/img/bannerHome.jpg')}}');background-size: cover;"> --}}
+      <div class="hero" style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{url('assets/img/bannerHome.jpg')}}');background-size: cover;">
         <div class="container">
           <div class="box-hero">
             <div class="box">
               <h1>
-                CARI INFO UMKM KAMU <br />
+                CARI INFO UMKM <br />
                 HANYA DI INFOUMKM.COM
               </h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, autem?</p>
@@ -86,21 +106,21 @@
             <img src="{{url('assets/img/kuliner.jpg')}}" alt="" style="object-fit:cover"/>
             <h3>Kuliner</h3>
             <a href="{{url('category/1')}}">
-              <button>Kunjungi</button>
+              <button style="color:white;">Kunjungi</button>
             </a>
           </div>
           <div class="box">
             <img src="{{url('assets/img/fashion.jpg')}}" alt="" style="object-fit:cover"/>
             <h3>Fashion</h3>
             <a href="{{url('category/2')}}">
-              <button>Kunjungi</button>
+              <button style="color:white;">Kunjungi</button>
             </a>
           </div>
           <div class="box">
             <img src="{{url('assets/img/service.jpg')}}" alt="" style="object-fit:cover"/>
             <h3>Jasa</h3>
             <a href="{{url('category/3')}}">  
-              <button>Kunjungi</button>
+              <button style="color:white;">Kunjungi</button>
             </a>
           </div>
         </div>

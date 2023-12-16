@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami</title>
+    <title>InfoUMKM | Tentang Kami</title>
+    <link rel="icon" href="{{url('assets/img/logo.png')}}">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -11,7 +12,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="{{('assets/css/footer-style.css')}}">
     <link rel="stylesheet" href="{{('assets/css/about-us.css')}}">
+    <link rel="stylesheet" href="{{('assets/css/header-style.css')}}">
 </head>
 <body>
     <header class="header">
@@ -111,5 +114,6 @@
             </div>
         </div>
     </main>
+    @include('footer/footer-visitor')
 </body>
 </html>
