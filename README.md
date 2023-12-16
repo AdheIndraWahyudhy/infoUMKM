@@ -29,7 +29,7 @@ Pastikan Anda telah memenuhi persyaratan berikut sebelum menginstal proyek:
 2. **Pindah ke Direktori Proyek**
 
     ```bash
-    cd nama-proyek
+    cd infoUMKM
     ```
 
 3. **Salin Berkas .env**
