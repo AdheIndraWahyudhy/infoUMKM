@@ -10,7 +10,7 @@ Ikuti langkah-langkah di bawah ini untuk menginstal proyek ini di lingkungan pen
 
 Pastikan Anda telah memenuhi persyaratan berikut sebelum menginstal proyek:
 
-- PHP versi >= 7.4
+- PHP versi >= 8.0
 - Composer
 - MySQL 
 - Memiliki lingkungan pengembangan lokal (local development environment). Seperti XAMPP dan Laragon
