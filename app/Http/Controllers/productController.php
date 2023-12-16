@@ -16,6 +16,9 @@ class productController extends Controller
         $userName=Auth::user()->name;
         $idUser=Auth::user()->id;
         $store=Store::where('user_id',$idUser)->first();
+        if($store == null){
+            return redirect('user/')->withErrors(['Harap membuat toko terlebih dahulu']);
+        }
         $products=Product::where('store_id',$store->id_store)->get();
 
         return view('user/produk')->with(['no'=>$no, 'store'=>$store,'user'=>$userName,'products'=>$products]);

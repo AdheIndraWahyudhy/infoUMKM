@@ -537,6 +537,9 @@ h1{
     .button-container btn{
         max-width: 100px;
     }
+    #popup-report{
+        height: 300px;
+    }
 }
 
 @media (max-width: 965px) {
@@ -671,6 +674,9 @@ h1{
     .button-saran{
         width: auto;
     }
+    #popup-report{
+        height: 350px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -683,6 +689,9 @@ h1{
     .popup-content{
         height: 60px;
     }
+    #popup-report{
+        height: 330px;
+    }
 }
 
 @media (max-width:550px) {
@@ -694,6 +703,9 @@ h1{
     }
     .submit-report{
         width: auto;
+    }
+    #popup-report{
+        height: 400px;
     }
 }
 

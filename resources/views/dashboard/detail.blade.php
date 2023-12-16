@@ -150,7 +150,7 @@
         </div>
 
         <div class="popup" id="reportPopup">
-            <div class="popup-content">
+            <div class="popup-content" id="popup-report">
                 <span class="close" onclick="closeReportPopup()">&times;</span>
                 <h2>Mengapa Anda Melaporkan Toko Ini?</h2>
                 <form action="{{url('store/'.$id.'/report')}}" method="POST">

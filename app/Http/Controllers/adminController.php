@@ -142,18 +142,18 @@ class adminController extends Controller
     }
     function deleteAccount($id){
         $store=Store::where('user_id',$id)->first();
-        $products=Product::where('store_id',$store->id_store)->get();
-        if ($products->count() != 0) {
-            foreach ($products as $product) {
-                $imagePath = public_path('ProductsImg/' . $product->product_image);
-                if (file_exists($imagePath)) {
-                    unlink($imagePath);
+        if($store != null) {
+            $products=Product::where('store_id',$store->id_store)->get();
+            if ($products->count() != 0) {
+                foreach ($products as $product) {
+                    $imagePath = public_path('ProductsImg/' . $product->product_image);
+                    if (file_exists($imagePath)) {
+                        unlink($imagePath);
+                    }
                 }
+                // Menghapus record dari database
+                Product::where('store_id', $store->id_store)->delete();
             }
-            // Menghapus record dari database
-            Product::where('store_id', $store->id_store)->delete();
-        }
-        if($store->count() != 0) {
             $imagePath = public_path('StoresImg/'.$store->store_image);
             if (file_exists($imagePath)) {
                 unlink($imagePath);
