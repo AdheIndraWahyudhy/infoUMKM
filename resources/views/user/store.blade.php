@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Store</title>
+    <title>InforUMKM.com | Toko</title>
+    <link rel="icon" href="{{url('assets/img/logo.png')}}">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -13,6 +14,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="{{url('assets/css/store-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/footer-style.css')}}">
 </head>
 <body>
     <header class="header">
@@ -24,7 +26,7 @@
             <ul>
                 <li><a href="{{url('user/')}}">UMKM</a></li>
                 <li><a href="{{url('user/account')}}">Akun</a></li>
-                <li><a href="{{url('user/store')}}">Store</a></li>
+                <li><a href="{{url('user/store')}}">Toko</a></li>
                 @if ($store != null)
                 <li><a href="{{url('user/product')}}">Produk</a></li>
                 @endif
@@ -43,7 +45,7 @@
                 </label>
                 <ul>
                     <li><a href="{{url('user/')}}">UMKM</a></li>
-                    <li><a href="{{url('user/account')}}">Akun</a></li>
+                    <li><a href="{{url('user/account')}}">Profil</a></li>
                     <li><a href="{{url('user/store')}}">Toko</a></li>
                     @if ($store != null)
                     <li><a href="{{url('user/product')}}">Produk</a></li>
@@ -56,7 +58,7 @@
     <main class="main">
         <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
+            <p> Jelajahi ragam toko dan dukung pertumbuhan bisnis lokal melalui InfoUMKM.com</p>
         </div>
         <div class="main-content">
             <h2>Toko</h2>
@@ -147,7 +149,7 @@
                         <input type="text" id="store_address" class="form-input" name="store_address"  value="{{$store->store_address}}" required><br>
                         
                         <label for="link_address">Link alamat pada google maps:</label>
-                        <input type="url" id="link_address" class="form-input" name="link_address"  value="{{$store->link_address}}"><br>
+                        <input type="url" id="link_address" class="form-input" name="link_address" placeholder="Opsional"  value="{{$store->link_address}}"><br>
                         
                         <img src="{{url('StoresImg/'.$store->store_image)}}" alt=""><br>
                         
@@ -175,7 +177,7 @@
                         <label for="store_address">Alamat Toko:</label>
                         <input type="text" id="store_address" class="form-input" name="store_address" required><br>
                         <label for="link_address">Link alamat pada google maps:</label>
-                        <input type="url" id="link_address" class="form-input" name="link_address" ><br>
+                        <input type="url" id="link_address" class="form-input" name="link_address" placeholder="Opsional" ><br>
                         <label for="store_image">Gambar Toko:</label>
                         <input type="file" id="store_address" class="input-file" name="store_image" accept="image/*"required> <br>
                         <label for="description">Deskripsi Toko</label>
@@ -188,5 +190,6 @@
             
         </div>
     </main>
+    @include('footer.footer-user')
 </body>
 </html>

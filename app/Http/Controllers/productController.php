@@ -64,7 +64,7 @@ class productController extends Controller
         ],[
             'product_price.required' => 'Harga Wajib di isi',
             'product_price.numeric' => 'Harga harus berupa angka',
-            'product_price.max' => 'Harga tidak boleh melebihi batas yang ditentukan',
+            'product_price.max' => 'Harga tidak boleh melebihi Rp 10.000.000',
         ]);
         if($request->hasFile('product_image')){
             

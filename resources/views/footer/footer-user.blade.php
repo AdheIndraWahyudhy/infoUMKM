@@ -5,14 +5,13 @@
             <!-- footer col-->
             <div class="footer-col">
                 <ul>
-                    <li><a> UMKM </a></li>
-                    <li><a> Akun </a></li>
+                    <li><a href="{{url('/user')}}"> UMKM </a></li>
+                    <li><a href="{{url('/user/account')}}"> Akun </a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <ul>
-                    <li><a>Toko </a></li>
-                    <li><a >Produk</a></li>
+                    <li><a href="{{url('/user/store')}}">Toko </a></li>
                 </ul>
             </div>
             <!--end footer col-->

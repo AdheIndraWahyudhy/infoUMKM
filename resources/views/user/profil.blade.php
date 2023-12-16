@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profil</title>
+    <title>InfoUMKM.com | Profil</title>
+    <link rel="icon" href="{{url('assets/img/logo.png')}}">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -13,6 +14,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="{{url('assets/css/profil_user_baru.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/footer-style.css')}}">
     <style>
         #passwordInput {
             display: none;
@@ -28,10 +30,10 @@
         <nav class="menu">
             <ul>
                 <li><a href="{{url('user/')}}">UMKM</a></li>
-                <li><a href="{{url('user/account')}}">Account</a></li>
-                <li><a href="{{url('user/store')}}">Store</a></li>
+                <li><a href="{{url('user/account')}}">Profil</a></li>
+                <li><a href="{{url('user/store')}}">Toko</a></li>
                 @if ($store != null)
-                    <li><a href="{{url('user/product')}}">Product</a></li>
+                    <li><a href="{{url('user/product')}}">Produk</a></li>
                 @endif
                 <li><i class="fa-solid fa-user" ></i>Hallo, {{$data->name}}</li>
                 <li><a href="{{url('auth/logout/user')}}">Keluar <i class="fa-solid fa-right-from-bracket"></i></a></li>
@@ -48,10 +50,10 @@
                 </label>
                 <ul>
                     <li><a href="{{url('user/')}}">UMKM</a></li>
-                    <li><a href="{{url('user/account')}}">Account</a></li>
-                    <li><a href="{{url('user/store')}}">Store</a></li>
+                    <li><a href="{{url('user/account')}}">Akun</a></li>
+                    <li><a href="{{url('user/store')}}">Toko</a></li>
                     @if ($store != null)
-                        <li><a href="{{url('user/product')}}">Product</a></li>
+                        <li><a href="{{url('user/product')}}">Produk</a></li>
                     @endif
                     <li><a href="{{url('auth/logout/user')}}">Keluar</a></li>
                 </ul>
@@ -61,10 +63,10 @@
     <main class="content">
         <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
+            <p> Jelajahi ragam toko dan dukung pertumbuhan bisnis lokal melalui InfoUMKM.com</p>
         </div>
         <div class="main-content">
-            <h2>User</h2>
+            <h2>Profil</h2>
             <form id="myForm" action="{{url('user/account/update')}}" method="POST" class="form">
                 @csrf
                 <label for="name">Name:</label>
@@ -72,7 +74,7 @@
             
                 <br>
             
-                <label for="number_phone">Number Phone:</label>
+                <label for="number_phone">Nomor Hp atau WhatsApp:</label>
                 <input type="text" id="number_phone" name="number_phone" value="{{$data->number_phone}}" required>
             
                 <br>
@@ -102,7 +104,7 @@
             </form>
         </div>
     </main>
-    
+    @include('footer.footer-user')
     <script>
         function togglePasswordField() {
             var passwordInput = document.getElementById("passwordInput");

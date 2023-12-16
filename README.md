@@ -58,8 +58,21 @@ Pastikan Anda telah memenuhi persyaratan berikut sebelum menginstal proyek:
 
 6. **Migrasi dan Isi Database**
 
+    Lakukan langkah berikut secara bertahap
+
     ```bash
     php artisan migrate
+    ```
+
+    Untuk Pengisian data awal admin pada tabel users, Jalankan perintah ini
+
+    ```bash
+    php artisan db:seed --class=adminSeeder
+    ```
+    Untuk Pengisian data awal pada tabel categories, Jalankan perintah ini
+
+    ```bash
+    php artisan db:seed --class=categoriesSeeder
     ```
 
     Opsional: Jika Anda ingin mengisi database dengan data awal, jalankan perintah ini.

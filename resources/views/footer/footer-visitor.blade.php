@@ -4,14 +4,14 @@
             <!-- footer col-->
             <div class="footer-col">
                 <ul>
-                    <li><a> Home </a></li>
-                    <li><a> UMKM </a></li>
+                    <li><a href="{{url('/')}}"> Beranda </a></li>
+                    <li><a href="{{url('/umkm')}}"> UMKM </a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <ul>
-                    <li><a>Favorite </a></li>
-                    <li><a >About Us</a></li>
+                    <li><a href="{{url('/favorite')}}">Favorit</a></li>
+                    <li><a href="{{url('/aboutus')}}">Tentang Kami</a></li>
                 </ul>
             </div>
             <!--end footer col-->

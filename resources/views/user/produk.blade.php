@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
+    <title>InfoUMKM.com | Product</title>
+    <link rel="icon" href="{{url('assets/img/logo.png')}}">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="{{url('assets/css/produk-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/alert-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/footer-style.css')}}">
 </head>
 <body>
     <!-- NAVBAR -->
@@ -58,7 +60,7 @@
     <main class="content">
         <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
+            <p> Jelajahi ragam toko dan dukung pertumbuhan bisnis lokal melalui InfoUMKM.com</p>
         </div>
 
         <!-- Produk -->
@@ -206,7 +208,7 @@
 
         
     </main>
-    
+    @include('footer.footer-user')
     {{-- <script src="produk.js"></script> --}}
 </body>
 </html>

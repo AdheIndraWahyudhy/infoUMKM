@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{url('assets/css/home-style.css')}}" />
     <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}" />
-    <title>INFO UMKM</title>
+    <title>INFO UMKM | Beranda</title>
+    <link rel="icon" href="{{url('assets/img/logo.png')}}">
   </head>
   <body>
     <header>

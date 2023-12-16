@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfoUMKM.com</title>
+    <title>InfoUMKM.com | Detail</title>
+    <link rel="icon" href="{{url('assets/img/logo.png')}}">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -13,6 +14,7 @@
     />
     <link rel="stylesheet" href="{{url('assets/css/detail-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/footer-style.css')}}">
     <style>
         #messageContainer {
             display: none;
@@ -43,7 +45,7 @@
                     <li><a href="{{url('user/product')}}">Produk</a></li>
                 @endif
                 <li><i class="fa-solid fa-user" ></i>Hallo, {{$user}}</li>
-                <li><a href="{{url('auth/logout/user')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a href="{{url('auth/logout/user')}}">Keluar <i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
@@ -62,7 +64,7 @@
                     @if ($store != null)
                         <li><a href="{{url('user/product')}}">Produk</a></li>
                     @endif
-                    <li><a href="{{url('auth/logout/user')}}">Logout</a></li>
+                    <li><a href="{{url('auth/logout/user')}}">Keluar</a></li>
                 </ul>
             </div>
         </div>
@@ -70,7 +72,7 @@
     <main class="content">
         <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
+            <p> Jelajahi ragam toko dan dukung pertumbuhan bisnis lokal melalui InfoUMKM.com</p>
         </div>
         <div class="main-content">
             <div class="detail-card">
@@ -102,7 +104,8 @@
                             <p>Lokasi : <a href="{{$store->link_address}}">{{$store->store_address}}</a> </i></p>
                             <p>Contact : {{$owner->number_phone}}</p>
                             <p>Deskripsi : {{$store->description}}</p>
-                        </div>
+                        </div><br>
+                        <hr>
                         <a class="button" id="myButton" disabled onmouseover="showMessage(event)" onmouseout="hideMessage()">Berikan Komentar</a>
                         <div id="messageContainer">Hanya pengunjung yang bisa memberikan komentar</div>
 
@@ -183,6 +186,7 @@
             </div>
         </div>
     </main>
+    @include('footer.footer-user')
     <script src="{{url('assets/js/detail-script.js')}}"></script>
     <script>
         function showMessage(event) {

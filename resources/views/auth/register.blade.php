@@ -26,7 +26,7 @@
                 <li><a href="{{url('/')}}">Beranda</a></li>
                 <li><a href="{{url('/umkm')}}">UMKM</a></li>
                 <li><a href="{{url('/favorite')}}">Favorit</a></li>
-                <li>Tentang kami</li>
+                <li><a href="{{url('/aboutus')}}">Tentang kami</a></li>
             </ul>
         </nav>
         <div class="main-sidebar">
@@ -42,7 +42,7 @@
                     <li><a href="{{url('/')}}">Beranda</a></li>
                     <li><a href="{{url('/umkm')}}">UMKM</a></li>
                     <li><a href="{{url('/favorite')}}">Favorit</a></li>
-                    <li><a href="">Tentang kami</a></li>
+                    <li><a href="{{url('/aboutus')}}">Tentang kami</a></li>
                 </ul>
             </div>
         </div>
