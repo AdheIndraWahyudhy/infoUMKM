@@ -181,6 +181,7 @@
                         </div>
                         <span> | {{$comment->created_at}} | </span>
                         <span>{{$comment->message}}</span>
+                        <hr>
                     @endforeach
                 </ul>
             </div>

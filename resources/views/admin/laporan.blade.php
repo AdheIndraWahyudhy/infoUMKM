@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan</title>
+    <title>InfotUMKM.com | Laporan</title>
+    <link rel="icon" href="{{url('assets/img/logo.png')}}">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -13,6 +14,7 @@
     />
     <link rel="stylesheet" href="{{url('assets/css/header-style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/laporan-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/footer-style.css')}}">
 </head>
 <body>
     <!-- NAVBAR -->
@@ -24,7 +26,7 @@
         <nav class="menu">
             <ul>
                 <li><a href="{{url('/admin/users')}}">Pengguna</a></li>
-                <li><a href="{{url('/admin/reports')}}">Laporan</a></li>
+                <li><a href="{{url('/admin')}}">Laporan</a></li>
                 <li><a href="{{url('/admin/profile')}}">Profil</a></li>
                 <li><a><i class="fa-solid fa-user"></i>Halo, {{$name}}</a></li>
                 <li><a href="{{url('auth/logout/admin')}}">Keluar <i class="fa-solid fa-right-from-bracket"></i></a></li>
@@ -41,7 +43,7 @@
                 </label>
                 <ul>
                     <li><a href="{{url('/admin/users')}}">Pengguna</a></li>
-                    <li><a href="{{url('/admin/reports')}}">Laporan</a></li>
+                    <li><a href="{{url('/admin')}}">Laporan</a></li>
                     <li><a href="{{url('/admin/profile')}}">Profil</a></li>
                     <li><a href="{{url('auth/logout/admin')}}">Keluar</a></li>
                 </ul>
@@ -52,7 +54,7 @@
     <main class="content">
         <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
+            <p> Jelajahi ragam toko dan dukung pertumbuhan bisnis lokal melalui InfoUMKM.com</p>
         </div>
     </main>
     <!-- Laporan  -->
@@ -123,7 +125,7 @@
             <i><h5>Note:</h5> Setelah melakukan penahanan, silahkan chat owner akun lewat email.</i>
         </div>
     </div>
-
+    @include('footer.footer-admin')
     {{-- <script src="laporan.js"></script> --}}
 </body>
 </html>

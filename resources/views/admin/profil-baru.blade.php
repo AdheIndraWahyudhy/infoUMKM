@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Contoh</title>
+    <title>InfoUMKM.com | Profil</title>
+    <link rel="icon" href="{{url('assets/img/logo.png')}}">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -13,6 +14,7 @@
     />
     <link rel="stylesheet" href="{{url('assets/css/profil_user_baru.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/alert-style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/footer-style.css')}}">
     <style>
         .password-container {
             display: none;
@@ -56,7 +58,7 @@
     <div class="content">
         <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
+            <p> Jelajahi ragam toko dan dukung pertumbuhan bisnis lokal melalui InfoUMKM.com</p>
         </div>
         <div class="main-content">
             <h2>Profil</h2>
@@ -94,6 +96,7 @@
             </form>
         </div>
     </div>
+    @include('footer.footer-admin')
     <script>
         function toggleEditMode() {
             var editButton = document.getElementById('editButton');

@@ -3,9 +3,13 @@
         <div class="row-footer">
             <div class="footer-col">
                 <ul>
-                    <li><a> Profil </a></li>
-                    <li><a> Laporan </a></li>
-                    <li><a> Pengguna </a></li>
+                    <li><a href="{{url('admin/profile')}}"> Profil </a></li>
+                    <li><a href="{{url('admin/')}}"> Laporan </a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <ul>
+                    <li><a href="{{url('admin/users')}}"> Pengguna </a></li>
                 </ul>
             </div>
         </div>
