@@ -155,10 +155,14 @@ p {
     margin-top: 0;
     }
         
-.list img {
+.list-item img {
     height: 170px;
+    width: 170px;
     border-radius: 5px;
     object-fit: cover;
+}
+.list-item p{
+    text-align: center;
 }
 
 /* Styles for the modal */

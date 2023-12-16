@@ -55,7 +55,7 @@
     <main class="content">
         <div class="header-content" style="background: url('{{url('assets/img/banner.png')}}')">
             <h1>CARI INFO UMKM KAMU <br> HANYA DI <span style="color: #0F3555;">INFOUMKM.COM</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut.</p>
+            <p> Jelajahi ragam toko dan dukung pertumbuhan bisnis lokal melalui InfoUMKM.com</p>
         </div>
         <div class="main-content">
             <div class="detail-card">
@@ -109,6 +109,7 @@
                                 <img src="{{url('ProductsImg/'.$product->product_image)}}" alt="resto">
                                 <div class="name"><h2>{{$product->product_name}}</h2></div>
                                 <h3>Rp. {{ number_format($product->product_price, 0, ',', '.') }}</h3>
+                                <hr>
                                 <p>{{$product->description}}</p>
                             </div>
                         @endforeach
@@ -193,6 +194,7 @@
                         </div>
                         <span> | {{$comment->created_at}} | </span>
                         <span>{{$comment->message}}</span>
+                        <hr>
                     @endforeach
                 </ul>
             </div>

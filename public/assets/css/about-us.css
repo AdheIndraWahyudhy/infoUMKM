@@ -302,6 +302,14 @@ body {
         font-size: 60px;
         color: #004369;
     }
+    footer{
+        margin-top: 400px;
+    }
+}
+@media (max-width: 850px){
+    footer{
+        margin-top: 200px;
+    }
 }
 @media (max-width: 768px) {
     .about h1 {
@@ -331,5 +339,8 @@ body {
 @media (max-width:550px) {
     .about h1 {
         font-size: 30px;
+    }
+    footer{
+        margin-top: 350px;
     }
 }

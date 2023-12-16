@@ -20,6 +20,9 @@ body {
 .content {
     width: 100%;
 }
+.content .info{
+    margin-bottom: 35vh;
+}
 
 .header-content {
     background: linear-gradient(93deg, #1B81D7 16.71%, #05B7D0 98.22%);

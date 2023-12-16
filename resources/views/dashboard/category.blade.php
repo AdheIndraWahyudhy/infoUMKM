@@ -59,27 +59,27 @@
         </div>
         @if ($stores->count() != 0)
             <div class="main-content">
-            @foreach ($stores as $store)
-                <div class="umkm-container">
-                    <img src="{{url('StoresImg/'.$store->store_image)}}" alt="toko">
-                    <h3>{{$store->store_name}}</h3>
-                    <p>{{$store->store_address}}</p>
-                    <div class="rating">
-                        @for ($i = 0; $i < 5; $i++)
-                            @if ($i < round($store->rating))
-                                <span class="star">&#9733;</span>
-                            @else
-                                <span class="star">&#9734;</span>
-                            @endif
-                        @endfor
+                @foreach ($stores as $store)
+                    <div class="umkm-container">
+                        <img src="{{url('StoresImg/'.$store->store_image)}}" alt="toko">
+                        <h3>{{$store->store_name}}</h3>
+                        <p>{{$store->store_address}}</p>
+                        <div class="rating">
+                            @for ($i = 0; $i < 5; $i++)
+                                @if ($i < round($store->rating))
+                                    <span class="star">&#9733;</span>
+                                @else
+                                    <span class="star">&#9734;</span>
+                                @endif
+                            @endfor
+                        </div>
+                        <p> Rate {{$store->rating}}</p>
+                        <a href="{{url('store/'.$store->id_store)}}">
+                            <button>Detail</button>
+                        </a>
                     </div>
-                    <p> Rate {{$store->rating}}</p>
-                    <a href="{{url('store/'.$store->id_store)}}">
-                        <button>Detail</button>
-                    </a>
-                </div>
-            @endforeach
-        </div>
+                @endforeach
+            </div>
         @else
             <h3 class="info">Belum ada Toko dengan kategori {{$categoryName}}</h3>
         @endif

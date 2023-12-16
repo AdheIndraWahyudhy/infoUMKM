@@ -28,7 +28,6 @@
         <nav class="menu">
           <ul>
             <li><a href="{{url('/')}}">Beranda</a> </li>
-            <li><a href="#kategori">Kategroi</a> </li>
             <li><a href="{{url('/umkm')}}">UMKM</a></li>
             <li><a href="{{url('/favorite')}}">Favorit</a></li>
             <li><a href="{{url('/aboutus')}}">Tentang Kami</a></li>
@@ -59,7 +58,7 @@
       </div>
           
       {{-- <div class="hero" style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) url('{{url('assets/img/bannerHome.jpg')}}');background-size: cover;"> --}}
-      <div class="hero" style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{url('assets/img/bannerHome.jpg')}}');background-size: cover;">
+      <div class="hero" style="background:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1)), url('{{url('assets/img/bannerHome.jpg')}}');background-size: cover;">
         <div class="container">
           <div class="box-hero">
             <div class="box">
@@ -67,7 +66,7 @@
                 CARI INFO UMKM <br />
                 HANYA DI INFOUMKM.COM
               </h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, autem?</p>
+              <p>Tersedia dalam genggamanmu, InfoUMKM.com menjadi jembatan antara penjual dan pembeli! Temukan beragam toko UMKM dari berbagai pemilik di InfoUMKM.com, dengan informasi yang lengkap mulai dari produk unggulan hingga ulasan pelanggan</p>
               <a href="{{url('/umkm')}}">
                 <button>List UMKM</button>
               </a>
@@ -83,17 +82,17 @@
           <div class="box">
             <i class="fa-solid fa-coins"></i>
             <h4>Daftar Restoran</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, labore.</p>
+            <p>Menyediakan informasi berbagai toko UMKM.</p>
           </div>
           <div class="box">
             <i class="fa-solid fa-certificate"></i>
             <h4>Rating</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, labore.</p>
+            <p>Berikan ulasan dan ratingmu untuk menilai toko.</p>
           </div>
           <div class="box">
             <i class="fa-solid fa-people-roof"></i>
             <h4>Favorite</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, labore.</p>
+            <p>Temukan toko favorite dengan rating tertinggi.</p>
           </div>
         </div>
       </div>
@@ -132,14 +131,14 @@
         <div class="box-footer">
           <div class="box">
             <h2>INFOUMKM</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam eius rerum quisquam perspiciatis obcaecati, quasi temporibus aperiam iusto aliquam doloremque.</p>
+            <p>Website InfoUMKM.com ini merupakan sistem informasi yang menyediakan informasi UMKM dan produknya yang menjadi wadah dalam membantu promosi dan pemasaran UMKM.</p>
           </div>
           <div class="box">
             <h3>Menu</h3>
-            <a href="#home">Home</a>
+            <a href="#home">Beranda</a>
             <a href="{{url('/umkm')}}">UMKM</a>
-            <a href="{{url('/favorite')}}">Favorite</a>
-            <a href="{{url('/')}}">Contact</a>
+            <a href="{{url('/favorite')}}">Favorit</a>
+            <a href="{{url('/')}}">Tentang Kami</a>
           </div>
           <div class="box">
             <p>&copy; Copyright by <span>Capstone Team | Dicoding Indonesia</span> All Rights Reserved 2023, Indonesia</p>
